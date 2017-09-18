@@ -1,0 +1,26 @@
+{
+  "name": "test_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "db.js",
+  "dependencies": {
+    "express": "^4.15.4",
+    "pg": "^7.3.0",
+    "pg-promise": "^6.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nasalski/test_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nasalski/test_project/issues"
+  },
+  "homepage": "https://github.com/nasalski/test_project#readme"
+}
