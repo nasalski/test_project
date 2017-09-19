@@ -1,87 +1,126 @@
+
 var express = require('express');
-/*var bodyParser = require('body-parser');*/
-/*var db = require(./db);*/
-var pg = require('pg');
-var conString = "postgres://listapps@localhost/listapps";
+var path = require('path');
+var bodyParser = require('body-parser');
+/*var router = express.Router();*/
+var pgp = require("pg-promise")(/*options*/);
+var db = pgp("postgres://postgres:@localhost:5432/db_users");
 
-function query(sql, params, callback) {
-    pg.connect(conString, function(err, client, done) {
+/*var db = require('./queries.js');*/
+var app  = express();
 
-        if (err) {
-            return console.error('error fetching client from pool', err);
-        }
-        client.query(sql, params, function(err, result) {
-            done();
-            if (err) {
-                return console.error('error running query', err);
-            }
-            if (callback) {
-                callback(result);
-            }
-        });
-
-    });
-};
-
-function create(item, callback) {
-    query('insert into list (text) values ($1)', [item.text], callback);
-}
-
-function read(callback) {
-    query('select * from list', [], function (err, result) {
-        callback(err, result);
-    });
-}
-
-function readById(id, callback) {
-    query('select * from list where id = $1', id, callback);
-}
-
-function update(id, text, callback) {
-    query('update list set text = $1 where id = $2', [text, id], callback);
-}
-
-function del(id, callback) {
-    query('delete from list where id = $1', id, callback);
-}
-
-
-    app.get('/items', function (req, res) {
-        read(function (err, result) {
-            res.render('list', {list: result.rows});
-        });
-    });
-
-app.get('/items/add', function (req, res) {
-    res.render('form', {item: {text: ''}});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true}));
+/*app.use(express.static('public'));*/
+app.use('/static', express.static(__dirname + '/public'));
+/*app.use(express.static(path.join(__dirname, 'public')));*/
+app.get('/', function(req, res){
+    res.sendfile('index.html');
 });
 
-app.post('/items/add', function (req, res) {
-    create({text: req.body.text},
-        function () {
-            res.redirect('/items');
+app.get('/users', function (req,res) {
+    db.any("SELECT * from users")
+        .then(function (data) {
+            console.log("DATA:", data);
+            res.status(200)
+                .json({
+                    status: 'success',
+                    data: data,
+                    message: 'Retrieved ALL users'
+                });
+        })
+        .catch(function (error) {
+            console.log("ERROR:", error);
+            res.sendStatus(500);
         });
 });
 
-app.get('/items/delete/:id', function (req, res) {
-    del(req.params.id, function () {
-        res.redirect('/items');
-    });
-});
-
-app.get('/items/edit/:id', function (req, res) {
-    readById(req.params.id, function (err, result) {
-        res.render('form', {item: result.rows[0]});
-    });
-});
-
-app.post('/items/edit/:id', function (req, res) {
-    update(req.params.id, req.body.text, function () {
-        res.redirect('/items');
-    });
-});
-
-var app = express();
-app.listen(3012, function () {
-    console.log('app started');
+app.get('/users/:id', function (req,res) {
+    var userID = parseInt(req.params.id);
+    db.one("SELECT * from users where id = $1", userID)
+        .then(function (data) {
+            console.log("DATA:", data);
+            res.status(200)
+                .json({
+                    status: 'success',
+                    data: data,
+                    message: 'Retrieved ONE user'
+                });
+        })
+        .catch(function (error) {
+            console.log("ERROR:", error);
+            res.sendStatus(500);
+        });
 })
+app.post('/users', function (req,res) {
+    /*var userID = parseInt(req.params.id);*/
+    var user = {
+        name: req.body.name,
+        role: req.body.role,
+        age : req.body.age,
+        foto: req.body.foto,
+    };
+    user.age = parseInt(user.age);
+    db.none('insert into users(name, role, age, foto) ' +
+        'values(${name}, ${role}, ${age}, ${foto})',
+        user).then(function (data) {
+            console.log("DATA:", data);
+            res.status(200)
+                .json({
+                    status: 'success',
+                    message: 'Inserted one user'
+                });
+        })
+        .catch(function (error) {
+            console.log("ERROR:", error);
+            res.sendStatus(500);
+        });
+})
+
+app.put('/users/:id', function (req,res) {
+    var userID = parseInt(req.params.id);
+    var user = {
+        id  : userID,
+        name: req.body.name,
+        role: req.body.role,
+        age : req.body.age,
+        foto: req.body.foto,
+    };
+    db.none('update users set name=$1, role=$2, age=$3, foto=$4 where id=$5',
+        [user.name, user.role, parseInt(user.age),
+            user.foto, parseInt(user.id)])
+        .then(function () {
+            console.log("DATA:", data);
+            res.status(200)
+                .json({
+                    status: 'success',
+                    message: 'Updated user'
+                });
+        })
+        .catch(function (error) {
+            console.log("ERROR:", error);
+            res.sendStatus(500);
+        });
+})
+
+app.delete('/users/:id', function (req,res) {
+    var userID = parseInt(req.params.id);
+    db.result('delete from users where id = $1', userID)
+        .then(function (result) {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    message: `Removed ${result.rowCount} user`
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+
+});
+app.listen(3000, function(){
+    console.log('API app started');
+})
+
+
