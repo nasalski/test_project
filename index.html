@@ -14,9 +14,35 @@
 </head>
 <body ng-app="app" ng-controller="phonebookCtrl">
 <form>
-    <div class = "row">
-        <div class = "small-3 columns">
-            <label class = "right
+    <div class="row">
+        <div class="small-3 columns">
+            <label class="right inline">ФИО</label>
+        </div>
+        <div class="small-9 columns">
+            <input type="text" ng-model="name" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-3 columns">
+            <label class="right inline">№ телефона</label>
+        </div>
+        <div class="small-9 columns">
+            <input type="text" ng-model="phone" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-3 columns">
+            <label class="right inline">Эл. почта</label>
+        </div>
+        <div class="small-9 columns">
+            <input type="text" ng-model="email" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-3 columns"></div>
+        <div class="small-9 columns">
+            <button class="small radius" ng-click="addNewPerson()" ng-hide="currentPersonId > -1">Добавить</button>
+            <button class="small radius" ng-click="savePerson()" ng-show="currentPersonId > -1">Сохранить</button>
         </div>
     </div>
 </form>
