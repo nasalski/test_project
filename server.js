@@ -18,25 +18,33 @@ app.use('/static', express.static(__dirname + '/public'));
 app.get('/', function(req, res){
     res.sendfile('index.html');
 });
-
-app.get('/users', function (req,res) {
-    db.any("SELECT * from users")
+app.get('/users', function(req, res){
+    res.sendfile('users.html');
+});
+process.on("unhandledRejection", (reason) => {
+    console.log(reason)
+})
+function getUsers(res) {
+    db.any("SELECT * from users", 123)
         .then(function (data) {
             console.log("DATA:", data);
             res.status(200)
                 .json({
                     status: 'success',
                     data: data,
-                    message: 'Retrieved ALL users'
+                    message: 'Retrieved all users'
                 });
         })
         .catch(function (error) {
             console.log("ERROR:", error);
             res.sendStatus(500);
         });
-});
+}
 
-app.get('/users/:id', function (req,res) {
+app.get('/usersjson', function (req,res) {
+    getUsers(res);
+});
+app.get('/usersjson/:id', function (req,res) {
     var userID = parseInt(req.params.id);
     db.one("SELECT * from users where id = $1", userID)
         .then(function (data) {
@@ -45,31 +53,7 @@ app.get('/users/:id', function (req,res) {
                 .json({
                     status: 'success',
                     data: data,
-                    message: 'Retrieved ONE user'
-                });
-        })
-        .catch(function (error) {
-            console.log("ERROR:", error);
-            res.sendStatus(500);
-        });
-})
-app.post('/users', function (req,res) {
-    /*var userID = parseInt(req.params.id);*/
-    var user = {
-        name: req.body.name,
-        role: req.body.role,
-        age : req.body.age,
-        foto: req.body.foto,
-    };
-    user.age = parseInt(user.age);
-    db.none('insert into users(name, role, age, foto) ' +
-        'values(${name}, ${role}, ${age}, ${foto})',
-        user).then(function (data) {
-            console.log("DATA:", data);
-            res.status(200)
-                .json({
-                    status: 'success',
-                    message: 'Inserted one user'
+                    message: 'Retrieved all users'
                 });
         })
         .catch(function (error) {
@@ -78,7 +62,34 @@ app.post('/users', function (req,res) {
         });
 })
 
-app.put('/users/:id', function (req,res) {
+app.post('/usersjson', function (req,res) {
+    /*var userID = parseInt(req.params.id);*/
+    var user = {
+        name: req.body.name,
+        role: req.body.role,
+        age : req.body.age,
+        foto: req.body.foto,
+    };
+    console.log("post:", req);
+    user.age = parseInt(user.age);
+    db.none('insert into users(name, role, age, foto) ' +
+        'values(${name}, ${role}, ${age}, ${foto})',
+        user).then(function (data) {
+            /*console.log("DATA:", data);*/
+            /*res.status(200)
+                .json({
+                    status: 'success',
+                    message: 'Inserted one user'
+                });*/
+            getUsers(res);
+        })
+        .catch(function (error) {
+            console.log("ERROR:", error);
+            res.sendStatus(500);
+        });
+})
+
+app.put('/usersjson/:id', function (req,res) {
     var userID = parseInt(req.params.id);
     var user = {
         id  : userID,
@@ -92,11 +103,13 @@ app.put('/users/:id', function (req,res) {
             user.foto, parseInt(user.id)])
         .then(function () {
             console.log("DATA:", data);
-            res.status(200)
+
+            /*res.status(200)
                 .json({
                     status: 'success',
                     message: 'Updated user'
-                });
+                });*/
+            getUsers(res);
         })
         .catch(function (error) {
             console.log("ERROR:", error);
@@ -104,18 +117,20 @@ app.put('/users/:id', function (req,res) {
         });
 })
 
-app.delete('/users/:id', function (req,res) {
+app.delete('/usersjson/:id', function (req,res) {
     var userID = parseInt(req.params.id);
+    /*var userID = req.params.id*/
+
     db.result('delete from users where id = $1', userID)
         .then(function (result) {
-            res.status(200)
+            /*res.status(200)
                 .json({
                     status: 'success',
                     message: `Removed ${result.rowCount} user`
-                });
-        })
-        .catch(function (err) {
-            return next(err);
+                });*/
+            getUsers(res);
+        }).catch(function (err) {
+            return console.log("err", err);
         });
 
 });

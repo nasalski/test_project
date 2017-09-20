@@ -1,73 +1,164 @@
- 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Телефонная книга</title>
-    <link rel="stylesheet" type="test/css" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.3/css/foundation.min.css"
-    <script src = "angular.min.js"></script>
-    <script>
-        var app = angular.module('app'.[])
-            .controller('phonebookCtrl',function($scope){
 
-            })
-    </script>
+
+
+
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="static/css/style.css">
+
 </head>
-<body ng-app="app" ng-controller="phonebookCtrl">
+
+<body>
+<div class="login">
+    <div class="login-screen">
+        <div class="app-title">
+            <h1>Login</h1>
+        </div>
+
+        <div class="login-form">
+            <div class="control-group">
+                <input type="text" class="login-field" value="" placeholder="username" id="login-name">
+                <label class="login-field-icon fui-user" for="login-name"></label>
+            </div>
+
+            <div class="control-group">
+                <input type="password" class="login-field" value="" placeholder="password" id="login-pass">
+                <label class="login-field-icon fui-lock" for="login-pass"></label>
+            </div>
+
+            <a class="btn btn-primary btn-large btn-block" href="/users">login</a>
+            <a class="login-link" href="#">Lost your password?</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>Авторизация</title>
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+
+    <link href="justified-nav.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="jumbotron" style="padding-bottom:0px;">
+        <h2>Авторизация</h2>
+    </div>
+    <form class="form-signin" role="form">
+        <input type="email" class="form-control" placeholder="Email address" required="" autofocus="">
+        <input type="password" class="form-control" placeholder="Password" required="">
+        <label class="checkbox">
+            <a href="#"> Sign In</a>
+        </label>
+        <button type="button" class="btn btn-lg btn-primary btn-block">Register</button>
+    </form>
+
+</div>
+
+</body></html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en" ng-app >
+<head>
+   <meta charset="UTF-8">
+   <title>Телефонная книга</title>
+   <link rel="stylesheet" type="test/css" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.3/css/foundation.min.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+   <script>
+       var app = angular.module('app'.[])
+           .controller('phonebookCtrl',function($scope){
+
+           })
+   </script>
+</head>
+<body ng-controller="phonebookCtrl">
+
+{{2+2}}
 <form>
-    <div class="row">
-        <div class="small-3 columns">
-            <label class="right inline">ФИО</label>
-        </div>
-        <div class="small-9 columns">
-            <input type="text" ng-model="name" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="small-3 columns">
-            <label class="right inline">№ телефона</label>
-        </div>
-        <div class="small-9 columns">
-            <input type="text" ng-model="phone" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="small-3 columns">
-            <label class="right inline">Эл. почта</label>
-        </div>
-        <div class="small-9 columns">
-            <input type="text" ng-model="email" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="small-3 columns"></div>
-        <div class="small-9 columns">
-            <button class="small radius" ng-click="addNewPerson()" ng-hide="currentPersonId > -1">Добавить</button>
-            <button class="small radius" ng-click="savePerson()" ng-show="currentPersonId > -1">Сохранить</button>
-        </div>
-    </div>
+   <div class="row">
+       <div class="small-3 columns">
+           <label class="right inline">ФИО</label>
+       </div>
+       <div class="small-9 columns">
+           <input type="text" ng-model="name" />
+       </div>
+   </div>
+   <div class="row">
+       <div class="small-3 columns">
+           <label class="right inline">№ телефона</label>
+       </div>
+       <div class="small-9 columns">
+           <input type="text" ng-model="phone" />
+       </div>
+   </div>
+   <div class="row">
+       <div class="small-3 columns">
+           <label class="right inline">Эл. почта</label>
+       </div>
+       <div class="small-9 columns">
+           <input type="text" ng-model="email" />
+       </div>
+   </div>
+   <div class="row">
+       <div class="small-3 columns"></div>
+       <div class="small-9 columns">
+           <button class="small radius" ng-click="addNewPerson()" ng-hide="currentPersonId > -1">Добавить</button>
+           <button class="small radius" ng-click="savePerson()" ng-show="currentPersonId > -1">Сохранить</button>
+       </div>
+   </div>
 </form>
 <table id="phonebook">
-    <thead>
-        <tr>
-            <th>№</th>
-            <th>ФИО</th>
-            <th>№ телефона</th>
-            <th>Эл. почта</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+   <thead>
+       <tr>
+           <th>№</th>
+           <th>ФИО</th>
+           <th>№ телефона</th>
+           <th>Эл. почта</th>
+           <th></th>
+       </tr>
+   </thead>
+   <tbody>
+       <tr>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
 
-        </tr>
+       </tr>
 
-    </tbody>
+   </tbody>
 
 </table>
 </body>
-</html>
+</html>--></html>
