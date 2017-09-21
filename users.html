@@ -10,20 +10,19 @@
     <title>Node/Angular Todo App</title>
 
     <!-- SCROLLS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- load bootstrap -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <style>
+    <!--<style>
         html 					{ overflow-y:scroll; }
         body 					{ padding-top:50px; }
-        #todo-list 				{ margin-bottom:30px; }
-        #todo-form 	 			{ margin-bottom:50px; }
-    </style>
+        #user-list 				{ margin-bottom:30px; }
+        #user-form 	 			{ margin-bottom:50px; }
+    </style>-->
 
     <!-- SPELLS -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
-
     <script src="static/controllers/controller.js"></script> <!-- load up our controller -->
-    <script src="static/services/service.js"></script> <!-- load our todo service -->
+    <script src="static/services/service.js"></script> <!-- load our user service -->
     <script src="static/core.js"></script> <!-- load our main application -->
 
 </head>
@@ -31,23 +30,54 @@
 <body ng-controller="mainController">
 <div class="container">
 
-    <!-- HEADER AND TODO COUNT -->
+    <!--HEADER-->
     <div class="jumbotron text-center">
-        <h1>I'm a Todo-aholic <span class="label label-info">{{ users.length }}</span></h1>
+        <h1>connecting table  </h1>
     </div>
 
-    <!-- TODO LIST -->
-    <div id="todo-list" class="row">
+    <!-- USER LIST -->
+    <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
 
 
+            <!-- Классы navbar и navbar-default (базовые классы меню) -->
+            <table class="table table-hover">
+                <tr class="heading" >
+                    <td class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #000000" >Name
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Lastname</a></li>
+                            <li><a href="#">Firstname</a></li>
+                        </ul>
+                    </td>
+                    <td>Domain</td>
+                    <td>Last signed in</td>
+                    <td> </td>
+                </tr>
 
-            <!-- LOOP OVER THE TODOS IN $scope.todos -->
-            <div class="checkbox" ng-repeat="user in users">
+                <tr class="active" ng-repeat="user in users">
+                     <td>{{ user.firstname + " " + user.lastname }}</td>
+                     <td>{{ user.domain }}</td>
+                     <td>{{ user.log_time }}</td>
+                     <td class="dropdown">
+                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-label="Left Align">
+                                 <span class="glyphicon glyphicon-option-vertical" aria-hidden="true" style="color: #000000"></span>
+                             </a>
+                             <ul class="dropdown-menu" role="menu">
+                                 <li><a href="#" >put</a></li>
+                                 <li><a href="#" ng-click="deleteUser(user.id)">delete</a></li>
+                             </ul>
+                     </td>
+                </tr>
+            </table>
+            <!-- LOOP OVER THE USERS IN $scope.users -->
+            <!--<div class="checkbox" ng-repeat="user in users">
                 <label>
                     <input type="checkbox" ng-click="deleteUser(user.id)"> {{ user.name }}
                 </label>
-            </div>
+            </div>-->
 
             <p class="text-center" ng-show="loading">
                 <span class="fa fa-spinner fa-spin fa-3x"></span>
@@ -56,28 +86,25 @@
         </div>
     </div>
 
-    <!-- FORM TO CREATE TODOS -->
-    <div id="todo-form" class="row">
+    <!-- FORM TO CREATE USERS -->
+    <div class="row">
         <div class="col-sm-8 col-sm-offset-2 text-center">
             <form>
-                <div class="form-group">
+                <!-- BIND THIS VALUE TO formData IN ANGULAR -->
+                <input type="text" class="form-control input-lg text-center" placeholder="firstname" ng-model="formData.firstname">
+                <input type="text" class="form-control input-lg text-center" placeholder="lastname" ng-model="formData.lastname">
+                <input type="text" class="form-control input-lg text-center" placeholder="role" ng-model="formData.role">
+                <input type="text" class="form-control input-lg text-center" placeholder="domain" ng-model="formData.domain">
 
-                    <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-                    <input type="text" class="form-control input-lg text-center" placeholder="I want to buy a puppy that will love me forever" ng-model="formData.name">
-                </div>
 
-                <!-- create() WILL CREATE NEW TODOS -->
+                <!-- create() WILL CREATE NEW USERS -->
                 <button type="submit" class="btn btn-primary btn-lg" ng-click="create()">Add</button>
             </form>
         </div>
     </div>
 
-    <div class="text-center text-muted">
-        <p>A demo by <a href="http://scotch.io">Scotch</a>.</p>
-        <p>Read the <a href="http://scotch.io/tutorials/javascript/creating-a-single-page-todo-app-with-node-and-angular">tutorial</a>.</p>
-    </div>
-
 </div>
-
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

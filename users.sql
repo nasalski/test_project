@@ -5,11 +5,15 @@ CREATE DATABASE db_users;
 
 CREATE TABLE users (
   ID SERIAL PRIMARY KEY,
-  name VARCHAR,
+  firstname VARCHAR,
+  lastname VARCHAR,
   role VARCHAR,
-  age INTEGER,
-  foto VARCHAR
+  domain VARCHAR,
+  log_time VARCHAR,
+  foto VARCHAR,
+  email VARCHAR,
+  password VARCHAR
 );
 
-INSERT INTO users (name, role, age, foto)
-  VALUES ('Tyler', 'admin', 20, ' ');
+INSERT INTO users (firstname,,lastname, role, domain,log_time, foto, email, password)
+  VALUES ('Tyler','Logan', 'admin', 'Nexus',' ', ' ', 'wwwasd@gmail.com', 'qwerty');

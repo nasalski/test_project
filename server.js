@@ -12,7 +12,7 @@ var app  = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true}));
-/*app.use(express.static('public'));*/
+/*app.use(express.static('/public'));*/
 app.use('/static', express.static(__dirname + '/public'));
 /*app.use(express.static(path.join(__dirname, 'public')));*/
 app.get('/', function(req, res){
@@ -65,15 +65,19 @@ app.get('/usersjson/:id', function (req,res) {
 app.post('/usersjson', function (req,res) {
     /*var userID = parseInt(req.params.id);*/
     var user = {
-        name: req.body.name,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
         role: req.body.role,
-        age : req.body.age,
+        domain: req.body.domain,
+        log_time: req.body.log_time,
         foto: req.body.foto,
+        email : req.body.email,
+        password : req.body.password
     };
     console.log("post:", req);
     user.age = parseInt(user.age);
-    db.none('insert into users(name, role, age, foto) ' +
-        'values(${name}, ${role}, ${age}, ${foto})',
+    db.none('insert into users(firstname,lastname, role, domain, log_time, foto, email,password) ' +
+        'values(${firstname}, ${lastname}, ${role}, ${domain}, ${log_time}, ${foto}, ${email}, ${password})',
         user).then(function (data) {
             /*console.log("DATA:", data);*/
             /*res.status(200)
@@ -92,11 +96,14 @@ app.post('/usersjson', function (req,res) {
 app.put('/usersjson/:id', function (req,res) {
     var userID = parseInt(req.params.id);
     var user = {
-        id  : userID,
-        name: req.body.name,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
         role: req.body.role,
-        age : req.body.age,
+        domain: req.body.domain,
+        log_time: req.body.log_time,
         foto: req.body.foto,
+        email : req.body.email,
+        password : req.body.email
     };
     db.none('update users set name=$1, role=$2, age=$3, foto=$4 where id=$5',
         [user.name, user.role, parseInt(user.age),
