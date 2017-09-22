@@ -7,17 +7,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
 
-    <title>Node/Angular Todo App</title>
+    <title>My first node/angular App</title>
 
     <!-- SCROLLS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- load bootstrap -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <!--<style>
-        html 					{ overflow-y:scroll; }
-        body 					{ padding-top:50px; }
-        #user-list 				{ margin-bottom:30px; }
-        #user-form 	 			{ margin-bottom:50px; }
-    </style>-->
+    <link rel="stylesheet" href="static/css/style.css">
 
     <!-- SPELLS -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
@@ -38,9 +33,6 @@
     <!-- USER LIST -->
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
-
-
-            <!-- Классы navbar и navbar-default (базовые классы меню) -->
             <table class="table table-hover">
                 <tr class="heading" >
                     <td class="dropdown">
@@ -48,8 +40,16 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Lastname</a></li>
-                            <li><a href="#">Firstname</a></li>
+                            <li><a href="#" ng-click="sortBy('lastname')">
+                                <span class="sortorder" ng-show="propertyName === 'lastname'" ng-class="{reverse: reverse}"></span>
+                                Lastname
+                                </a>
+                            </li>
+                            <li><a href="#" ng-click="sortBy('firstname')">
+                                    <span class="sortorder" ng-show="propertyName === 'firstname'" ng-class="{reverse: reverse}"></span>
+                                    Firstname
+                                </a>
+                            </li>
                         </ul>
                     </td>
                     <td>Domain</td>
@@ -57,7 +57,7 @@
                     <td> </td>
                 </tr>
 
-                <tr class="active" ng-repeat="user in users">
+                <tr class="active" ng-repeat="user in users | orderBy:propertyName:reverse">
                      <td>{{ user.firstname + " " + user.lastname }}</td>
                      <td>{{ user.domain }}</td>
                      <td>{{ user.log_time }}</td>
@@ -66,18 +66,12 @@
                                  <span class="glyphicon glyphicon-option-vertical" aria-hidden="true" style="color: #000000"></span>
                              </a>
                              <ul class="dropdown-menu" role="menu">
-                                 <li><a href="#" >put</a></li>
+                                 <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="getById(user.id)">put</a></li>
                                  <li><a href="#" ng-click="deleteUser(user.id)">delete</a></li>
                              </ul>
                      </td>
                 </tr>
             </table>
-            <!-- LOOP OVER THE USERS IN $scope.users -->
-            <!--<div class="checkbox" ng-repeat="user in users">
-                <label>
-                    <input type="checkbox" ng-click="deleteUser(user.id)"> {{ user.name }}
-                </label>
-            </div>-->
 
             <p class="text-center" ng-show="loading">
                 <span class="fa fa-spinner fa-spin fa-3x"></span>
@@ -103,8 +97,52 @@
         </div>
     </div>
 
-</div>
+
+
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Edit users </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control input-lg text-center" placeholder="domain" ng-model="formData.domain" >
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control input-lg text-center" placeholder="role" ng-model="formData.role">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control input-lg text-center" placeholder="firstname" ng-model="formData.firstname" >
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control input-lg text-center" placeholder="lastname" ng-model="formData.lastname">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="email" class="form-control input-lg text-center" placeholder="email" ng-model="formData.email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="password" class="form-control input-lg text-center" placeholder="password" ng-model="formData.password">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal" ng-click="update(id)">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </body>
 </html>
