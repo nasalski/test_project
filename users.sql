@@ -15,5 +15,5 @@ CREATE TABLE users (
   password VARCHAR
 );
 
-INSERT INTO users (firstname,,lastname, role, domain,log_time, foto, email, password)
+INSERT INTO users (firstname, lastname, role, domain,log_time, foto, email, password)
   VALUES ('Tyler','Logan', 'admin', 'Nexus',' ', ' ', 'wwwasd@gmail.com', 'qwerty');

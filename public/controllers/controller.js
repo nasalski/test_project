@@ -33,9 +33,9 @@ angular.module('controller', [])
                 $scope.loading = false;
             });
 
-        // GET =====================================================================
-        // when landing on the page, get all users and show them
-        // use the service to get all the users
+        // GET one by id =====================================================================
+        // when landing on the page, get one user and show
+        // use the service to get one user by id
         $scope.getById = function(id)
             {$scope.loading = true;
                 Users.getById(id)
