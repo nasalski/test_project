@@ -107,7 +107,7 @@ angular.module('controller', [])
         $scope.deleteUser = function(id) {
             $scope.loading = true;
             Users.deleteUser(id)
-            // if successful deleting, call our get function to get all the new todos
+            // if successful deleting, call our get function to get all the new users
                 .success(function(data) {
                     $scope.loading = false;
                     $scope.users = data.data;
@@ -128,13 +128,13 @@ angular.module('authController', [])
 
                 $scope.login = function(user) {
                     console.log(user.email);
-                    $http.post('/signup', user)
-                        .success(function(data) {
+                    $http.post('/signup', user);
+                        /*.success(function(data) {
                             $rootScope.currentUser = data.data;
                             $location.url("/users");
                             location.reload(true);
 
-                        });
+                        });*/
                 }
 
     });
