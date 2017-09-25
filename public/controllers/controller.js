@@ -23,7 +23,6 @@ angular.module('controller', [])
             $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
             $scope.propertyName = propertyName;
         };
-
         // GET =====================================================================
         // when landing on the page, get all users and show them
         // use the service to get all the users
@@ -115,3 +114,28 @@ angular.module('controller', [])
                 });
         };
     }]);
+
+//auth-------------------------------------------------------------
+
+
+angular.module('authController', [])
+    .config(function($locationProvider) {
+        $locationProvider.html5Mode(true);
+
+    })
+.controller("LogCtrl", function($location, $scope, $http, $rootScope) {
+        console.log("yep");
+
+                $scope.login = function(user) {
+                    console.log(user.email);
+                    $http.post('/signup', user)
+                        .success(function(data) {
+                            $rootScope.currentUser = data.data;
+                            $location.url("/users");
+                            location.reload(true);
+
+                        });
+                }
+
+    });
+

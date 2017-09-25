@@ -13,7 +13,7 @@ var methodOverride = require('method-override');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var cookieSession = require('cookie-session');
-
+var users = require('./public/models/user');
 app.set('port', config.get("app:port") || 3000);
 /*app.set('views', path.join(__dirname + "/..", 'views'));*/
 app.set('views', __dirname + '/views/');
@@ -29,11 +29,10 @@ app.set('view engine', 'jade');
       );
     }
 
-    //if behind a reverse proxy such as Varnish or Nginx
-    //app.enable('trust proxy');
+
 app.use('default',logger);
 /*app.use(express.static(path.join(__dirname, 'public')));*/
-/*app.use(methodOverride('X-HTTP-Method-Override'));*/
+/*app.use(methodOverride('X-HTTP-Method-Override'));*/    // почему то не работает
 /*app.use(cookieParser);*/
 app.use(cookieSession({secret: 'abc'}));
 app.use(session(sessionOptions));
@@ -42,27 +41,38 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true}));
 
+
+
+
 app.get('/', function(req, res){
-    res.sendfile('views/auth.html');
+    res.sendFile(path.join(__dirname+'/views/auth.html'));
 });
 app.get('/users', function(req, res){
-    res.sendfile('users.html');
+    res.sendFile(path.join(__dirname+'/views/users.html'));
 });
-process.on("unhandledRejection", (reason) => {
+/*process.on("unhandledRejection", (reason) => {
     console.log(reason)
-})
+})*/
 
 
 
 /*------ passport------------*/
-passport.use('local', new LocalStrategy(
-    function (email, password, done) {
-        console.log("im here");
-        if (email == "www.slava.sn@gmail.com" && password == "123") {
+/*passport.use('local', new LocalStrategy(
+    function (req,done) {
+        /!*var user = {email:req.body.email,
+                    password: req.body.password};
+        console.log(user.email);
+        console.log(user.password);
+        var docs = userController.getByEmail(user);
+        console.log(docs);*!/
+        console.log(user.password);
+        if (req.body.email == "www.slava.sn@gmail.com" && req.body.password == "123") {
             return done(null, {
                 email: "www.slava.sn@gmail.com",
             });
@@ -72,7 +82,8 @@ passport.use('local', new LocalStrategy(
             message: 'Неверный логин или пароль'
         });
     }
-));
+));*/
+
 passport.serializeUser(function (user, done) {
     done(null, JSON.stringify(user));
 });
@@ -89,7 +100,7 @@ app.get('/signup', function (req, res) {
 
         if (req.isAuthenticated()) {
             /*res.redirect('/users.html');*/
-            res.sendfile('users.html');
+            res.sendFile(path.join(__dirname+'/views/users.html'));
             return;
         }
 
@@ -104,10 +115,30 @@ app.get('/signup', function (req, res) {
         res.redirect('/signup');
     });
 
-    app.post('/signup', passport.authenticate('local', {
+    /*app.post('/signup', passport.authenticate('local', {
         successRedirect: '/users',
         failureRedirect: '/signup' })
-    );
+    );*/
+    app.post('/signup', function (req,res) {
+        var user = {email:req.body.email,
+            password: req.body.password};
+
+        var docs;
+        userController.getByEmail(user,docs);
+        if (docs != 'error')
+            console.log(docs);
+
+        if (req.body.email == "www.slava.sn@gmail.com" && req.body.password == "123") {
+            /*res.sendFile(path.join(__dirname+'users.html'));*/
+            return res.status(200)
+                .json({
+                    status: 'success',
+                    data: req.body.email,
+                    message: 'Retrieved one user'
+                });
+        }
+        return res.sendStatus(500);
+    })
 /*----------------------------------------------------------------------*/
 
 

@@ -17,6 +17,16 @@ exports.get = function (req, res) {
     getUsers(res);
 };
 
+exports.getByEmail = function (user,data) {
+    Users.getByEmail(user, function (docs,err) {
+            if(err) {console.log(err);
+                data = 'error';
+            }
+
+            data = docs;
+        });
+};
+
 exports.getById = function (req,res) {
     Users.getById(req.params.id, function (docs,err) {
             if(err) {console.log(err);

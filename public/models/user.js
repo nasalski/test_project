@@ -22,8 +22,8 @@ exports.getById = function (id,cb) {
            cb(null,error);
         });
 }
-exports.getByEmail = function (email,cb) {
-    db.one("SELECT * from users where email = $1", email)
+exports.getByEmail = function (user,cb) {
+    db.one("SELECT * from users where email = $1 and password = $2", [user.email, user.password])
         .then(function (data) {
             cb(data,null);
         })
