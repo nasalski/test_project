@@ -2,7 +2,7 @@
 angular.module('controller', [])
 
 // inject the service factory into our controller
-    .controller('mainController', ['$scope','$http','Users', function($scope, $http, Users) {
+    .controller('mainController', ['$scope','$http','$rootScope','Users', function($scope, $http,$rootScope, Users) {
         $scope.formData = {
             firstname:"",
             lastname:"",
@@ -17,7 +17,8 @@ angular.module('controller', [])
         $scope.propertyName = 'lastname';
         $scope.reverse = true;
         $scope.loading = true;
-
+        $scope.isAuth = false;
+        console.log($rootScope.currentUser);
         // SORTING table by lastname and firstname ========================
         $scope.sortBy = function(propertyName) {
             $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
@@ -123,19 +124,35 @@ angular.module('authController', [])
         $locationProvider.html5Mode(true);
 
     })
-.controller("LogCtrl", function($location, $scope, $http, $rootScope) {
+.controller("AuthCtrl",['$location', '$scope', '$http', '$rootScope', function($location, $scope, $http, $rootScope) {
         console.log("yep");
-
+                $scope.isAuth = false;
                 $scope.login = function(user) {
                     console.log(user.email);
-                    $http.post('/signup', user);
-                        /*.success(function(data) {
-                            $rootScope.currentUser = data.data;
-                            $location.url("/users");
-                            location.reload(true);
-
-                        });*/
+                    $http.post('/signup', user)
+                        .success(function(data,docs) {
+                            console.log(data);
+                            console.log(docs);
+                            if(docs==200){
+                                $rootScope.currentUser = user;
+                                $location.url("/users");
+                                location.reload(true);
+                                $rootScope.isAuth = true;
+                            } else alert("не верный логин или пароль");
+                        });
                 }
 
-    });
+
+    }])
+.controller("LogCtrl", ['$location', '$scope', '$http','Users', '$rootScope', function($location, $scope, $http, $rootScope) {
+     console.log("good users");
+     $scope.currentUser;
+        $scope.check = function() {
+            Users.getByEmail($rootScope.currentUser)
+                .success(function (data) {
+                    console.log(data);
+                    $scope.currentUser = data;
+                })
+    }
+}]);
 

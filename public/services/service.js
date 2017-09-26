@@ -10,6 +10,9 @@ angular.module('service', [])
             getById : function (id) {
                 return $http.get('/usersjson/' + id);
             },
+            getByEmail : function (email,password) {
+                return $http.get('/usersjson/' + id);
+            },
             create : function(Data) {
                 return $http.post('/usersjson', Data);
             },

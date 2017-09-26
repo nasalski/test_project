@@ -10,8 +10,9 @@
     <title>My first node/angular App</title>
 
     <!-- SCROLLS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- load bootstrap -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
     <link rel="stylesheet" href="static/css/style.css">
 
     <!-- SPELLS -->
@@ -22,27 +23,45 @@
 
 </head>
 <!-- SET THE CONTROLLER -->
-<body ng-controller="mainController">
+<body ng-controller="mainController" >
 <div class="container">
 
-    <!--HEADER-->
-    <div class="jumbotron text-center">
-        <h1>connecting table  </h1>
+    <div class="header">
+        <div class="row">
+            <div class="col-sm-10">
+                <div class="box_for_button_create">
+                    <button class="create_user" type="button">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="box_for_profile">
+                    <button class="look_profile_self" type="button" ng-click="check()">
+                        <span class="glyphicon glyphicon-user icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- USER LIST -->
     <div class="row">
-        <div class="col-sm-4 col-sm-offset-4">
-            <table class="table table-hover">
-                <tr class="heading" >
-                    <td class="dropdown">
+        <div class="col-sm-4">
+            <table class="table user_table">
+                <tr class="heading_of_table" >
+                    <td class="user_foto">
+
+                    </td>
+                    <td class="dropdown user_name">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #000000" >Name
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#" ng-click="sortBy('lastname')">
-                                <span class="sortorder" ng-show="propertyName === 'lastname'" ng-class="{reverse: reverse}"></span>
-                                Lastname
+                                    <span class="sortorder" ng-show="propertyName === 'lastname'" ng-class="{reverse: reverse}"></span>
+                                    Lastname
                                 </a>
                             </li>
                             <li><a href="#" ng-click="sortBy('firstname')">
@@ -52,16 +71,22 @@
                             </li>
                         </ul>
                     </td>
-                    <td>Domain</td>
-                    <td>Last signed in</td>
-                    <td> </td>
+                    <td class="user_domain">Domain</td>
+                    <td class="user_last_log">Last signed in</td>
+                    <td class="user_menu"> </td>
                 </tr>
 
-                <tr class="active" ng-repeat="user in users | orderBy:propertyName:reverse">
-                     <td>{{ user.firstname + " " + user.lastname }}</td>
-                     <td>{{ user.domain }}</td>
-                     <td>{{ user.log_time }}</td>
-                     <td class="dropdown">
+                <tr class="active body_of_table" ng-repeat="user in users | orderBy:propertyName:reverse">
+                     <td class="user_foto">
+                         <div class="box_for_profile">
+                             <button class="look_profile" type="button">
+                                 <span class="glyphicon glyphicon-user icon"></span>
+                             </button>
+                         </div></td>
+                     <td class="user_name">{{ user.firstname + " " + user.lastname }}</td>
+                     <td class="user_domain">{{ user.domain }}</td>
+                     <td class="user_last_log">{{ user.log_time }}</td>
+                     <td class="dropdown user_menu">
                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-label="Left Align">
                                  <span class="glyphicon glyphicon-option-vertical" aria-hidden="true" style="color: #000000"></span>
                              </a>

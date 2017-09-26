@@ -5,19 +5,14 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var userController = require('./public/controllers/user');
 var app  = express();
-var flash = require('connect-flash');
 var passport       = require('passport');
 var LocalStrategy  = require('passport-local').Strategy;
 var logger = require('morgan');
-var methodOverride = require('method-override');
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
-var cookieSession = require('cookie-session');
-var users = require('./public/models/user');
-/*app.set('port', config.get("app:port") || 3000);*/
-/*app.set('views', path.join(__dirname + "/..", 'views'));*/
+
+
+
 app.set('views', __dirname + '/views/');
-//app.use('views', express.static(__dirname + '/views'));
+
 
 
 app.use('/static', express.static(__dirname + '/public'));
@@ -47,19 +42,30 @@ passport.use(new LocalStrategy(
         passwordField: 'password'
     },
     function (email,password,done) {
-        console.log("log");
-        /*var docs = userController.getByEmail(user);
-        console.log(docs);*/
-        console.log(email);
-        if (email == "www.slava.sn@gmail.com" && password == "123") {
-            return done(null, {
-                email: "www.slava.sn@gmail.com",
-            });
-        }
+        var user = {
+            email: email,
+            password: password
+        };
 
-        return done(null, false, {
-            message: 'Неверный логин или пароль'
+        userController.login(user, function (docs, err) {
+            if (err) {
+                console.log(err);
+            }
+            if (email == docs.email && password == docs.password) {
+                return done(null, {
+                    email: email,
+                    path:'/users'
+
+                });
+            } else {
+                return done(null, false, {
+                    message: 'Неверный логин или пароль',
+                    path:'/signup'
+
+                });
+            }
         });
+
     }
 ));
 
@@ -78,53 +84,27 @@ passport.deserializeUser(function (data, done) {
 app.get('/signup', function (req, res) {
 
         if (req.isAuthenticated()) {
-            /*res.redirect('/users.html');*/
             res.sendFile(path.join(__dirname+'/views/users.html'));
             return;
         }
-
-        /*res.render('auth', {
-            error: req.flash('error')
-        });*/
         res.sendfile('./views/auth.html');
-    });
+});
 
-    app.get('/sign-out', function (req, res) {
-        req.logout();
-        res.redirect('/signup');
-    });
+app.get('/sign-out', function (req, res) {
+    req.logout();
+    res.redirect('/signup');
+});
 
+app.post('/signup', passport.authenticate('local', {
+    successRedirect: '/users',
+    failureRedirect: '/signup' })
+);
 
+/*app.post('/signup', passport.authenticate('local'), function(req, res) {
+    console.log("works");
+    res.sendFile(path.join(__dirname+'/views/users.html'));
+});*/
 
-    app.post('/signup', passport.authenticate('local', {
-        successRedirect: '/users',
-        failureRedirect: '/signup' })
-    );
-
-
-
-/*
-app.post('/signup', function (req,res) {
-    var user = {email:req.body.email,
-        password: req.body.password};
-
-    /!*var docs;
-    userController.getByEmail(user,docs);
-    if (docs != 'error')
-        console.log(docs);*!/
-        console.log(req.body.password);
-    if (req.body.email == "www.slava.sn@gmail.com" && req.body.password == "123") {
-        /!*res.sendFile(path.join(__dirname+'users.html'));*!/
-        return res.status(200)
-            .json({
-                status: 'success',
-                data: req.body.email,
-                message: 'Retrieved one user'
-            });
-    }
-    return res.sendStatus(500);
-})
-*/
 /*----------------------------------------------------------------------*/
 
 

@@ -1,41 +1,13 @@
-* {
-    box-sizing: border-box;
-}
 
-*:focus {
-    outline: none;
-}
-body {
+.body_auth {
     font-family: Arial;
-    /*background-color: #3498DB;*/
+    background-color: #ffa514;
     padding: 50px;
 }
-.login {
-    margin: 20px auto;
-    width: 300px;
-}
-.login-screen {
-    background-color: #FFF;
-    padding: 20px;
-    border-radius: 5px
-}
-
-.app-title {
-    text-align: center;
-    color: #777;
-}
-
-.login-form {
-    text-align: center;
-}
-.control-group {
-    margin-bottom: 10px;
-}
-
 
 input {
     text-align: center;
-    background-color: #ECF0F1;
+    background-color: #FFFFFF;
     border: 2px solid transparent;
     border-radius: 3px;
     font-size: 16px;
@@ -46,35 +18,157 @@ input {
 }
 
 input:focus {
-    border: 2px solid #3498DB;
+    border: 2px solid #FFFFFF;
     box-shadow: none;
 }
 
-.btn {
-    border: 2px solid transparent;
-    background: #3498DB;
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 25px;
-    padding: 10px 0;
-    text-decoration: none;
-    text-shadow: none;
-    border-radius: 3px;
-    box-shadow: none;
-    transition: 0.25s;
-    display: block;
+.img{
+    text-align: center;
     width: 250px;
-    margin: 0 auto;
+    height: 136px;
+}
+.auth_form{
+    width: 250px;
+    height: 31px;
+    text-align: center;
+}
+.input {
+    border-width: 2px;
+    border-radius: 0px;
+    border-color: #000000;
+}
+.logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 5em;
+
 }
 
-.btn:hover {
-    background-color: #2980B9;
+.text_login {
+    width: 250px;
+    height: 50px;
+    vertical-align: middle;
+    background: #000000;
+    color: #FFFFFF;
+}
+.btn {
+    background: #000000;
+    border-radius: 0px;
+    width: 70px;
+    color: #FFFFFF;
+
 }
 
-.login-link {
-    font-size: 12px;
-    color: #444;
-    display: block;
-    margin-top: 12px;
+.button_log {
+    height: 120px;
+    width: 250px;
+    text-align: center;
+    margin-top: 60px;
+}
+.for_forgot {
+    width: 250px;
+    height: 100px;
+    color: black;
+    text-align: center;
+    vertical-align: bottom;
 }
 
+
+/* enable absolute positioning */
+.inner-addon {
+    position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 15px;
+    pointer-events: none;
+}
+
+/* align icon */
+.left-addon .icon_auth  { left:  0px;}
+.right-addon .icon_auth { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+.header {
+    height: 40px;
+    width:  650px;
+    background: #f0f0f0;
+}
+.box_for_button_create{
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    border-right: 2px solid #cfcfcf;
+    /*outline: 2px solid #cfcfcf;*/
+}
+.create_user {
+    background: #4185f2;
+    height: 30px;
+    width: 30px;
+    border-radius: 90px;
+    border-width: 0px;
+    color: #FFFFFF;
+    font-size: large;
+    margin-top: 5px;
+    text-align: center;
+}
+.box_for_profile{
+    position: relative;
+    margin-left: 30px;
+}
+.look_profile_self{
+    background: #f0f0f0;
+    height: 30px;
+    width: 30px;
+    border-radius: 90px;
+    border: 2px solid #757575;
+    margin-top: 5px;
+    text-align: center;
+    color: #757575;
+}
+.look_profile{
+    background: #f0f0f0;
+    height: 30px;
+    width: 30px;
+    border-radius: 90px;
+    /*border: 2px solid #757575;*/
+    border: 0px;
+    margin-top: 5px;
+    text-align: center;
+    color: #757575;
+}
+.user_table {
+    width: 600px;
+    margin-left: 15px;
+}
+.user_foto {
+    background-color: #FFFFFF;
+    width: 40px;
+
+}
+.user_name {
+    background-color: #FFFFFF;
+    width: 190px;
+}
+.user_domain {
+    width: 170px;
+}
+.user_last_log {
+    width: 170px;
+}
+.user_menu{
+    width: 30px;
+}
+.body_of_table >td{
+    background-color: #FFFFFF;
+    border: 0px solid;
+}
+.heading_of_table{
+    /*background-color: #FFFFFF;
+    border: 0px;*/
+}

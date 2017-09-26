@@ -17,16 +17,29 @@ exports.get = function (req, res) {
     getUsers(res);
 };
 
-exports.getByEmail = function (user,data) {
+exports.login = function (user,cb) {
     Users.getByEmail(user, function (docs,err) {
             if(err) {console.log(err);
-                data = 'error';
+                return cb(null, err);
             }
 
-            data = docs;
+            return cb(docs,null);
         });
 };
 
+exports.getByEmail = function (req,res) {
+    Users.getByEmail(user, function (docs,err) {
+            if(err) {console.log(err);
+                return res.sendStatus(500);
+            }
+            res.status(200)
+                .json({
+                    status: 'success',
+                    data: docs,
+                    message: 'Retrieved one user'
+                });
+        }
+    )};
 exports.getById = function (req,res) {
     Users.getById(req.params.id, function (docs,err) {
             if(err) {console.log(err);
