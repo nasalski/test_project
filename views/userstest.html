@@ -1,7 +1,7 @@
-<div class="container" >
+<div class="container">
 
-    <div class="header" >
-        <div class="row"  >
+    <div class="header">
+        <div class="row">
             <div class="col-sm-10">
                 <div class="box_for_button_create">
                     <button class="create_user" type="button">
@@ -21,7 +21,7 @@
     </div>
 
     <!-- USER LIST -->
-    <div class="row" >
+    <div class="row">
         <div class="col-sm-4">
             <table class="table user_table">
                 <tr class="heading_of_table" >
@@ -34,14 +34,14 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#" ng-click="sortBy('lastname')">
-                                    <span class="sortorder" ng-show="propertyName === 'lastname'" ng-class="{reverse: reverse}"></span>
-                                    Lastname
-                                </a>
+                                <span class="sortorder" ng-show="propertyName === 'lastname'" ng-class="{reverse: reverse}"></span>
+                                Lastname
+                            </a>
                             </li>
                             <li><a href="#" ng-click="sortBy('firstname')">
-                                    <span class="sortorder" ng-show="propertyName === 'firstname'" ng-class="{reverse: reverse}"></span>
-                                    Firstname
-                                </a>
+                                <span class="sortorder" ng-show="propertyName === 'firstname'" ng-class="{reverse: reverse}"></span>
+                                Firstname
+                            </a>
                             </li>
                         </ul>
                     </td>
@@ -51,24 +51,24 @@
                 </tr>
 
                 <tr class="active body_of_table" ng-repeat="user in users | orderBy:propertyName:reverse">
-                     <td class="user_foto">
-                         <div class="box_for_profile">
-                             <button class="look_profile" type="button">
-                                 <span class="glyphicon glyphicon-user icon"></span>
-                             </button>
-                         </div></td>
-                     <td class="user_name">{{ user.firstname + " " + user.lastname }}</td>
-                     <td class="user_domain">{{ user.domain }}</td>
-                     <td class="user_last_log">{{ user.log_time }}</td>
-                     <td class="dropdown user_menu">
-                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-label="Left Align">
-                                 <span class="glyphicon glyphicon-option-vertical" aria-hidden="true" style="color: #000000"></span>
-                             </a>
-                             <ul class="dropdown-menu" role="menu">
-                                 <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="getById(user.id)">put</a></li>
-                                 <li><a href="#" ng-click="deleteUser(user.id)">delete</a></li>
-                             </ul>
-                     </td>
+                    <td class="user_foto">
+                        <div class="box_for_profile">
+                            <button class="look_profile" type="button">
+                                <span class="glyphicon glyphicon-user icon"></span>
+                            </button>
+                        </div></td>
+                    <td class="user_name">{{ user.firstname + " " + user.lastname }}</td>
+                    <td class="user_domain">{{ user.domain }}</td>
+                    <td class="user_last_log">{{ user.log_time }}</td>
+                    <td class="dropdown user_menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-option-vertical" aria-hidden="true" style="color: #000000"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="getById(user.id)">put</a></li>
+                            <li><a href="#" ng-click="deleteUser(user.id)">delete</a></li>
+                        </ul>
+                    </td>
                 </tr>
             </table>
 
@@ -106,29 +106,29 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-md-6">
                             <input type="text" class="form-control input-lg text-center" placeholder="domain" ng-model="formData.domain" >
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-md-6">
                             <input type="text" class="form-control input-lg text-center" placeholder="role" ng-model="formData.role">
                         </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control input-lg text-center" placeholder="firstname" ng-model="formData.firstname" >
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control input-lg text-center" placeholder="lastname" ng-model="formData.lastname">
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control input-lg text-center" placeholder="firstname" ng-model="formData.firstname" >
                         </div>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <input type="email" class="form-control input-lg text-center" placeholder="email" ng-model="formData.email">
-                            </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control input-lg text-center" placeholder="lastname" ng-model="formData.lastname">
                         </div>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <input type="password" class="form-control input-lg text-center" placeholder="password" ng-model="formData.password">
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="email" class="form-control input-lg text-center" placeholder="email" ng-model="formData.email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="password" class="form-control input-lg text-center" placeholder="password" ng-model="formData.password">
                         </div>
                     </div>
                 </div>
@@ -139,8 +139,6 @@
         </div>
     </div>
 
-</div>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

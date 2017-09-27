@@ -1,8 +1,8 @@
-angular.module('service', [])
+angular.module('usersService', [])
 
 // super simple service
 // each function returns a promise object
-    .factory('Users', ['$http',function($http) {
+    .factory('UsersService', ['$http',function($http) {
         return {
             get : function() {
                 return $http.get('/usersjson');
@@ -10,8 +10,8 @@ angular.module('service', [])
             getById : function (id) {
                 return $http.get('/usersjson/' + id);
             },
-            getByEmail : function (email,password) {
-                return $http.get('/usersjson/' + id);
+            getByEmail : function (email) {
+                return $http.post('/usersjson/email', email);
             },
             create : function(Data) {
                 return $http.post('/usersjson', Data);

@@ -18,7 +18,7 @@ exports.get = function (req, res) {
 };
 
 exports.login = function (user,cb) {
-    Users.getByEmail(user, function (docs,err) {
+    Users.login(user, function (docs,err) {
             if(err) {console.log(err);
                 return cb(null, err);
             }
@@ -28,7 +28,8 @@ exports.login = function (user,cb) {
 };
 
 exports.getByEmail = function (req,res) {
-    Users.getByEmail(user, function (docs,err) {
+    console.log(req.body.email);
+    Users.getByEmail(req.body.email, function (docs,err) {
             if(err) {console.log(err);
                 return res.sendStatus(500);
             }
@@ -38,8 +39,8 @@ exports.getByEmail = function (req,res) {
                     data: docs,
                     message: 'Retrieved one user'
                 });
-        }
-    )};
+        })
+    };
 exports.getById = function (req,res) {
     Users.getById(req.params.id, function (docs,err) {
             if(err) {console.log(err);

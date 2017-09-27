@@ -1,64 +1,43 @@
+<div class="body_auth">
+    <nav>
+        <div class="container bgcont center-block">
 
+                <div class="col-sm-8">
+                    <div class="logo">
+                        <div class="img">
+                            <img src="static/img/Logo.png">
+                        </div>
 
-<!DOCTYPE html>
-<html lang="en" ng-app="auth">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/style.css">
+                        <div class="form-group auth_form">
+                            <div class = "text_login">
+                                <h2>Login</h2>
+                            </div>
+                        </div>
+                        <div class="form-group auth_form inner-addon left-addon">
+                                <!--<span class="glyphicon glyphicon-play"></span>-->
+                            <i class=" icon_auth glyphicon glyphicon-play"></i>
+                            <input ng-model="user.email" name="email" type="email" required="required" placeholder="enter your email" class="input pass"/>
 
-    <base href="/">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+                        </div>
+                        <div class="form-group auth_form inner-addon left-addon">
+                            <i class="icon_auth glyphicon glyphicon-play"></i>
+                            <input ng-model="user.password" name="password" type="password" placeholder="enter your password" required="required" class="input pass"/>
+                        </div>
+                        <div class ="button_log">
+                            <button class="btn" type="button" ng-click="login(user)">
+                                <span class="glyphicon glyphicon-arrow-right"></span>
+                            </button>
+                        </div>
 
-    <!-- SPELLS -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script><!-- load angular -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
-    <script src="static/controllers/controller.js"></script> <!-- load up our controller -->
-    <script src="static/auth.js"></script>
-</head>
-<body class ="body_auth">
-<nav ng-controller="AuthCtrl">
-    <div class="container bgcont center-block">
-
-            <div class="col-sm-8">
-                <div class="logo">
-                    <div class="img">
-                        <img src="static/img/Logo.png">
-                    </div>
-
-                    <div class="form-group auth_form">
-                        <div class = "text_login">
-                            <h2>Login</h2>
+                        <div class="for_forgot">
+                            Forgotten access details?
                         </div>
                     </div>
-                    <div class="form-group auth_form inner-addon left-addon">
-                            <!--<span class="glyphicon glyphicon-play"></span>-->
-                        <i class=" icon_auth glyphicon glyphicon-play"></i>
-                        <input ng-model="user.email" name="email" type="email" required="required" placeholder="enter your email" class="input pass"/>
-
-                    </div>
-                    <div class="form-group auth_form inner-addon left-addon">
-                        <i class="icon_auth glyphicon glyphicon-play"></i>
-                        <input ng-model="user.password" name="password" type="password" placeholder="enter your password" required="required" class="input pass"/>
-                    </div>
-                    <div class ="button_log">
-                        <button class="btn" type="button" ng-click="login(user)">
-                            <span class="glyphicon glyphicon-arrow-right"></span>
-                        </button>
-                    </div>
-
-                    <div class="for_forgot">
-                        Forgotten access details?
-                    </div>
                 </div>
-            </div>
 
 
-    </div>
-</nav>
+        </div>
+    </nav>
 
     <script
             src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -66,5 +45,6 @@
             crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--<script src="static/common.js"></script>-->
-</body>
-</html>
+
+
+</div>

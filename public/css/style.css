@@ -1,5 +1,8 @@
-
+.ng_view{
+    height: 100%;
+}
 .body_auth {
+    height: 100%;
     font-family: Arial;
     background-color: #ffa514;
     padding: 50px;

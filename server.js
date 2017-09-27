@@ -12,9 +12,7 @@ var logger = require('morgan');
 
 
 app.set('views', __dirname + '/views/');
-
-
-
+app.use('/static', express.static(__dirname + '/views'));
 app.use('/static', express.static(__dirname + '/public'));
 
 app.use('default',logger);
@@ -28,10 +26,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+'/views/auth.html'));
+    res.sendFile(path.join(__dirname+'/index.html'));
 });
 app.get('/users', function(req, res){
-    res.sendFile(path.join(__dirname+'/views/users.html'));
+    if (req.isAuthenticated()) {
+        res.redirect('/users');
+        return;
+    }
+    res.redirect('/');
 });
 
 
@@ -53,14 +55,12 @@ passport.use(new LocalStrategy(
             }
             if (email == docs.email && password == docs.password) {
                 return done(null, {
-                    email: email,
-                    path:'/users'
+                    email: email
 
                 });
             } else {
                 return done(null, false, {
-                    message: 'Неверный логин или пароль',
-                    path:'/signup'
+                    message: 'Неверный логин или пароль'
 
                 });
             }
@@ -87,7 +87,7 @@ app.get('/signup', function (req, res) {
             res.sendFile(path.join(__dirname+'/views/users.html'));
             return;
         }
-        res.sendfile('./views/auth.html');
+    res.sendFile(path.join(__dirname+'/views/auth.html'));
 });
 
 app.get('/sign-out', function (req, res) {
@@ -111,6 +111,7 @@ app.post('/signup', passport.authenticate('local', {
 
 app.get('/usersjson', userController.get)
 app.get('/usersjson/:id', userController.getById)
+app.post('/usersjson/email', userController.getByEmail)
 app.post('/usersjson', userController.post)
 app.put('/usersjson/:id', userController.put)
 app.delete('/usersjson/:id', userController.delete);
