@@ -194,7 +194,7 @@ input:focus {
      /*background: #FFFFFF;*/
      /*visibility: visible;*/ /* Делает видимым */
       opacity: 1;    /* Фон становится полностью прозрачным */
-     background: rgba(0, 0, 0, 0);
+     background: rgba(0, 0, 0, 0.0001);
  }
 .modal-dialog {
 

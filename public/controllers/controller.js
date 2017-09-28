@@ -11,8 +11,6 @@ angular.module('allControllers', [])
                         $rootScope.currentUser = user;
                         $rootScope.isAuth = true;
                         $location.url("/users");
-                        /*$scope.apply()*/
-                        /*location.reload(true);*/
 
                     } else window.alert('incorrect email or password');
                 });
@@ -24,40 +22,41 @@ angular.module('allControllers', [])
     .controller('usersController', ['$scope','$http','$rootScope','$cookieStore','$location','UsersService',
         function($scope, $http, $rootScope, $cookieStore, $location, UsersService) {
         $scope.formData = {
-            firstname:"",
-            lastname:"",
-            role:"",
-            domain:"",
-            log_time:"",
-            foto:"",
-            email:"",
-            password:"",
+
         };
         $scope.id = 0;
         $scope.propertyName = 'lastname';
         $scope.reverse = true;
         $scope.loading = true;
-            $scope.email={
-                email:$rootScope.currentUser.email
-            };
-            UsersService.getByEmail($scope.email)
-                .success(function (data) {
-                    $scope.currentUser = data.data;
-            });
+        $scope.email={
+               email:$rootScope.currentUser.email
+        };
+
         console.log($scope.currentUser);
         // SORTING table by lastname and firstname ========================
         $scope.sortBy = function(propertyName) {
             $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
             $scope.propertyName = propertyName;
         };
-        // GET =====================================================================
-        // when landing on the page, get all users and show them
-        // use the service to get all the users
+        //update log_time and put to server
+        UsersService.getByEmail($scope.email)
+            .success(function (data) {
+                $scope.currentUser = data.data;
+                var now = new Date();
+                $scope.currentUser.log_time = now;
+                UsersService.update($scope.currentUser.id, $scope.currentUser );
+
+            });
+
+            // GET =====================================================================
+            // when landing on the page, get all users and show them
+            // use the service to get all the user
         UsersService.get()
             .success(function(data) {
                 $scope.users = data.data;
                 $scope.loading = false;
             });
+
 
         // GET one by id =====================================================================
         // when landing on the page, get one user and show
@@ -80,23 +79,17 @@ angular.module('allControllers', [])
             console.log('i want create new person');
             if ($scope.formData.lastname != "" && $scope.formData.firstname != "") {
                 $scope.loading = true;
-                console.log('need to create person' + $scope.formData.firstname);
+
                 // call the create function from our service (returns a promise object)
                 UsersService.create($scope.formData)
 
                 // if successful creation, call our get function to get all the new users
                     .success(function() {
+                        console.log('created  person' + $scope.formData.firstname);
                         $scope.users.push($scope.formData);
                         $scope.loading = false;
                         $scope.formData = {
-                            firstname:"",
-                            lastname:"",
-                            role:"",
-                            domain:"",
-                            log_time:"",
-                            foto:"",
-                            email:"",
-                            password:""
+
                         }; // clear the form so our user is ready to enter another
                     });
             }
@@ -116,6 +109,8 @@ angular.module('allControllers', [])
                     // if successful creation, call our get function to get all the new users
                         .success(function () {
                             var index = $scope.users.indexOf($scope.id);
+                            console.log($scope.id);
+                            console.log($scope.users);
                             $scope.users.splice(index, 1);
                             $scope.users.push($scope.formData);
                             $scope.loading = false;
