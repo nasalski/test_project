@@ -175,3 +175,80 @@ input:focus {
     /*background-color: #FFFFFF;
     border: 0px;*/
 }
+/* стили для формы обновления пользователя
+
+ */
+.modal {
+    /*background: #FFFFFF;*/
+    /*visibility: visible;*/ /* Делает видимым */
+   /* opacity: 1;  */  /* Фон становится полностью прозрачным */
+    /*background: rgba(0, 0, 0, 0);*/
+    /*z-index: auto;*/
+}
+.fade {
+    position: fixed;
+    top: 45px;
+    right: 0;
+    bottom: 0;
+    left: 350px;
+     /*background: #FFFFFF;*/
+     /*visibility: visible;*/ /* Делает видимым */
+      opacity: 1;    /* Фон становится полностью прозрачным */
+     background: rgba(0, 0, 0, 0);
+ }
+.modal-dialog {
+
+
+}
+.modal-content{
+    border-radius: 0px;
+    width: 350px;
+}
+.modal-body {
+    width: 320px;
+    height:500px;
+    border-radius: 0px;
+}
+.form-control {
+    border-radius: 0px;
+}
+
+div.domain{
+    margin-left: 10px;
+    float:left;
+    width: 150px;
+    height:50px;
+}
+div.role{
+    margin-left: 10px;
+    float:left;
+    width: 150px;
+    height:50px;
+}
+div.firstname {
+    margin-left: 10px;
+    float:left;
+    width: 150px;
+    height:50px;
+}
+div.lastname {
+    margin-left: 10px;
+    float:left;
+    width: 150px;
+    height:50px;
+}
+div.email {
+    margin-left: 10px;
+    width: 310px;
+    height:50px;
+}
+div.password {
+    margin-left: 10px;
+    width: 310px;
+    height:50px;
+}
+.modal_com{
+    text-align: right;
+    width: 310px;
+    height:50px;
+}

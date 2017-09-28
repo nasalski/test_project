@@ -60,7 +60,11 @@ exports.post = function (req,res) {
         if(err) {console.log(err);
             return res.sendStatus(500);
         }
-        getUsers(res);
+        res.status(200)
+            .json({
+                status: 'success',
+            });
+        /*getUsers(res);*/
     });
 }
 
@@ -70,7 +74,11 @@ exports.put = function (req,res) {
         if(err) {console.log(err);
             return res.sendStatus(500);
         }
-        getUsers(res);
+        /*getUsers(res);*/
+        res.status(200)
+            .json({
+                status: 'success',
+            });
     });
 }
 
@@ -80,7 +88,11 @@ exports.delete = function (req,res) {
         if(err) {console.log(err);
             return res.sendStatus(500);
         }
-        getUsers(res);
+        /*getUsers(res);*/
+        res.status(200)
+            .json({
+                status: 'success',
+            });
     });
 
 }

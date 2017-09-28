@@ -29,11 +29,10 @@ app.get('/', function(req, res){
     res.sendFile(path.join(__dirname+'/index.html'));
 });
 app.get('/users', function(req, res){
-    if (req.isAuthenticated()) {
-        res.redirect('/users');
-        return;
-    }
     res.redirect('/');
+});
+app.get('/logout', function(req, res){
+    res.send('/logout');
 });
 
 
@@ -81,18 +80,18 @@ passport.deserializeUser(function (data, done) {
         done(err)
     }
 });
-app.get('/signup', function (req, res) {
+/*app.get('/signup', function (req, res) {
 
         if (req.isAuthenticated()) {
             res.sendFile(path.join(__dirname+'/views/users.html'));
             return;
         }
     res.sendFile(path.join(__dirname+'/views/auth.html'));
-});
+});*/
 
 app.get('/sign-out', function (req, res) {
     req.logout();
-    res.redirect('/signup');
+    res.redirect('/');
 });
 
 app.post('/signup', passport.authenticate('local', {

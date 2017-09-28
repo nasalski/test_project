@@ -4,6 +4,9 @@ angular.module('usersService', [])
 // each function returns a promise object
     .factory('UsersService', ['$http',function($http) {
         return {
+            logout:function () {
+                return $http.get('/');
+            },
             get : function() {
                 return $http.get('/usersjson');
             },

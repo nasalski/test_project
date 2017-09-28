@@ -1,28 +1,7 @@
 
-angular.module('allControllers', [])
-    .controller('AuthCtrl',['$location', '$scope', '$http', '$rootScope', function($location, $scope, $http, $rootScope) {
-        /*console.log("yep");*/
-        $scope.login = function(user) {
-            /*console.log(user.email);*/
-            $http.post('/signup', user)
-                .success(function(data,docs) {
-                    if(docs==200){
-                        console.log("im here");
-                        $rootScope.currentUser = user;
-                        $rootScope.isAuth = true;
-                        $location.url("/users");
-                        /*$scope.apply()*/
-                        /*location.reload(true);*/
-
-                    } else window.alert('incorrect email or password');
-                });
-        }
-
-
-    }])
-// inject the service factory into our controller
-    .controller('usersController', ['$scope','$http','$rootScope','$cookieStore','$location','UsersService',
-        function($scope, $http, $rootScope, $cookieStore, $location, UsersService) {
+angular.module('usersController',[])
+.controller('usersController', ['$scope','$http','$rootScope','$cookieStore','$location','UsersService',
+    function($scope, $http, $rootScope, $cookieStore, $location, UsersService) {
         $scope.formData = {
             firstname:"",
             lastname:"",
@@ -37,12 +16,12 @@ angular.module('allControllers', [])
         $scope.propertyName = 'lastname';
         $scope.reverse = true;
         $scope.loading = true;
-            $scope.email={
-                email:$rootScope.currentUser.email
-            };
-            UsersService.getByEmail($scope.email)
-                .success(function (data) {
-                    $scope.currentUser = data.data;
+        $scope.email={
+            email:$rootScope.currentUser.email
+        };
+        UsersService.getByEmail($scope.email)
+            .success(function (data) {
+                $scope.currentUser = data.data;
             });
         console.log($scope.currentUser);
         // SORTING table by lastname and firstname ========================
@@ -63,14 +42,14 @@ angular.module('allControllers', [])
         // when landing on the page, get one user and show
         // use the service to get one user by id
         $scope.getById = function(id)
-            {$scope.loading = true;
-                UsersService.getById(id)
-                    .success(function(data) {
-                        $scope.loading = false;
-                        $scope.formData = data.data
-                        $scope.id = id;
-                    });
-            }
+        {$scope.loading = true;
+            UsersService.getById(id)
+                .success(function(data) {
+                    $scope.loading = false;
+                    $scope.formData = data.data
+                    $scope.id = id;
+                });
+        }
         // CREATE ==================================================================
         // when submitting the add form, send the data user to the node API
         $scope.create = function() {
@@ -85,8 +64,8 @@ angular.module('allControllers', [])
                 UsersService.create($scope.formData)
 
                 // if successful creation, call our get function to get all the new users
-                    .success(function() {
-                        $scope.users.push($scope.formData);
+                    .success(function(data) {
+                        console.log('returned' + data.data);
                         $scope.loading = false;
                         $scope.formData = {
                             firstname:"",
@@ -96,8 +75,9 @@ angular.module('allControllers', [])
                             log_time:"",
                             foto:"",
                             email:"",
-                            password:""
+                            password:"",
                         }; // clear the form so our user is ready to enter another
+                        $scope.users = data.data; // assign our new list of user
                     });
             }
         };
@@ -114,10 +94,7 @@ angular.module('allControllers', [])
                     UsersService.update($scope.id, $scope.formData)
 
                     // if successful creation, call our get function to get all the new users
-                        .success(function () {
-                            var index = $scope.users.indexOf($scope.id);
-                            $scope.users.splice(index, 1);
-                            $scope.users.push($scope.formData);
+                        .success(function (data) {
                             $scope.loading = false;
                             $scope.id = 0;
                             $scope.formData = {
@@ -130,12 +107,9 @@ angular.module('allControllers', [])
                                 email: "",
                                 password: "",
                             }; // clear the form so our user is ready to enter another
+                            $scope.users = data.data; // assign our new list of user
                         });
-
-                } else{
-                    console.log('u cant update user, u are '+ $scope.currentUser.role);
-                    window.alert('u cant update user, u are '+ $scope.currentUser.role);
-                }
+                } else console.log('u cant update user, u are '+ $scope.currentUser.role);
             }
         };
 
@@ -144,14 +118,11 @@ angular.module('allControllers', [])
         $scope.deleteUser = function(id) {
             if($scope.currentUser.role === "admin") {
                 $scope.loading = true;
-
                 UsersService.deleteUser(id)
                 // if successful deleting, call our get function to get all the new users
-                    .success(function () {
-                        var index = $scope.users.indexOf(id);
-                        $scope.users.splice(index, 1);
+                    .success(function (data) {
                         $scope.loading = false;
-
+                        $scope.users = data.data;
                     });
             } else {
                 window.alert('u cant delete user, u are '+ $scope.currentUser.role);
@@ -160,10 +131,8 @@ angular.module('allControllers', [])
         };
         $scope.logout = function () {
             console.log('logout');
-            window.alert("u're logged out");
             $cookieStore.put('currentUser', null);
             location.reload(true);
 
         }
     }]);
-

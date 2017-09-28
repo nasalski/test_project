@@ -1,48 +1,45 @@
 <div class="body_auth">
-    <nav>
-        <div class="container bgcont center-block">
+    <div class="container bgcont center-block">
 
-                <div class="col-sm-8">
-                    <div class="logo">
-                        <div class="img">
-                            <img src="static/img/Logo.png">
-                        </div>
-
-                        <div class="form-group auth_form">
-                            <div class = "text_login">
-                                <h2>Login</h2>
-                            </div>
-                        </div>
-                        <div class="form-group auth_form inner-addon left-addon">
-                                <!--<span class="glyphicon glyphicon-play"></span>-->
-                            <i class=" icon_auth glyphicon glyphicon-play"></i>
-                            <input ng-model="user.email" name="email" type="email" required="required" placeholder="enter your email" class="input pass"/>
-
-                        </div>
-                        <div class="form-group auth_form inner-addon left-addon">
-                            <i class="icon_auth glyphicon glyphicon-play"></i>
-                            <input ng-model="user.password" name="password" type="password" placeholder="enter your password" required="required" class="input pass"/>
-                        </div>
-                        <div class ="button_log">
-                            <button class="btn" type="button" ng-click="login(user)">
-                                <span class="glyphicon glyphicon-arrow-right"></span>
-                            </button>
-                        </div>
-
-                        <div class="for_forgot">
-                            Forgotten access details?
-                        </div>
-                    </div>
+        <div class="col-sm-8">
+            <div class="logo">
+                <div class="img">
+                    <img src="static/img/Logo.png">
                 </div>
 
+                <div class="form-group auth_form">
+                    <div class = "text_login">
+                        <h2>Login</h2>
+                    </div>
+                </div>
+                <div class="form-group auth_form inner-addon left-addon">
+                    <!--<span class="glyphicon glyphicon-play"></span>-->
+                    <i class=" icon_auth glyphicon glyphicon-play"></i>
+                    <input ng-model="user.email" name="email" type="email" required="required" placeholder="enter your email" class="input pass"/>
 
+                </div>
+                <div class="form-group auth_form inner-addon left-addon">
+                    <i class="icon_auth glyphicon glyphicon-play"></i>
+                    <input ng-model="user.password" name="password" type="password" placeholder="enter your password" required="required" class="input pass"/>
+                </div>
+                <div class ="button_log">
+                    <button class="btn" type="button" ng-click="login(user)">
+                        <span class="glyphicon glyphicon-arrow-right"></span>
+                    </button>
+                </div>
+
+                <div class="for_forgot">
+                    Forgotten access details?
+                </div>
+            </div>
         </div>
-    </nav>
 
-    <script
-            src="https://code.jquery.com/jquery-3.2.1.min.js"
+
+    </div>
+
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--<script src="static/common.js"></script>-->
 
