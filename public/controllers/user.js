@@ -1,6 +1,6 @@
 
 var Users = require('../models/user');
-function getUsers(res) {
+exports.get = function (req, res) {
     Users.get(function (docs,err) {
         if(err) {console.log(err);
             return res.sendStatus(500);
@@ -12,9 +12,6 @@ function getUsers(res) {
                 message: 'Retrieved all users'
             });
     });
-}
-exports.get = function (req, res) {
-    getUsers(res);
 };
 
 exports.login = function (user,cb) {
@@ -64,7 +61,6 @@ exports.post = function (req,res) {
             .json({
                 status: 'success',
             });
-        /*getUsers(res);*/
     });
 }
 
@@ -88,7 +84,6 @@ exports.delete = function (req,res) {
         if(err) {console.log(err);
             return res.sendStatus(500);
         }
-        /*getUsers(res);*/
         res.status(200)
             .json({
                 status: 'success',

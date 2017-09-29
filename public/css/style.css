@@ -63,10 +63,16 @@ input:focus {
 }
 
 .button_log {
-    height: 120px;
+    height: 50px;
     width: 250px;
     text-align: center;
     margin-top: 60px;
+}
+.signup{
+    height: 50px;
+    width: 250px;
+    text-align: center;
+    margin-top: 40px;
 }
 .for_forgot {
     width: 250px;

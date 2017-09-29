@@ -25,9 +25,18 @@ app.use(bodyParser.urlencoded({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+app.get('/', function(req, res){
+    console.log('path /');
+    res.redirect('/signin');
+});
+app.get('/signup', function(req, res){
+    console.log('path signup');
+    res.sendFile(path.join(__dirname+'/index.html'));
+});
 app.get('/users', function(req, res){
-    res.redirect('/');
+    console.log('path users');
+    /*res.redirect('/signin');*/
+    res.sendFile(path.join(__dirname+'/index.html'));
 });
 
 app.get('/logout', function(req, res){
@@ -93,9 +102,9 @@ app.get('/sign-out', function (req, res) {
     res.redirect('/');
 });
 
-app.post('/signup', passport.authenticate('local', {
+app.post('/signin', passport.authenticate('local', {
     successRedirect: '/users',
-    failureRedirect: '/signup' })
+    failureRedirect: '/signin' })
 );
 
 /*app.post('/signup', passport.authenticate('local'), function(req, res) {
@@ -113,7 +122,7 @@ app.post('/usersjson/email', userController.getByEmail)
 app.post('/usersjson', userController.post)
 app.put('/usersjson/:id', userController.put)
 app.delete('/usersjson/:id', userController.delete);
-app.get('/*', function(req, res){
+app.get('*', function(req, res){
     res.sendFile(path.join(__dirname+'/index.html'));
 });
 app.listen(3000, function(){
