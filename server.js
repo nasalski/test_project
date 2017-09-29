@@ -25,12 +25,11 @@ app.use(bodyParser.urlencoded({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+'/index.html'));
-});
+
 app.get('/users', function(req, res){
     res.redirect('/');
 });
+
 app.get('/logout', function(req, res){
     res.send('/logout');
 });
@@ -114,6 +113,9 @@ app.post('/usersjson/email', userController.getByEmail)
 app.post('/usersjson', userController.post)
 app.put('/usersjson/:id', userController.put)
 app.delete('/usersjson/:id', userController.delete);
+app.get('/*', function(req, res){
+    res.sendFile(path.join(__dirname+'/index.html'));
+});
 app.listen(3000, function(){
     console.log('API app started');
 })

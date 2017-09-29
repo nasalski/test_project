@@ -21,9 +21,7 @@ angular.module('allControllers', [])
 // inject the service factory into our controller
     .controller('usersController', ['$scope','$http','$rootScope','$cookieStore','$location','UsersService',
         function($scope, $http, $rootScope, $cookieStore, $location, UsersService) {
-        $scope.formData = {
-
-        };
+        clearForm()
         $scope.id = 0;
         $scope.propertyName = 'lastname';
         $scope.reverse = true;
@@ -88,9 +86,7 @@ angular.module('allControllers', [])
                         console.log('created  person' + $scope.formData.firstname);
                         $scope.users.push($scope.formData);
                         $scope.loading = false;
-                        $scope.formData = {
-
-                        }; // clear the form so our user is ready to enter another
+                        clearForm(); // clear the form so our user is ready to enter another
                     });
             }
         };
@@ -106,25 +102,14 @@ angular.module('allControllers', [])
                     // call the create function from our service (returns a promise object)
                     UsersService.update($scope.id, $scope.formData)
 
-                    // if successful creation, call our get function to get all the new users
+                    // if successful creation, update users array
                         .success(function () {
-                            var index = $scope.users.indexOf($scope.id);
-                            console.log($scope.id);
-                            console.log($scope.users);
-                            $scope.users.splice(index, 1);
-                            $scope.users.push($scope.formData);
+                            for (var i = 0; i < $scope.users.length; i++) {
+                                if ($scope.users[i].id == $scope.id) $scope.users[i] = $scope.formData;
+                            }
                             $scope.loading = false;
                             $scope.id = 0;
-                            $scope.formData = {
-                                firstname: "",
-                                lastname: "",
-                                role: "",
-                                domain: "",
-                                log_time: "",
-                                foto: "",
-                                email: "",
-                                password: "",
-                            }; // clear the form so our user is ready to enter another
+                            clearForm(); // clear the form so our user is ready to enter another
                         });
 
                 } else{
@@ -136,15 +121,16 @@ angular.module('allControllers', [])
 
         // DELETE ==================================================================
         // delete a user after checking it
-        $scope.deleteUser = function(id) {
+        $scope.deleteUser = function(id,index) {
             if($scope.currentUser.role === "admin") {
                 $scope.loading = true;
 
                 UsersService.deleteUser(id)
                 // if successful deleting, call our get function to get all the new users
                     .success(function () {
-                        var index = $scope.users.indexOf(id);
-                        $scope.users.splice(index, 1);
+                        for (var i = 0; i < $scope.users.length; i++) {
+                            if ($scope.users[i].id == id) $scope.users.splice(i, 1);
+                        }
                         $scope.loading = false;
 
                     });
@@ -158,6 +144,21 @@ angular.module('allControllers', [])
             window.alert("u're logged out");
             $cookieStore.put('currentUser', null);
             location.reload(true);
+
+        }
+        function clearForm() {
+            $scope.formData = {
+                id: null,
+                firstname:null,
+                lastname:null,
+                role:null,
+                domain:null,
+                log_time:null,
+                foto:null,
+                email:null,
+                password:null
+
+            }; // clear the form so our user is ready to enter another
 
         }
     }]);

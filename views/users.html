@@ -83,30 +83,31 @@
     </div>
 
      <!--FORM TO CREATE USERS-->
-    <!--<div class="row">
+    <div class="row">
         <div class="col-sm-8 col-sm-offset-2 text-center">
             <form>
-                &lt;!&ndash; BIND THIS VALUE TO formData IN ANGULAR &ndash;&gt;
+                <!-- BIND THIS VALUE TO formData IN ANGULAR -->
                 <input type="text" class="form-control input-lg text-center" placeholder="firstname" ng-model="formData.firstname">
                 <input type="text" class="form-control input-lg text-center" placeholder="lastname" ng-model="formData.lastname">
                 <input type="text" class="form-control input-lg text-center" placeholder="role" ng-model="formData.role">
                 <input type="text" class="form-control input-lg text-center" placeholder="domain" ng-model="formData.domain">
 
 
-                &lt;!&ndash; create() WILL CREATE NEW USERS &ndash;&gt;
+                <!-- create() WILL CREATE NEW USERS -->
                 <button type="submit" class="btn btn-primary btn-lg" ng-click="create()">Add</button>
             </form>
         </div>
-    </div>-->
+    </div>
 
 
 
     <div id="myModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
-                    <!--<h4 class="modal-title">Edit users </h4>-->
-                </div>
+                <!--<div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
+                    &lt;!&ndash;<h4 class="modal-title">Edit users </h4>&ndash;&gt;
+                </div>-->
+                <button class="close" type="button" data-dismiss="modal">×</button>
                 <div class="modal-body">
                     <div class="row head_update">
                         <h3> Update {{formData.firstname + " " + formData.lastname}}</h3>
@@ -141,7 +142,7 @@
                         </div>
                     </div>
                     <div class="modal_com">
-                        <a href="" ng-click="update(id)" data-dismiss="modal"><h3>UPDATE USER</h3></a>
+                        <a href="" ng-click="update()" data-dismiss="modal"><h3>UPDATE USER</h3></a>
                     </div>
                 </div>
             </div>
