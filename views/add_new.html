@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="header" >
+        <div class="row"  >
+            <div class="col-sm-8">
+                <div class="box_for_button_create">
+                    <button class="create_user" type="button">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="box_sign_out">
+                    <a href="#" ng-click="logout()">Sign out</a>
+                </div>
+                <!--<div class="box_for_button_create">
+                    <button class="create_user" type="button">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </div>-->
+            </div>
+            <div class="col-sm-2">
+                <div class="box_for_profile">
+                    <button class="look_profile_self" type="button" ng-click="nothing()">
+                        <span class="glyphicon glyphicon-user icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class ="middle_add">
+        <div class="row">
+            <div class="col-sm-8">
+                <h4> Users</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col-sm-4">
+            <table class="table user_table_3_columns">
+                <thead>
+                    <tr class="heading_of_table" >
+                        <td class="user_foto">
+
+                        </td>
+                        <td class="dropdown user_name">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #000000" >Name
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#" ng-click="sortBy('lastname')">
+                                    <span class="sortorder" ng-show="propertyName === 'lastname'" ng-class="{reverse: reverse}"></span>
+                                    Lastname
+                                </a>
+                                </li>
+                                <li><a href="#" ng-click="sortBy('firstname')">
+                                    <span class="sortorder" ng-show="propertyName === 'firstname'" ng-class="{reverse: reverse}"></span>
+                                    Firstname
+                                </a>
+                                </li>
+                            </ul>
+                        </td>
+                        <td class="user_domain">Domain</td>
+                    </tr>
+                </thead>
+                <tr class="active body_of_table" ng-repeat="user in users | orderBy:propertyName:reverse">
+                    <td class="user_foto">
+                        <div class="box_for_profile">
+                            <button class="look_profile" type="button">
+                                <span class="glyphicon glyphicon-user icon"></span>
+                            </button>
+                        </div></td>
+                    <td class="user_name">{{ user.firstname + " " + user.lastname }}</td>
+                    <td class="user_domain">{{ user.domain }}</td>
+                </tr>
+            </table>
+
+            <p class="text-center" ng-show="loading">
+                <span class="fa fa-spinner fa-spin fa-3x"></span>
+            </p>
+
+        </div>
+    </div>
+</div>

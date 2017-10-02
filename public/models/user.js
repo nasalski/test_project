@@ -10,7 +10,7 @@ exports.get = function (cb) {
             cb(null,error);
         });
 
-}
+};
 
 exports.getById = function (id,cb) {
     var userID = parseInt(id);
@@ -21,7 +21,7 @@ exports.getById = function (id,cb) {
         .catch(function (error) {
            cb(null,error);
         });
-}
+};
 exports.login = function (user,cb) {
     db.one("SELECT * from users where email = $1 and password = $2", [user.email, user.password])
         .then(function (data) {
@@ -30,7 +30,7 @@ exports.login = function (user,cb) {
         .catch(function (error) {
            cb(null,error);
         });
-}
+};
 exports.getByEmail = function (email,cb) {
     db.one("SELECT * from users where email = $1", email)
         .then(function (data) {
@@ -39,7 +39,7 @@ exports.getByEmail = function (email,cb) {
         .catch(function (error) {
             cb(null, error);
         });
-}
+};
 exports.post = function (user,cb) {
     db.none('insert into users(firstname,lastname, role, domain, log_time, foto, email,password) ' +
         'values(${firstname}, ${lastname}, ${role}, ${domain}, ${log_time}, ${foto}, ${email}, ${password})',
@@ -48,7 +48,7 @@ exports.post = function (user,cb) {
         }).catch(function (error) {
             cb(null,error);
         });
-}
+};
 exports.put = function (id,user,cb) {
     db.none('update users set firstname=$1, lastname = $2, role=$3, domain=$4, foto=$5, email=$6, password=$7 where id=$8',
         [user.firstname, user.lastname, user.role, user.domain, user.foto,
@@ -58,7 +58,7 @@ exports.put = function (id,user,cb) {
         }).catch(function (error) {
             cb(null,error);
         });
-}
+};
 
 exports.delete = function (id,cb) {
     db.result('delete from users where id = $1', id)
@@ -67,4 +67,36 @@ exports.delete = function (id,cb) {
         }).catch(function (error) {
         cb(null,error);
     });
-}
+};
+/*----------------------------------*/
+exports.postKey = function (key,cb) {
+    console.log('and here', key);
+    db.none('insert into keys(email,key, dat) ' +
+    'values(${email}, ${key}, ${dat})', key)
+        .then(function (data) {
+            cb(data,null);
+        }).catch(function (error) {
+        cb(null,error);
+    });
+};
+exports.getKey = function (key,cb) {
+    /*var key = parseInt(key);*/
+    console.log(key);
+    db.one("SELECT * from keys where key = $1", key)
+        .then(function (data) {
+            cb(data,null);
+        })
+        .catch(function (error) {
+            cb(null,error);
+        });
+};
+
+exports.deleteKey = function (key,cb) {
+    console.log(key);
+    db.result('delete from keys where key = $1', key.toString())
+        .then(function (data) {
+            cb(data,null);
+        }).catch(function (error) {
+        cb(null,error);
+    });
+};

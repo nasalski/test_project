@@ -17,3 +17,9 @@ CREATE TABLE users (
 
 INSERT INTO users (firstname, lastname, role, domain,log_time, foto, email, password)
   VALUES ('Tyler','Logan', 'admin', 'Nexus',' ', ' ', 'wwwasd@gmail.com', 'qwerty');
+  
+  CREATE TABLE keys (
+  email VARCHAR,
+  key INTEGER,
+  dat date
+);

@@ -1,8 +1,6 @@
-.ng_view{
-    height: 100%;
-}
+
 .body_auth {
-    height: 100%;
+    height: 3000px;
     font-family: Arial;
     background-color: #ffa514;
     padding: 50px;
@@ -115,6 +113,13 @@ input:focus {
     border-right: 2px solid #cfcfcf;
     /*outline: 2px solid #cfcfcf;*/
 }
+
+.box_sign_out {
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 9px;
+
+}
 .create_user {
     background: #4185f2;
     height: 30px;
@@ -151,21 +156,36 @@ input:focus {
     text-align: center;
     color: #757575;
 }
+.table>tbody>tr.active>td{
+    background-color: #FFFFFF;
+    border-top-color: #FFFFFF;
+}
+.table>tfoot>tr.active>td{
+    border-top-color: #000000;
+}
+.table>thead{
+    border-bottom:2px solid #f0f0f0;
+}
+
 .user_table {
     width: 600px;
     margin-left: 15px;
-}
-.user_foto {
     background-color: #FFFFFF;
+}
+.user_table_3_columns {
+     width: 400px;
+     margin-left: 15px;
+     background-color: #FFFFFF;
+ }
+td.user_foto {
     width: 40px;
-
 }
 .user_name {
-    background-color: #FFFFFF;
     width: 190px;
+    vertical-align: middle;
 }
 .user_domain {
-    width: 170px;
+    width: 130px;
 }
 .user_last_log {
     width: 170px;
@@ -174,12 +194,12 @@ input:focus {
     width: 30px;
 }
 .body_of_table >td{
-    background-color: #FFFFFF;
     border: 0px solid;
 }
 .heading_of_table{
     /*background-color: #FFFFFF;
     border: 0px;*/
+    border-color: green;
 }
 /* стили для формы обновления пользователя
 
@@ -257,4 +277,118 @@ div.password {
     text-align: right;
     width: 310px;
     height:50px;
+}
+
+.body_forgot{
+    height: 3000px;
+    /*width: 600px;*/
+    background-color: #f0f0f0;
+}
+.form_forgot{
+    margin-left: 300px;
+    text-align: center;
+}
+.forgot {
+    height:50px;
+    text-align: center;
+    vertical-align: middle;
+}
+.forg_img {
+    height:100px;
+    text-align: center;
+    vertical-align: middle;
+}
+.email {
+    width: 300px;
+    border: 1px solid #3c3c3c;
+    border-radius: 0px;
+}
+.forgot >a {
+     margin-left: 30px;
+ }
+.top_forgot {
+    background-color: #33cc00;
+    height: 30px;
+}
+.top_forgot >p{
+    text-align: center;
+    color: #FFFFFF;
+}
+.new_pass_btn{
+    width: 90px;
+}
+.animate-show-hide{
+    /*animation:0.5s lightSpeedOut ease;*/
+    animation:0.5s flipInX ease;
+}
+/* light speed out */
+@keyframes lightSpeedOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(100%, 0, 0) skewX(30deg);
+        transform: translate3d(100%, 0, 0) skewX(30deg);
+        opacity: 0;
+    }
+}
+
+@keyframes lightSpeedOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(100%, 0, 0) skewX(30deg);
+        transform: translate3d(100%, 0, 0) skewX(30deg);
+        transform: translate3d(100%, 0, 0) skewX(30deg);
+        opacity: 0;
+    }
+}
+@keyframes flipInX {
+    0% {
+        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        transition-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    40% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        transition-timing-function: ease-in;
+        transition-timing-function: ease-in;
+    }
+
+    60% {
+        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        opacity: 1;
+    }
+
+    80% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+
+    100% {
+        transform: perspective(400px);
+        transform: perspective(400px);
+        transform: perspective(400px);
+    }
+}
+
+.middle_add {
+    height: 40px;
+    width:  650px;
+    background: #ffffff;
+    border-bottom: 2px solid #d6d6d6;
+}
+
+.middle_add >.row> .col-sm-8 {
+    margin-left: 30px;
+
 }

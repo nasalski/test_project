@@ -58,16 +58,7 @@ angular.module('allControllers', [])
 
 
 
-            /*$http.post('/signin', user)
-                .success(function (data, docs) {
-                    if (docs == 200) {
-                        console.log("success register");
-                        $rootScope.currentUser = user;
-                        $rootScope.isAuth = true;
-                        $location.url("/users");
 
-                    } else window.alert('something wrong');
-                });*/
 
         }
 
@@ -233,9 +224,14 @@ angular.module('allControllers', [])
         $scope.logout = function () {
             console.log('logout');
             window.alert("u're logged out");
+            $rootScope.currentUser=null;
             $cookieStore.put('currentUser', null);
             $location.path('/signin');
 
+        };
+        $scope.addNew = function () {
+            console.log("i want add new user");
+            $location.path('/add_new');
         }
         function clearForm() {
             $scope.formData = {
@@ -255,6 +251,7 @@ angular.module('allControllers', [])
     }])
     .controller('ForgCtrl',['$location', '$scope', '$http', '$rootScope','UsersService', function($location, $scope, $http, $rootScope,UsersService) {
         console.log("forgot pass controller");
+        $scope.top = false;
         function clearForm() {
             $scope.formData = {
                 email: null,
@@ -262,8 +259,7 @@ angular.module('allControllers', [])
         }
         clearForm();
         $scope.sendPassword = function() {
-            // validate the formData to make sure that something is there
-            // if form is empty, nothing will happen
+
             console.log('i want send password');
             $scope.email = {
                 email:$scope.formData.email
@@ -272,15 +268,39 @@ angular.module('allControllers', [])
                 console.log($scope.formData.email + " проверим почту");
                 UsersService.getByEmail($scope.email)
                     .success(function () {
-                        console.log();
-                        window.alert('такая почта есть');
+                        console.log('send mail');
+                        //создадим некий ключ, который отправим по почте и его же добавим в новую таблицу
+                        //которая  будет хранить почты на которые отправлены письма и ключи
+                        var key = new Date().getTime();
+                        $scope.email = {
+                                        email:$scope.formData.email,
+                                        key: key
+                                    };
+
                         //здесь мы отправим письмо на указанную почту
-                        clearForm();
+                        UsersService.sendMail($scope.email)
+                            .success(function(){
+                                console.log('success sending mail');
+                                //после успешной отправки письма отправим в нашу базу ключ
+                                var date = new Date();
+                                key = key.toString();
+                                $scope.email = {
+                                    email:$scope.formData.email,
+                                    key: key,
+                                    dat: date
+                                };
+                                UsersService.sendKey($scope.email)
+                                    .success(function () {
+                                        console.log('success sending key to base');
+                                        $scope.top = true;
+                                    });
+                            });
+                        /*clearForm();*/
                     })
                     .error(function () {
                         window.alert('такой почты нет');
-                        clearForm();
-                    })
+                        /*clearForm();*/
+                    });
                 // call the create function from our service (returns a promise object)
 
             } else {
@@ -290,4 +310,62 @@ angular.module('allControllers', [])
 
 
         }
-    }]);
+    }])
+    .controller('NewPassCtrl',['$location', '$scope', '$http', '$rootScope','UsersService',
+        function($location, $scope, $http, $rootScope,UsersService) {
+            var user = {};
+            console.log("new pass controller");
+             function parseUrl() {
+                 var data = {};
+                 if (location.search) {
+                     var pair = (location.search.substr(1)).split('&');
+                     for (var i = 0; i < pair.length; i++) {
+                         var param = pair[i].split('=');
+                         data[param[0]] = param[1];
+                     }
+                 }
+                 return data;
+             }
+             var key = parseUrl();
+            console.log(key.key);
+            var str = {
+                key:key.key.toString()
+            };
+            UsersService.getKey(str)
+                .success(function (data) {
+                    /*console.log(data.data);*/
+                    //изменяем пароль пользователю
+                    var email = {
+                        email:data.data.email
+                    };
+                    UsersService.getByEmail(email)
+                        .success(function (data) {
+                            /*console.log(data.data);*/
+                            user = data.data;
+                        });
+                })
+                .error(function () {
+                    $location.url("/notfound");
+                });
+
+            $scope.confirm = function () {
+                if ($scope.formData.password == $scope.formData.confirmPass && $scope.formData.password != ''){
+                    user.password = $scope.formData.password;
+                    console.log(user);
+                    UsersService.update(user.id, user)
+
+                    // if successful creation, update users array
+                        .success(function () {
+                            console.log('pass updated');
+                            console.log(str);
+                            UsersService.deleteKey(key.key)
+                                .success(function () {
+                                    window.alert('u have new password');
+                                    $location.url('/signin');
+                                })
+
+                        });
+
+                }
+            }
+        }]);

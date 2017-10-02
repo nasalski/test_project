@@ -4,6 +4,12 @@ angular.module('usersService', [])
 // each function returns a promise object
     .factory('UsersService', ['$http',function($http) {
         return {
+            sendMail:function (email) {
+                return $http.post('/sendmail',email);
+            },
+            /*login:function (user) {
+                return $http.post('/signin',user);
+            },*/
             logout:function () {
                 return $http.get('/');
             },
@@ -25,6 +31,16 @@ angular.module('usersService', [])
             deleteUser : function(id) {
                 console.log("delete ID:", id);
                 return $http.delete('/usersjson/' + id);
+            },
+            sendKey : function (key) {
+                return $http.post('/sendkey', key);
+            },
+            getKey : function (key) {
+                return $http.post('/new_password', key);
+            },
+            deleteKey : function (key) {
+                return $http.delete('/deletekey/'+ key);
             }
+
         }
     }]);

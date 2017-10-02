@@ -4,6 +4,7 @@ var config = require("nconf");
 var path = require('path');
 var bodyParser = require('body-parser');
 var userController = require('./public/controllers/user');
+var mailer = require('./public/controllers/nodeMailer');
 var app  = express();
 var passport       = require('passport');
 var LocalStrategy  = require('passport-local').Strategy;
@@ -38,7 +39,10 @@ app.get('/users', function(req, res){
     /*res.redirect('/signin');*/
     res.sendFile(path.join(__dirname+'/index.html'));
 });
-
+app.get('/signin', function(req, res){
+    console.log('path signin');
+    res.sendFile(path.join(__dirname+'/index.html'));
+});
 app.get('/logout', function(req, res){
     res.send('/logout');
 });
@@ -88,20 +92,13 @@ passport.deserializeUser(function (data, done) {
         done(err)
     }
 });
-/*app.get('/signup', function (req, res) {
 
-        if (req.isAuthenticated()) {
-            res.sendFile(path.join(__dirname+'/views/users.html'));
-            return;
-        }
-    res.sendFile(path.join(__dirname+'/views/auth.html'));
-});*/
-
-app.get('/sign-out', function (req, res) {
+/*app.get('/sign-out', function (req, res) {
     req.logout();
     res.redirect('/');
 });
 
+*/
 app.post('/signin', passport.authenticate('local', {
     successRedirect: '/users',
     failureRedirect: '/signin' })
@@ -122,6 +119,27 @@ app.post('/usersjson/email', userController.getByEmail)
 app.post('/usersjson', userController.post)
 app.put('/usersjson/:id', userController.put)
 app.delete('/usersjson/:id', userController.delete);
+
+app.post('/sendkey', userController.postKey);
+app.post('/new_password',userController.getKey);
+app.get('/new_pass',function (req,res) {
+    res.sendFile(path.join(__dirname+'/index.html'));
+});
+app.delete('/deletekey/:key', userController.deleteKey);
+
+app.post('/sendmail',function(req,res){     //subscription, signal) {
+                        console.log("send mail");
+                       opts = {
+                          from: 'Slava',//'Simple Notification Service',
+                          to: req.body.email//'nasalski.slava@gmail.com'//subscription.alertEndpoint,
+                          //subject: 'test',//subscription.eventTitle + ' happened at: ' + new Date(),
+                          //body: 'test'//signal.instancedata
+                       };
+                       // Отправка уведомления
+                       console.log(req.body);
+                       mailer.sendMail(opts,res,req.body.key);
+                    });
+
 app.get('*', function(req, res){
     res.sendFile(path.join(__dirname+'/index.html'));
 });

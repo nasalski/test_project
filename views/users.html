@@ -2,16 +2,26 @@
 
     <div class="header" >
         <div class="row"  >
-            <div class="col-sm-10">
+            <div class="col-sm-8">
                 <div class="box_for_button_create">
-                    <button class="create_user" type="button">
+                    <button class="create_user" type="button" ng-click="addNew()">
                         <span class="glyphicon glyphicon-plus"></span>
                     </button>
                 </div>
             </div>
             <div class="col-sm-2">
+                <div class="box_sign_out">
+                    <a href="#" ng-click="logout()">Sign out</a>
+                </div>
+                <!--<div class="box_for_button_create">
+                    <button class="create_user" type="button">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </div>-->
+            </div>
+            <div class="col-sm-2">
                 <div class="box_for_profile">
-                    <button class="look_profile_self" type="button" ng-click="logout()">
+                    <button class="look_profile_self" type="button" ng-click="nothing()">
                         <span class="glyphicon glyphicon-user icon"></span>
                     </button>
                 </div>
@@ -24,32 +34,33 @@
     <div class="row" >
         <div class="col-sm-4">
             <table class="table user_table">
-                <tr class="heading_of_table" >
-                    <td class="user_foto">
+                <thead>
+                    <tr class="heading_of_table" >
+                        <td class="user_foto">
 
-                    </td>
-                    <td class="dropdown user_name">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #000000" >Name
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#" ng-click="sortBy('lastname')">
-                                    <span class="sortorder" ng-show="propertyName === 'lastname'" ng-class="{reverse: reverse}"></span>
-                                    Lastname
-                                </a>
-                            </li>
-                            <li><a href="#" ng-click="sortBy('firstname')">
-                                    <span class="sortorder" ng-show="propertyName === 'firstname'" ng-class="{reverse: reverse}"></span>
-                                    Firstname
-                                </a>
-                            </li>
-                        </ul>
-                    </td>
-                    <td class="user_domain">Domain</td>
-                    <td class="user_last_log">Last signed in</td>
-                    <td class="user_menu"> </td>
-                </tr>
-
+                        </td>
+                        <td class="dropdown user_name">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #000000" >Name
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#" ng-click="sortBy('lastname')">
+                                        <span class="sortorder" ng-show="propertyName === 'lastname'" ng-class="{reverse: reverse}"></span>
+                                        Lastname
+                                    </a>
+                                </li>
+                                <li><a href="#" ng-click="sortBy('firstname')">
+                                        <span class="sortorder" ng-show="propertyName === 'firstname'" ng-class="{reverse: reverse}"></span>
+                                        Firstname
+                                    </a>
+                                </li>
+                            </ul>
+                        </td>
+                        <td class="user_domain">Domain</td>
+                        <td class="user_last_log">Last signed in</td>
+                        <td class="user_menu"> </td>
+                    </tr>
+                </thead>
                 <tr class="active body_of_table" ng-repeat="user in users | orderBy:propertyName:reverse">
                      <td class="user_foto">
                          <div class="box_for_profile">
@@ -83,21 +94,21 @@
     </div>
 
      <!--FORM TO CREATE USERS-->
-    <div class="row">
+    <!--<div class="row">
         <div class="col-sm-8 col-sm-offset-2 text-center">
             <form>
-                <!-- BIND THIS VALUE TO formData IN ANGULAR -->
+                &lt;!&ndash; BIND THIS VALUE TO formData IN ANGULAR &ndash;&gt;
                 <input type="text" class="form-control input-lg text-center" placeholder="firstname" ng-model="formData.firstname">
                 <input type="text" class="form-control input-lg text-center" placeholder="lastname" ng-model="formData.lastname">
                 <input type="text" class="form-control input-lg text-center" placeholder="role" ng-model="formData.role">
                 <input type="text" class="form-control input-lg text-center" placeholder="domain" ng-model="formData.domain">
 
 
-                <!-- create() WILL CREATE NEW USERS -->
+                &lt;!&ndash; create() WILL CREATE NEW USERS &ndash;&gt;
                 <button type="submit" class="btn btn-primary btn-lg" ng-click="create()">Add</button>
             </form>
         </div>
-    </div>
+    </div>-->
 
 
 
