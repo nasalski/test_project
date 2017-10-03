@@ -7,6 +7,7 @@ angular.module('allControllers', [])
                 id: null,
                 firstname:null,
                 lastname:null,
+                nickname:null,
                 role:null,
                 domain:null,
                 log_time:null,
@@ -74,7 +75,7 @@ angular.module('allControllers', [])
                 .success(function(data,docs) {
                     if(docs==200){
                         console.log("im here");
-                        $rootScope.currentUser = user;
+                        $rootScope.currentUser = user.email;
                         $rootScope.isAuth = true;
                         $location.url("/users");
 
@@ -101,15 +102,23 @@ angular.module('allControllers', [])
 
 
     }])
-    .controller('UsersController', ['$scope','$http','$rootScope','$cookieStore','$location','UsersService',
-    function($scope, $http, $rootScope, $cookieStore, $location, UsersService) {
-        clearForm();
+    .controller('UsersController', ['$scope','$http','$rootScope','$cookieStore','$location','UsersService','Storage',
+    function($scope, $http, $rootScope, $cookieStore, $location, UsersService, Storage) {
+        $scope.formData = Storage.getUser();
+
+        $scope.name = Storage.getName();
+        if(location.pathname =='/edit'){
+            if (!$scope.name){
+                $location.url('/users');
+            }else var userEmail = $scope.formData.email;
+        }
+
         $scope.id = 0;
         $scope.propertyName = 'lastname';
         $scope.reverse = true;
         $scope.loading = true;
         $scope.email={
-            email:$rootScope.currentUser.email
+            email:$rootScope.currentUser
         };
 
         console.log($scope.currentUser);
@@ -145,9 +154,16 @@ angular.module('allControllers', [])
         {$scope.loading = true;
             UsersService.getById(id)
                 .success(function(data) {
-                    $scope.loading = false;
-                    $scope.formData = data.data
-                    $scope.id = id;
+                    if($scope.currentUser.role === "admin" ||($scope.currentUser.role === "moderator" && $scope.currentUser.id === $scope.id)) {
+                        $scope.loading = false;
+                        Storage.setUser(data.data);
+                        Storage.setName(data.data.firstname + " " + data.data.lastname);
+                        $scope.id = id;
+                        $location.path('/edit');
+                    } else {
+                        window.alert("u cant update user information");
+                    }
+
                 });
         }
         // CREATE ==================================================================
@@ -159,17 +175,26 @@ angular.module('allControllers', [])
             console.log('i want create new person');
             if ($scope.formData.lastname != "" && $scope.formData.firstname != "") {
                 $scope.loading = true;
+                var email ={
+                    email:$scope.formData.email
+                };
+                UsersService.getByEmail(email)
+                    .success(function () {
+                        window.alert("email is already in use")
+                    })
+                    .error(function () {
+                        $scope.formData.role = "user";
+                        UsersService.create($scope.formData)
 
-                // call the create function from our service (returns a promise object)
-                UsersService.create($scope.formData)
-
-                // if successful creation, call our get function to get all the new users
-                    .success(function() {
-                        console.log('created  person' + $scope.formData.firstname);
-                        $scope.users.push($scope.formData);
-                        $scope.loading = false;
-                        clearForm(); // clear the form so our user is ready to enter another
+                        // if successful creation, call our get function to get all the new users
+                            .success(function() {
+                                console.log('created  person' + $scope.formData.firstname);
+                                $scope.users.push($scope.formData);
+                                $scope.loading = false;
+                                clearForm(); // clear the form so our user is ready to enter another
+                            });
                     });
+
             }
         };
         // UPDATE ==================================================================
@@ -182,17 +207,30 @@ angular.module('allControllers', [])
                 if($scope.currentUser.role === "admin" ||($scope.currentUser.role === "moderator" && $scope.currentUser.id === $scope.id)) {
                     $scope.loading = true;
                     // call the create function from our service (returns a promise object)
-                    UsersService.update($scope.id, $scope.formData)
-
-                    // if successful creation, update users array
-                        .success(function () {
-                            for (var i = 0; i < $scope.users.length; i++) {
-                                if ($scope.users[i].id == $scope.id) $scope.users[i] = $scope.formData;
-                            }
-                            $scope.loading = false;
-                            $scope.id = 0;
-                            clearForm(); // clear the form so our user is ready to enter another
-                        });
+                    var email ={
+                        email:$scope.formData.email
+                    };
+                    if(userEmail == $scope.formData.email){
+                        UsersService.update($scope.id, $scope.formData)
+                            .success(function () {
+                                Storage.setUser(null);
+                                Storage.setName(null);
+                                $location.url('/users');
+                            });
+                    } else{
+                        UsersService.getByEmail(email)
+                            .success(function () {
+                                window.alert("email is already in use")
+                            })
+                            .error(function () {
+                                UsersService.update($scope.id, $scope.formData)
+                                    .success(function () {
+                                        Storage.setUser(null);
+                                        Storage.setName(null);
+                                        $location.url('/users');
+                                    });
+                            });
+                    }
 
                 } else{
                     console.log('u cant update user, u are '+ $scope.currentUser.role);
@@ -230,14 +268,21 @@ angular.module('allControllers', [])
 
         };
         $scope.addNew = function () {
-            console.log("i want add new user");
-            $location.path('/add_new');
-        }
+            if($scope.currentUser.role === "admin"){
+                clearForm();
+                console.log("i want add new user");
+                $location.path('/add_new');
+            } else {
+                window.alert("u're not admin");
+            }
+
+        };
         function clearForm() {
             $scope.formData = {
                 id: null,
                 firstname:null,
                 lastname:null,
+                nickname:null,
                 role:null,
                 domain:null,
                 log_time:null,
@@ -360,7 +405,7 @@ angular.module('allControllers', [])
                             console.log(str);
                             UsersService.deleteKey(key.key)
                                 .success(function () {
-                                    window.alert('u have new password');
+                                    window.alert('The password was reset!');
                                     $location.url('/signin');
                                 })
 
@@ -368,4 +413,22 @@ angular.module('allControllers', [])
 
                 }
             }
-        }]);
+        }])
+.service('Storage', function () {
+    var _name = null;
+    var _user = null;
+    return {
+        setName: function (name) {
+            _name = name;
+        },
+        getName: function () {
+            return _name;
+        },
+        setUser: function (user) {
+            _user = user;
+        },
+        getUser: function () {
+            return _user;
+        }
+    }
+});

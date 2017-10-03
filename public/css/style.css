@@ -103,7 +103,7 @@ input:focus {
 
 .header {
     height: 40px;
-    width:  650px;
+    width:  750px;
     background: #f0f0f0;
 }
 .box_for_button_create{
@@ -166,6 +166,9 @@ input:focus {
 .table>thead{
     border-bottom:2px solid #f0f0f0;
 }
+/*.add_thead {
+    border-right:2px solid #f0f0f0;
+}*/
 
 .user_table {
     width: 600px;
@@ -174,7 +177,7 @@ input:focus {
 }
 .user_table_3_columns {
      width: 400px;
-     margin-left: 15px;
+     /*margin-left: 15px;*/
      background-color: #FFFFFF;
  }
 td.user_foto {
@@ -383,7 +386,7 @@ div.password {
 
 .middle_add {
     height: 40px;
-    width:  650px;
+    width:  750px;
     background: #ffffff;
     border-bottom: 2px solid #d6d6d6;
 }
@@ -391,4 +394,148 @@ div.password {
 .middle_add >.row> .col-sm-8 {
     margin-left: 30px;
 
+}
+.ots {
+    height: 100px;
+}
+.add_table{
+    width: 430px;
+    float: left;
+}
+.form_add {
+
+    text-align: left;
+    margin-left: 30px;
+
+}
+.help-block {
+
+     color: #761c19;
+
+ }
+.box_add {
+    width: 750px;
+    display:inline-block;
+    overflow:hidden;
+
+
+}
+.add_container{
+    height: 600px;
+    width: 330px;
+    border-left:2px solid #f0f0f0;
+    float: left;
+
+}
+.add_close {
+    height: 25px;
+}
+
+.add_head{
+    height: 50px;
+}
+.add_text {
+    height: 40px;
+    width: 326px;
+}
+.form-group{
+    height: 35px;
+}
+.add_assign {
+    text-align: right;
+    color: #00aeed;
+    text-decoration: underline;
+}
+.add_firstname{
+    float: left;
+    width: 160px;
+    height: 35px;
+}
+.add_firstname::-webkit-input-placeholder {
+    font-weight: bold;
+    font-size: medium;
+}
+.add_lastname{
+    float: left;
+    width: 160px;
+    height: 35px;
+    margin-left: 3px;
+}
+.add_lastname::-webkit-input-placeholder {
+    font-weight: bold;
+    font-size: medium;
+}
+.add_email{
+    float: left;
+    width: 326px;
+    height: 35px;
+}
+.add_email::-webkit-input-placeholder {
+    font-weight: bold;
+    font-size: medium;
+}
+.add_nick{
+    float: left;
+    width: 326px;
+    height: 35px;
+}
+.add_nick::-webkit-input-placeholder {
+    /*font-weight: bold;*/
+    font-size: medium;
+}
+.add_password{
+    float: left;
+    width: 326px;
+    height: 35px;
+}
+.add_password::-webkit-input-placeholder {
+    font-weight: bold;
+    font-size: medium;
+}
+.add_auto_pass {
+    text-align: right;
+    color: #00aeed;
+    text-decoration: underline;
+}
+.add_footer{
+    text-align: right;
+    height: 300px;
+
+}
+.add_space{
+    height: 50px;
+}
+.add_cancel{
+    margin-right: 30px;
+}
+.add_alert{
+    height: 20px;
+    color: #761c19;
+}
+.add_user_btn{
+    width: 100px;
+    border:none;
+    padding:0;
+    margin:0;
+    font-size:15px;
+    color:#00aeed;
+    background-color:transparent;
+}
+.update_user_btn{
+    width: 80px;
+    border:none;
+    padding:0;
+    margin:0;
+    font-size:15px;
+    color:#00aeed;
+    background-color:transparent;
+}
+.canc_user_btn{
+    width: 60px;
+    border:none;
+    padding:0;
+    margin:0;
+    font-size:15px;
+    /*color:#00aeed;*/
+    background-color:transparent;
 }

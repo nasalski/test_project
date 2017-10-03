@@ -8,6 +8,7 @@ angular.module('core', ['allControllers', 'usersService','ngRoute', 'ngCookies']
                 controller: 'SignInCtrl',
                 hideMenus: true
             })
+
             .when ('/forg', {
                 templateUrl: 'static/forg.html',
                 controller: 'ForgCtrl'
@@ -30,6 +31,10 @@ angular.module('core', ['allControllers', 'usersService','ngRoute', 'ngCookies']
             })
             .when('/add_new', {
                 templateUrl: 'static/add_new.html',
+                controller: 'UsersController'
+            })
+            .when('/edit', {
+                templateUrl: 'static/edit_user.html',
                 controller: 'UsersController'
             })
             .otherwise({ redirectTo: '/notfound' });

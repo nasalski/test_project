@@ -130,14 +130,14 @@ app.delete('/deletekey/:key', userController.deleteKey);
 app.post('/sendmail',function(req,res){     //subscription, signal) {
                         console.log("send mail");
                        opts = {
-                          from: 'Slava',//'Simple Notification Service',
-                          to: req.body.email//'nasalski.slava@gmail.com'//subscription.alertEndpoint,
+                          from: "Thunderbolt",//'Simple Notification Service',
+                          to: req.body.email
                           //subject: 'test',//subscription.eventTitle + ' happened at: ' + new Date(),
                           //body: 'test'//signal.instancedata
                        };
                        // Отправка уведомления
                        console.log(req.body);
-                       mailer.sendMail(opts,res,req.body.key);
+                       mailer.sendMail(opts,res,req.body.key,req.body.email);
                     });
 
 app.get('*', function(req, res){

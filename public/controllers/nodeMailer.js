@@ -1,6 +1,6 @@
 nodemailer = require('nodemailer');
 
-exports.sendMail = function (opt,res,key) {
+exports.sendMail = function (opt,res,key,email) {
    var mailOpts, smtpTransport;
 
    console.log ('Creating Transport');
@@ -13,9 +13,11 @@ exports.sendMail = function (opt,res,key) {
       }
 });
 var subject = 'восстановление пароля'
-var body = '<p><b>Hello</b> to myself <img src="cid:note@example.com"/></p>' +
-           '<p>Here\'s a nyan cat for you as an embedded attachment:<br/><img src="cid:nyan@example.com"/></p>' +
-           '<p>ссылка для восстановления типа http://localhost:3000/new_pass?key='+key+'</p>';
+var body = '<p><b>Hello!</b></p>' +
+           '<p>You received this email because user '+ email + ' wants to reset the password :</p>' +
+           '<p>http://localhost:3000/new_pass?key='+key+'</p>'+
+'Regards,Administration of the project "Thunderbolt"';
+
 // параметры отправки
 mailOpts = {
    from: opts.from,
