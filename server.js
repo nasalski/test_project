@@ -25,29 +25,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.get('/', function(req, res){
-    console.log('path /');
-    res.redirect('/signin');
-});
-app.get('/signup', function(req, res){
-    console.log('path signup');
-    res.sendFile(path.join(__dirname+'/index.html'));
-});
-app.get('/users', function(req, res){
-    console.log('path users');
-    /*res.redirect('/signin');*/
-    res.sendFile(path.join(__dirname+'/index.html'));
-});
-app.get('/signin', function(req, res){
-    console.log('path signin');
-    res.sendFile(path.join(__dirname+'/index.html'));
-});
-app.get('/logout', function(req, res){
-    res.send('/logout');
-});
-
-
 /*------ passport------------*/
 passport.use(new LocalStrategy(
     {
@@ -83,8 +60,6 @@ passport.use(new LocalStrategy(
 passport.serializeUser(function (user, done) {
     done(null, JSON.stringify(user));
 });
-
-
 passport.deserializeUser(function (data, done) {
     try {
         done(null, JSON.parse(data));
@@ -93,21 +68,79 @@ passport.deserializeUser(function (data, done) {
     }
 });
 
-/*app.get('/sign-out', function (req, res) {
-    req.logout();
-    res.redirect('/');
+
+
+app.get('/', function(req, res){
+    console.log('path /');
+    res.redirect('/signin');
+});
+app.get('/signup', function(req, res){
+    console.log('path signup');
+    res.sendFile(path.join(__dirname+'/index.html'));
+});
+app.get('/users', function(req, res){
+    console.log('path users');
+    /*res.redirect('/signin');*/
+    res.sendFile(path.join(__dirname+'/index.html'));
 });
 
-*/
+app.get('/signin', function(req, res){
+    console.log('path signin');
+    res.sendFile(path.join(__dirname+'/index.html'));
+});
+
+/*function checkAuthentication(req,res,next){
+    if(req.isAuthenticated()){
+        //if user is looged in, req.isAuthenticated() will return true
+        next();
+    } else{
+        res.redirect("/signin");
+    }
+}*/
+
+/*app.get('/users', function(req,res){
+    if (req.isAuthenticated()) {
+        res.sendFile(path.join(__dirname + '/index.html'));
+    } else res.redirect('/signin');
+});*/
+
+
+/*app.get('/users', function(req, res, next) {
+    passport.authenticate('local', function(err, user, info) {
+        if (err) { return next(err); }
+        if (!user) { return res.redirect('/signin'); }
+        req.logIn(user, function(err) {
+            if (err) { return next(err); }
+            res.sendFile(path.join(__dirname+'/index.html'));
+        });
+    })(req, res, next);
+});*/
+/*app.get('/signin', function(req, res, next) {
+    passport.authenticate('local', function(err, user, info) {
+        if (err) { return next(err); }
+        if (!user) { res.sendFile(path.join(__dirname+'/index.html')); }
+        req.logIn(user, function(err) {
+            if (err) { return next(err); }
+            return res.redirect('/users');
+        });
+    })(req, res, next);
+});*/
+
+app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/signin');
+});
+
+
+
+
+
+
 app.post('/signin', passport.authenticate('local', {
     successRedirect: '/users',
     failureRedirect: '/signin' })
 );
 
-/*app.post('/signup', passport.authenticate('local'), function(req, res) {
-    console.log("works");
-    res.sendFile(path.join(__dirname+'/views/users.html'));
-});*/
 
 /*----------------------------------------------------------------------*/
 

@@ -11,7 +11,7 @@ angular.module('usersService', [])
                 return $http.post('/signin',user);
             },*/
             logout:function () {
-                return $http.get('/');
+                return $http.get('/logout');
             },
             get : function() {
                 return $http.get('/usersjson');
