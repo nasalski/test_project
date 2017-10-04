@@ -1,5 +1,4 @@
-
-angular.module('core', ['allControllers', 'usersService','ngRoute', 'ngCookies'])
+angular.module('core', ['allControllers', 'usersService','ngRoute', 'ngCookies','ngFileUpload'])
 
     .config(['$routeProvider','$locationProvider', '$httpProvider', function ($routeProvider,$locationProvider, $httpProvider) {
         $routeProvider

@@ -86,16 +86,31 @@
         </div>
         <div class="add_container">
             <div class="form_add">
+
+                <div class = "add_close">
+                    <button class="close" type="button" data-dismiss="modal" ng-click="cancel()">×</button>
+                </div>
+                <div class="row add_head">
+                    <h3>Add new user</h3>
+                </div>
+                <div class="row add_head">
+                    <h5>All fields marked bold must be completed.</h5>
+                </div>
+
+
+                <form name="file_form" novalidate>
+                    <input type="file" ngf-select ng-model="picFile" name="file"
+                           accept="image/*" ngf-max-size="2MB" required
+                           ngf-model-invalid="errorFile" ngf-multiple="true">
+                    <i ng-show="file_form.file.$error.required">*required</i><br>
+                    <i ng-show="file_form.file.$error.maxSize">File too large
+                        {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+                    <p ng-repeat="file in picFile">
+                        <img ng-show="file_form.file.$valid" ngf-thumbnail="file" class="thumb"> <button ng-click="delUplPhoto($index)" ng-show="file">Remove</button>
+                    </p>
+                </form>
+
                 <form name="add_form" novalidate>
-                    <div class = "add_close">
-                        <button class="close" type="button" data-dismiss="modal" ng-click="cancel()">×</button>
-                    </div>
-                    <div class="row add_head">
-                        <h3>Add new user</h3>
-                    </div>
-                    <div class="row add_head">
-                        <h5>All fields marked bold must be completed.</h5>
-                    </div>
                     <div class="row add_assign">
                         <h6><a href="#">Assign to a domain</a></h6>
                     </div>
@@ -134,7 +149,7 @@
                     </div>
                     <div class="add_footer">
                         <input type="submit" class="canc_user_btn" value="CANCEL" ng-click="cancel()">
-                        <input type="submit" class="add_user_btn" value="ADD USER" ng-disabled="add_form.$invalid" ng-click="create()">
+                        <input type="submit" class="add_user_btn" value="ADD USER" ng-disabled="add_form.$invalid" ng-click="create(picFile)">
                     </div>
                 </form>
             </div>

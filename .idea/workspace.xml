@@ -5,18 +5,553 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4b70ff0-e3c0-44b7-a995-8cfc93b56846" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/edit_user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.users.sql.kate-swp" afterPath="$PROJECT_DIR$/.users.sql.kate-swp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/ng-file-upload-all.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/ng-file-upload-shim.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/ng-file-upload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/services/storage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/services/uploadService.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/addressparser/.jshintrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/addressparser/src/addressparser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/autoscaling-2011-01-01.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/autoscaling-2011-01-01.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/cloudformation-2010-05-15.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/cloudformation-2010-05-15.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/cloudfront-2014-05-31.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/cloudfront-2014-05-31.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/cloudfront-2014-05-31.waiters.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/cloudsearch-2011-02-01.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/cloudsearch-2011-02-01.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/cloudsearch-2013-01-01.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/cloudsearch-2013-01-01.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/cloudsearchdomain-2013-01-01.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/cloudtrail-2013-11-01.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/cloudtrail-2013-11-01.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/cognito-identity-2014-06-30.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/cognito-sync-2014-06-30.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/datapipeline-2012-10-29.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/datapipeline-2012-10-29.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/directconnect-2012-10-25.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/directconnect-2012-10-25.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/dynamodb-2011-12-05.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/dynamodb-2011-12-05.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/dynamodb-2011-12-05.waiters.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/dynamodb-2012-08-10.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/dynamodb-2012-08-10.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/dynamodb-2012-08-10.waiters.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/ec2-2014-06-15.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/ec2-2014-06-15.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/ec2-2014-06-15.waiters.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/elasticache-2014-07-15.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/elasticache-2014-07-15.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/elasticbeanstalk-2010-12-01.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/elasticbeanstalk-2010-12-01.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/elasticloadbalancing-2012-06-01.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/elasticloadbalancing-2012-06-01.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/elasticmapreduce-2009-03-31.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/elasticmapreduce-2009-03-31.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/elastictranscoder-2012-09-25.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/elastictranscoder-2012-09-25.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/elastictranscoder-2012-09-25.waiters.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/email-2010-12-01.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/email-2010-12-01.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/email-2010-12-01.waiters.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/glacier-2012-06-01.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/glacier-2012-06-01.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/glacier-2012-06-01.waiters.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/iam-2010-05-08.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/iam-2010-05-08.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/importexport-2010-06-01.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/importexport-2010-06-01.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/kinesis-2013-12-02.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/kinesis-2013-12-02.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/logs-2014-03-28.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/logs-2014-03-28.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/monitoring-2010-08-01.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/monitoring-2010-08-01.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/opsworks-2013-02-18.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/opsworks-2013-02-18.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/rds-2013-01-10.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/rds-2013-01-10.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/rds-2013-02-12.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/rds-2013-02-12.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/rds-2013-09-09.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/rds-2013-09-09.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/rds-2013-09-09.waiters.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/redshift-2012-12-01.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/redshift-2012-12-01.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/redshift-2012-12-01.waiters.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/route53-2013-04-01.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/route53-2013-04-01.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/route53domains-2014-05-15.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/s3-2006-03-01.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/s3-2006-03-01.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/s3-2006-03-01.waiters.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/sdb-2009-04-15.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/sdb-2009-04-15.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/sns-2010-03-31.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/sns-2010-03-31.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/sqs-2012-11-05.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/sqs-2012-11-05.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/storagegateway-2013-06-30.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/storagegateway-2013-06-30.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/sts-2011-06-15.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/support-2013-04-15.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/support-2013-04-15.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/swf-2012-01-25.api.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/apis/swf-2012-01-25.paginators.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/lib/translator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/metadata.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk-apis/scripts/translate-api" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/.eslintrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/.yardopts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/.yardopts_guide" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/Gemfile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/Gemfile.lock" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/Rakefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/configuration.sample" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/dist-tools/.eslintrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/dist-tools/strategies/cache.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/dist-tools/strategies/default.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/dist-tools/test/browser-builder.mocha.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/dist-tools/test/helpers.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/guide/browser-building.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/guide/browser-configuring-wif.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/guide/browser-configuring.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/guide/browser-examples.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/guide/browser-intro.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/guide/browser-making-requests.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/guide/browser-services.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/guide/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/guide/node-configuring.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/guide/node-examples.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/guide/node-intro.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/guide/node-making-requests.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/guide/node-services.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/model_documentor.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/plugin.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/templates/default/class/html/setup.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/templates/default/class/html/waiter_details_list.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/templates/default/class/html/waiter_summary.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/templates/default/docstring/html/experimental.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/templates/default/docstring/setup.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/templates/default/fulldoc/html/css/common.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/templates/default/fulldoc/html/setup.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/templates/default/layout/html/services.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/templates/default/layout/html/setup.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/templates/default/module/html/box_info.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/templates/default/module/html/children.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/templates/default/tags/setup.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/templates/default/waiter_details/html/method_signature.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/api-versions/templates/default/waiter_details/html/setup.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/default/layout/html/footer.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/default/layout/html/layout.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/fulldoc/html/css/highlight.github.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/fulldoc/html/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/fulldoc/html/img/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/fulldoc/html/js/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/fulldoc/html/js/highlight.pack.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/fulldoc/html/js/sphinx/AUTHORS" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/fulldoc/html/js/sphinx/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/fulldoc/html/js/sphinx/doctools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/fulldoc/html/js/sphinx/file.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/fulldoc/html/js/sphinx/searchtools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/fulldoc/html/js/underscore.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/fulldoc/html/search.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/fulldoc/html/search_index.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/fulldoc/html/setup.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/layout/html/layout.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/layout/html/setup.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/layout/html/sidebar.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/onefile/html/layout.erb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/doc-src/templates/flasky_sphinx_guide/onefile/html/setup.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/eslint-rules/no-require-in-service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/autoscaling/autoscaling.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/autoscaling/step_definitions/autoscaling.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/cloudformation/cloudformation.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/cloudformation/step_definitions/cloudformation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/cloudfront/cloudfront.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/cloudfront/step_definitions/cloudfront-latest.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/cloudfront/step_definitions/cloudfront.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/cloudsearch/cloudsearch.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/cloudsearch/step_definitions/cloudsearch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/cloudtrail/cloudtrail.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/cloudtrail/step_definitions/cloudtrail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/cloudwatch/cloudwatch.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/cloudwatch/step_definitions/cloudwatch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/datapipeline/datapipeline.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/datapipeline/step_definitions/datapipeline.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/directconnect/directconnect.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/directconnect/step_definitions/directconnect.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/dynamodb/crc32.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/dynamodb/step_definitions/dynamodb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/dynamodb/tables.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/ec2/ec2.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/ec2/step_definitions/ec2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/elasticache/elasticache.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/elasticache/step_definitions/elasticache.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/elasticbeanstalk/elasticbeanstalk.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/elasticbeanstalk/step_definitions/elasticbeanstalk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/elastictranscoder/elastictranscoder.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/elastictranscoder/step_definitions/elastictranscoder.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/elb/elb.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/elb/step_definitions/elb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/emr/emr.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/emr/step_definitions/emr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/extra/assertions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/extra/dummy.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/extra/fixtures/testfile.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/extra/helpers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/extra/hooks.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/extra/world.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/glacier/glacier.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/glacier/step_definitions/glacier.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/iam/iam.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/iam/step_definitions/iam.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/importexport/importexport.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/importexport/step_definitions/importexport.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/kinesis/kinesis.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/kinesis/step_definitions/kinesis.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/opsworks/opsworks.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/opsworks/step_definitions/opsworks.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/rds/rds.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/rds/step_definitions/rds.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/redshift/redshift.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/redshift/step_definitions/redshift.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/route53/route53.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/route53/step_definitions/route53.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/s3/buckets.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/s3/objects.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/s3/step_definitions/buckets.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/s3/step_definitions/hooks.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/s3/step_definitions/objects.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/s3/step_definitions/proxy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/ses/ses.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/ses/step_definitions/ses.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/simpledb/simpledb.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/simpledb/step_definitions/simpledb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/sns/sns.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/sns/step_definitions/sns.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/sqs/messages.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/sqs/queues.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/sqs/step_definitions/messages.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/sqs/step_definitions/queues.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/sqs/step_definitions/sqs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/storagegateway/step_definitions/storagegateway.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/storagegateway/storagegateway.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/sts/step_definitions/sts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/sts/sts.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/support/step_definitions/support.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/support/support.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/swf/step_definitions/swf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/features/swf/swf.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/region_config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services/elastictranscoder.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/scripts/coverage" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/tasks/apis.rake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/tasks/browser.rake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/tasks/docs.rake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/tasks/lib/cucumber_generator.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/tasks/util.rake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/js/jasmine-1.3.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/js/jasmine-html.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/runner.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/runner.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/appinfo.sample.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/console.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/images/animated-overlay.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/images/ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/images/ui-bg_glass_75_dadada_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/images/ui-icons_222222_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/images/ui-icons_2e83ff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/images/ui-icons_454545_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/images/ui-icons_888888_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/images/ui-icons_cd0a0a_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/jquery-ui-1.10.1.custom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/css/smoothness/jquery-ui-1.10.1.custom.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/img/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/js/jquery-1.9.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/js/jquery-ui-1.10.1.custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/js/jquery-ui-1.10.1.custom.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/browser/sample/s3upload.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/config.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/credential_provider_chain.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/credentials.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/endpoint.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/event_listeners.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/helpers.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/http_request.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/json/builder.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/json/parser.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/metadata_service.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/model/api.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/model/shape.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/node_http_client.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/param_validator.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/protocol/json.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/protocol/query.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/protocol/rest.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/protocol/rest_json.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/protocol/rest_xml.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/query/query_param_serializer.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/region_config.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/request.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/resource_waiter.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/response.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/sequential_executor.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/service.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/services/cloudfront.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/services/cloudsearchdomain.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/services/dynamodb.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/services/ec2.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/services/elastictranscoder.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/services/glacier.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/services/rds.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/services/route53.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/services/s3.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/services/simpledb.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/services/sqs.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/services/sts.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/services/swf.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/signers/presign.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/signers/s3.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/signers/v2.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/signers/v4.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/util.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/xml/builder.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/test/xml/parser.spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/testem.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/dkim-signer/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/dkim-signer/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/dkim-signer/lib/dkim.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/dkim-signer/node_modules/punycode/LICENSE-GPL.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/dkim-signer/node_modules/punycode/LICENSE-MIT.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/dkim-signer/node_modules/punycode/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/dkim-signer/node_modules/punycode/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/dkim-signer/node_modules/punycode/punycode.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/dkim-signer/node_modules/punycode/punycode.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/dkim-signer/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/encoding/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/encoding/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/encoding/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/encoding/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/encoding/lib/encoding.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/encoding/lib/iconv-loader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/encoding/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/encoding/test/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/follow-redirects/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/follow-redirects/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/follow-redirects/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/follow-redirects/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/follow-redirects/test/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/isarray/build/build.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mailcomposer/lib/topunycode.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mailcomposer/lib/urlfetch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mailcomposer/node_modules/mime/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mailcomposer/node_modules/mime/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mailcomposer/node_modules/mime/mime.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mailcomposer/node_modules/mime/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mailcomposer/node_modules/mime/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mailcomposer/node_modules/mime/types/mime.types" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mailcomposer/node_modules/mime/types/node.types" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mimelib/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mimelib/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mimelib/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mimelib/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mimelib/lib/content-types-reversed.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mimelib/lib/content-types.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mimelib/lib/mimelib.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/mimelib/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/readable-stream/float.patch" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/AUTHORS" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/examples/big-not-pretty.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/examples/example.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/examples/get-products.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/examples/hello-world.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/examples/not-pretty.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/examples/pretty-print.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/examples/shopping.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/examples/strict.dtd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/examples/switch-bench.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/examples/test.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/examples/test.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/buffer-overrun.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/case.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/cdata-chunked.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/cdata-end-split.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/cdata-fake-end.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/cdata-multiple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/cdata.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/issue-23.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/issue-30.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/issue-35.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/issue-47.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/issue-49.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/parser-position.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/self-closing-child-strict.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/self-closing-child.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/self-closing-tag.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/stray-ending.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/trailing-non-whitespace.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/unquoted.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/xmlns-issue-41.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/xmlns-rebinding.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/xmlns-strict.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/xmlns-unbound.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/xmlns-xml-default-ns.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/xmlns-xml-default-prefix-attribute.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/xmlns-xml-default-prefix.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sax/test/xmlns-xml-default-redefine.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/underscore/underscore-min.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/xml2js/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/xml2js/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLFragment.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/bootstrap.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/controllers/mainController.js" afterPath="$PROJECT_DIR$/public/controllers/newPassController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/controllers/nodeMailer.js" afterPath="$PROJECT_DIR$/public/js/nodeMailer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/.bin/he" afterPath="$PROJECT_DIR$/node_modules/.bin/he" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/addressparser/.npmignore" afterPath="$PROJECT_DIR$/node_modules/addressparser/.npmignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/addressparser/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/addressparser/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/addressparser/LICENSE" afterPath="$PROJECT_DIR$/node_modules/addressparser/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/addressparser/package.json" afterPath="$PROJECT_DIR$/node_modules/addressparser/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/CONTRIBUTING.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/LICENSE.txt" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/NOTICE.txt" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/NOTICE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/README.md" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/dist-tools/browser-builder.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/dist-tools/browser-builder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/dist/BUNDLE_LICENSE.txt" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/dist/BUNDLE_LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/dist/aws-sdk.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/dist/aws-sdk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/dist/aws-sdk.min.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/dist/aws-sdk.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/aws.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/aws.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/browser.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/browser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/config.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/core.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/credential_provider_chain.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/credential_provider_chain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/ec2_metadata_credentials.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/environment_credentials.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/environment_credentials.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/file_system_credentials.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/file_system_credentials.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/saml_credentials.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/saml_credentials.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/shared_ini_file_credentials.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/shared_ini_file_credentials.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/temporary_credentials.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/temporary_credentials.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/web_identity_credentials.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/credentials/web_identity_credentials.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/event_listeners.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/event_listeners.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/http.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/http.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/http/node.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/http/node.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/http/xhr.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/http/xhr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/json/builder.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/json/builder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/json/parser.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/json/parser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/metadata_service.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/metadata_service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/model/api.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/model/api.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/model/collection.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/model/collection.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/model/operation.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/model/operation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/model/resource_waiter.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/model/resource_waiter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/model/shape.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/model/shape.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/param_validator.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/param_validator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/protocol/json.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/protocol/json.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/protocol/query.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/protocol/query.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/protocol/rest.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/protocol/rest.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/protocol/rest_json.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/protocol/rest_json.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/protocol/rest_xml.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/protocol/rest_xml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/query/query_param_serializer.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/query/query_param_serializer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/region_config.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/region_config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/request.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/request.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/resource_waiter.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/resource_waiter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/response.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/response.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/sequential_executor.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/sequential_executor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/service.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services/cloudsearchdomain.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services/cloudsearchdomain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services/dynamodb.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services/dynamodb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services/ec2.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services/ec2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services/glacier.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services/glacier.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services/route53.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services/route53.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services/s3.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services/s3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services/sqs.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/services/sqs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/signers/presign.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/signers/presign.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/signers/request_signer.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/signers/request_signer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/signers/s3.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/signers/s3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/signers/v4.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/signers/v4.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/util.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/util.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/xml/browser_parser.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/xml/browser_parser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/xml/builder.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/xml/builder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/lib/xml/node_parser.js" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/lib/xml/node_parser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/package.json" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/aws-sdk/scripts/console" afterPath="$PROJECT_DIR$/node_modules/aws-sdk/scripts/console" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/directmail/package.json" afterPath="$PROJECT_DIR$/node_modules/directmail/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/he/LICENSE-MIT.txt" afterPath="$PROJECT_DIR$/node_modules/he/LICENSE-MIT.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/he/README.md" afterPath="$PROJECT_DIR$/node_modules/he/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/he/bin/he" afterPath="$PROJECT_DIR$/node_modules/he/bin/he" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/he/he.js" afterPath="$PROJECT_DIR$/node_modules/he/he.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/he/man/he.1" afterPath="$PROJECT_DIR$/node_modules/he/man/he.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/he/package.json" afterPath="$PROJECT_DIR$/node_modules/he/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/isarray/README.md" afterPath="$PROJECT_DIR$/node_modules/isarray/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/isarray/index.js" afterPath="$PROJECT_DIR$/node_modules/isarray/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/isarray/package.json" afterPath="$PROJECT_DIR$/node_modules/isarray/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mailcomposer/LICENSE" afterPath="$PROJECT_DIR$/node_modules/mailcomposer/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mailcomposer/README.md" afterPath="$PROJECT_DIR$/node_modules/mailcomposer/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mailcomposer/lib/mailcomposer.js" afterPath="$PROJECT_DIR$/node_modules/mailcomposer/lib/mailcomposer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mailcomposer/package.json" afterPath="$PROJECT_DIR$/node_modules/mailcomposer/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/public-address/package.json" afterPath="$PROJECT_DIR$/node_modules/public-address/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/rai/package.json" afterPath="$PROJECT_DIR$/node_modules/rai/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/readable-stream/README.md" afterPath="$PROJECT_DIR$/node_modules/readable-stream/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_duplex.js" afterPath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_duplex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_passthrough.js" afterPath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_passthrough.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_readable.js" afterPath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_readable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_transform.js" afterPath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_transform.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_writable.js" afterPath="$PROJECT_DIR$/node_modules/readable-stream/lib/_stream_writable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/readable-stream/package.json" afterPath="$PROJECT_DIR$/node_modules/readable-stream/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/readable-stream/readable.js" afterPath="$PROJECT_DIR$/node_modules/readable-stream/readable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sax/LICENSE" afterPath="$PROJECT_DIR$/node_modules/sax/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sax/README.md" afterPath="$PROJECT_DIR$/node_modules/sax/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sax/lib/sax.js" afterPath="$PROJECT_DIR$/node_modules/sax/lib/sax.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sax/package.json" afterPath="$PROJECT_DIR$/node_modules/sax/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/simplesmtp/package.json" afterPath="$PROJECT_DIR$/node_modules/simplesmtp/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/string_decoder/package.json" afterPath="$PROJECT_DIR$/node_modules/string_decoder/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/underscore/LICENSE" afterPath="$PROJECT_DIR$/node_modules/underscore/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/underscore/package.json" afterPath="$PROJECT_DIR$/node_modules/underscore/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/underscore/underscore-min.js" afterPath="$PROJECT_DIR$/node_modules/underscore/underscore-min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/underscore/underscore.js" afterPath="$PROJECT_DIR$/node_modules/underscore/underscore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xml2js/README.md" afterPath="$PROJECT_DIR$/node_modules/xml2js/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xml2js/lib/xml2js.js" afterPath="$PROJECT_DIR$/node_modules/xml2js/lib/xml2js.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xml2js/package.json" afterPath="$PROJECT_DIR$/node_modules/xml2js/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/.npmignore" afterPath="$PROJECT_DIR$/node_modules/xmlbuilder/.npmignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/README.md" afterPath="$PROJECT_DIR$/node_modules/xmlbuilder/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLBuilder.js" afterPath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLBuilder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/index.js" afterPath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/package.json" afterPath="$PROJECT_DIR$/node_modules/xmlbuilder/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xoauth2/package.json" afterPath="$PROJECT_DIR$/node_modules/xoauth2/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/controllers/allUsersController.js" afterPath="$PROJECT_DIR$/public/controllers/allUsersController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/controllers/controller.js" afterPath="$PROJECT_DIR$/public/controllers/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/controllers/nodeMailer.js" afterPath="$PROJECT_DIR$/public/controllers/nodeMailer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/controllers/forgotController.js" afterPath="$PROJECT_DIR$/public/controllers/forgotController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/controllers/signInController.js" afterPath="$PROJECT_DIR$/public/controllers/signInController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/controllers/signUpController.js" afterPath="$PROJECT_DIR$/public/controllers/signUpController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/core.js" afterPath="$PROJECT_DIR$/public/core.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/models/user.js" afterPath="$PROJECT_DIR$/public/models/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/services/service.js" afterPath="$PROJECT_DIR$/public/services/service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/add_new.html" afterPath="$PROJECT_DIR$/views/add_new.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/forg.html" afterPath="$PROJECT_DIR$/views/forg.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/users.html" afterPath="$PROJECT_DIR$/views/users.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/edit_user.html" afterPath="$PROJECT_DIR$/views/edit_user.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,51 +602,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="core.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/core.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="79" lean-forward="false" selection-start-line="1" selection-start-column="79" selection-end-line="1" selection-end-column="79" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/controllers/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="275" column="47" lean-forward="false" selection-start-line="275" selection-start-column="47" selection-end-line="275" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nodeMailer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/controllers/nodeMailer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="65" lean-forward="false" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/services/service.js">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="34" />
+              <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server.js">
+      <file leaf-file-name="forgotController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/controllers/forgotController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="120" column="52" lean-forward="true" selection-start-line="120" selection-start-column="52" selection-end-line="120" selection-end-column="52" />
+            <state relative-caret-position="1054">
+              <caret line="62" column="7" lean-forward="false" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="allUsersController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/controllers/allUsersController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4229">
+              <caret line="303" column="35" lean-forward="false" selection-start-line="303" selection-start-column="35" selection-end-line="303" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -120,32 +635,11 @@
       <file leaf-file-name="edit_user.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/edit_user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="90" column="98" lean-forward="false" selection-start-line="90" selection-start-column="98" selection-end-line="90" selection-end-column="98" />
+            <state relative-caret-position="419">
+              <caret line="100" column="16" lean-forward="true" selection-start-line="100" selection-start-column="16" selection-end-line="110" selection-end-column="23" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#td#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-                <marker date="1507036207964" expanded="true" signature="4570:4791" ph="{...}" />
+                <marker date="1507130984945" expanded="true" signature="5659:5880" ph="{...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="517" column="14" lean-forward="true" selection-start-line="517" selection-start-column="14" selection-end-line="517" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newpass.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/newpass.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="80" lean-forward="false" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -153,21 +647,60 @@
       <file leaf-file-name="add_new.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/add_new.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="135" column="92" lean-forward="true" selection-start-line="135" selection-start-column="92" selection-end-line="135" selection-end-column="92" />
+            <state relative-caret-position="453">
+              <caret line="110" column="23" lean-forward="false" selection-start-line="110" selection-start-column="23" selection-end-line="110" selection-end-column="23" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#td#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-                <marker date="1507036034336" expanded="true" signature="4682:4903" ph="{...}" />
+                <marker date="1507131067963" expanded="true" signature="5436:5657" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/controllers/user.js">
+      <file leaf-file-name="storage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/services/storage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="122" column="40" lean-forward="false" selection-start-line="122" selection-start-column="40" selection-end-line="122" selection-end-column="40" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uploadService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/services/uploadService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/services/service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="748">
+              <caret line="44" column="57" lean-forward="false" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="423" column="14" lean-forward="false" selection-start-line="423" selection-start-column="14" selection-end-line="423" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1046">
+              <caret line="114" column="21" lean-forward="false" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -206,7 +739,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/db.js" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4b130b7d-6443-4533-8291-2be5d2462209/console.sql" />
         <option value="$PROJECT_DIR$/models/db.js" />
@@ -235,27 +767,29 @@
         <option value="$PROJECT_DIR$/views/auth.html" />
         <option value="$PROJECT_DIR$/views/register.html" />
         <option value="$PROJECT_DIR$/public/controllers/usersController.js" />
-        <option value="$PROJECT_DIR$/public/controllers/forgotController.js" />
-        <option value="$PROJECT_DIR$/public/controllers/allUsersController.js" />
-        <option value="$PROJECT_DIR$/public/controllers/signInController.js" />
-        <option value="$PROJECT_DIR$/public/controllers/signUpController.js" />
         <option value="$PROJECT_DIR$/public/controllers/mainController.js" />
         <option value="$PROJECT_DIR$/views/notfound.html" />
-        <option value="$PROJECT_DIR$/public/services/service.js" />
         <option value="$PROJECT_DIR$/public/controllers/user.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/views/newpass.html" />
         <option value="$PROJECT_DIR$/views/forg.html" />
         <option value="$PROJECT_DIR$/public/models/user.js" />
         <option value="$PROJECT_DIR$/views/users.html" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/views/add_new.html" />
-        <option value="$PROJECT_DIR$/views/edit_user.html" />
+        <option value="$PROJECT_DIR$/public/controllers/nodeMailer.js" />
+        <option value="$PROJECT_DIR$/public/controllers/forgotController.js" />
+        <option value="$PROJECT_DIR$/public/controllers/signInController.js" />
+        <option value="$PROJECT_DIR$/public/controllers/signUpController.js" />
+        <option value="$PROJECT_DIR$/public/controllers/controller.js" />
+        <option value="$PROJECT_DIR$/public/controllers/newPassController.js" />
         <option value="$PROJECT_DIR$/public/services/storage.js" />
         <option value="$PROJECT_DIR$/public/core.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/public/services/uploadService.js" />
+        <option value="$PROJECT_DIR$/public/services/service.js" />
         <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/public/controllers/nodeMailer.js" />
-        <option value="$PROJECT_DIR$/public/controllers/controller.js" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/public/controllers/allUsersController.js" />
+        <option value="$PROJECT_DIR$/views/edit_user.html" />
+        <option value="$PROJECT_DIR$/views/add_new.html" />
       </list>
     </option>
   </component>
@@ -290,7 +824,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -319,6 +853,12 @@
               <item name="test_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="test_project" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test_project" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -336,9 +876,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -354,12 +894,15 @@
     <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/controllers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/js" />
       <recent name="$PROJECT_DIR$/public/controllers" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/css" />
       <recent name="$PROJECT_DIR$/routes" />
-      <recent name="$PROJECT_DIR$/models" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -638,6 +1181,7 @@
       <workItem from="1506670270933" duration="24773000" />
       <workItem from="1506928970753" duration="26799000" />
       <workItem from="1507015164701" duration="23628000" />
+      <workItem from="1507098983451" duration="32106000" />
     </task>
     <task id="LOCAL-00001" summary="second from idea">
       <created>1505731693353</created>
@@ -650,10 +1194,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303939000" />
+    <option name="totallyTimeSpent" value="336045000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="0" width="1608" height="1174" extended-state="6" />
+    <frame x="98" y="185" width="1600" height="1170" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -754,11 +1299,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.js" />
-    <entry file="file://$PROJECT_DIR$/views/auth.js" />
-    <entry file="file://$PROJECT_DIR$/public/common.js" />
-    <entry file="file://$PROJECT_DIR$/public/models/db.js" />
-    <entry file="file://$PROJECT_DIR$/users.html" />
     <entry file="file://$PROJECT_DIR$/node_modules/passport/lib/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -820,43 +1360,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/controllers/auth.js" />
     <entry file="file://$PROJECT_DIR$/public/controllers/usersController.js" />
-    <entry file="file://$PROJECT_DIR$/public/controllers/forgotController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/controllers/mainController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/controllers/signUpController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/controllers/signInController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/controllers/allUsersController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="977">
-          <caret line="89" column="32" lean-forward="false" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/notfound.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -891,7 +1394,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -907,15 +1409,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -940,8 +1433,8 @@
         <state relative-caret-position="340">
           <caret line="23" column="78" lean-forward="false" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="85" />
           <folding>
-            <element signature="n#style#0;n#a#0;n#td#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#td#4;n#tr#0;n#table#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#td#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#td#4;n#tr#0;n#table#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -954,6 +1447,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/nodeMailer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="65" lean-forward="false" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/controllers/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
@@ -962,80 +1463,160 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/services/storage.js">
+    <entry file="file://$PROJECT_DIR$/public/controllers/signInController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+        <state relative-caret-position="595">
+          <caret line="35" column="7" lean-forward="false" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+    <entry file="file://$PROJECT_DIR$/public/controllers/mainController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="517" column="14" lean-forward="true" selection-start-line="517" selection-start-column="14" selection-end-line="517" selection-end-column="14" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/add_new.html">
+    <entry file="file://$PROJECT_DIR$/public/controllers/signUpController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="135" column="92" lean-forward="true" selection-start-line="135" selection-start-column="92" selection-end-line="135" selection-end-column="92" />
+        <state relative-caret-position="204">
+          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/controllers/newPassController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/ng-file-upload-shim.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/ng-file-upload-all.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/ng-file-upload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#a#0;n#td#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <marker date="1507036034336" expanded="true" signature="4682:4903" ph="{...}" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/core.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="79" lean-forward="false" selection-start-line="1" selection-start-column="79" selection-end-line="1" selection-end-column="79" />
+        <state relative-caret-position="-485">
+          <caret line="0" column="87" lean-forward="false" selection-start-line="0" selection-start-column="87" selection-end-line="0" selection-end-column="87" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/edit_user.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="90" column="98" lean-forward="false" selection-start-line="90" selection-start-column="98" selection-end-line="90" selection-end-column="98" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#td#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <marker date="1507036207964" expanded="true" signature="4570:4791" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="120" column="52" lean-forward="true" selection-start-line="120" selection-start-column="52" selection-end-line="120" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/services/service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/controllers/nodeMailer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="65" lean-forward="false" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
+        <state relative-caret-position="697">
+          <caret line="47" column="40" lean-forward="false" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/controllers/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="275" column="47" lean-forward="false" selection-start-line="275" selection-start-column="47" selection-end-line="275" selection-end-column="47" />
+        <state relative-caret-position="0">
+          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/controllers/forgotController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="7" lean-forward="false" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/controllers/allUsersController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4229">
+          <caret line="303" column="35" lean-forward="false" selection-start-line="303" selection-start-column="35" selection-end-line="303" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/edit_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="100" column="16" lean-forward="true" selection-start-line="100" selection-start-column="16" selection-end-line="110" selection-end-column="23" />
+          <folding>
+            <marker date="1507130984945" expanded="true" signature="5659:5880" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/add_new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="110" column="23" lean-forward="false" selection-start-line="110" selection-start-column="23" selection-end-line="110" selection-end-column="23" />
+          <folding>
+            <marker date="1507131067963" expanded="true" signature="5436:5657" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/services/storage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/services/uploadService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/services/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="57" lean-forward="false" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="423" column="14" lean-forward="false" selection-start-line="423" selection-start-column="14" selection-end-line="423" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1046">
+          <caret line="114" column="21" lean-forward="false" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
           <folding />
         </state>
       </provider>

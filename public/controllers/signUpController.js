@@ -7,6 +7,7 @@ angular.module('allControllers')
                 id: null,
                 firstname:null,
                 lastname:null,
+                nickname:null,
                 role:null,
                 domain:null,
                 log_time:null,
@@ -58,16 +59,7 @@ angular.module('allControllers')
 
 
 
-            /*$http.post('/signin', user)
-                .success(function (data, docs) {
-                    if (docs == 200) {
-                        console.log("success register");
-                        $rootScope.currentUser = user;
-                        $rootScope.isAuth = true;
-                        $location.url("/users");
 
-                    } else window.alert('something wrong');
-                });*/
 
         }
 

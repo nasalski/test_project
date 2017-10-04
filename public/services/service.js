@@ -40,6 +40,9 @@ angular.module('usersService', [])
             },
             deleteKey : function (key) {
                 return $http.delete('/deletekey/'+ key);
+            },
+            deletePhoto : function (photoUrl) {
+                return $http.post('/deleteImg/', photoUrl);
             }
 
         }

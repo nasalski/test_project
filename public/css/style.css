@@ -421,7 +421,7 @@ div.password {
 
 }
 .add_container{
-    height: 600px;
+    height: 1000px;
     width: 330px;
     border-left:2px solid #f0f0f0;
     float: left;
@@ -538,4 +538,14 @@ div.password {
     font-size:15px;
     /*color:#00aeed;*/
     background-color:transparent;
+}
+.add_files{
+    height:200px;
+}
+.thumb {
+    width: 24px;
+    height: 24px;
+    float: none;
+    position: relative;
+    top: 7px;
 }

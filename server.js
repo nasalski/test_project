@@ -4,13 +4,13 @@ var config = require("nconf");
 var path = require('path');
 var bodyParser = require('body-parser');
 var userController = require('./public/controllers/user');
-var mailer = require('./public/controllers/nodeMailer');
+var mailer = require('./public/js/nodeMailer');
 var app  = express();
 var passport       = require('passport');
 var LocalStrategy  = require('passport-local').Strategy;
 var logger = require('morgan');
-
-
+var multiparty = require('multiparty');
+var fs = require("fs");
 
 app.set('views', __dirname + '/views/');
 app.use('/static', express.static(__dirname + '/views'));
@@ -111,13 +111,92 @@ app.post('/signin', passport.authenticate('local', {
 
 /*----------------------------------------------------------------------*/
 
+app.post('/deleteImg', function (req,res) {
+    var filePath = './public/img/' + req.body.photoUrl;
+    console.log(filePath);
+    fs.unlinkSync(filePath);
+});
+//for upload files
+app.post('/upload', function(req, res, next) {
+    // создаем форму
+    var form = new multiparty.Form();
+    //здесь будет храниться путь с загружаемому файлу, его тип и размер
+    var uploadFile = {uploadPath: '', type: '', size: 0};
+    //максимальный размер файла
+    var maxSize = 2 * 1024 * 1024; //2MB
+    //поддерживаемые типы(в данном случае это картинки формата jpeg,jpg и png)
+    var supportMimeTypes = ['image/jpg', 'image/jpeg', 'image/png'];
+    //массив с ошибками произошедшими в ходе загрузки файла
+    var errors = [];
+
+    //если произошла ошибка
+    form.on('error', function(err){
+        if(fs.existsSync(uploadFile.path)) {
+            //если загружаемый файл существует удаляем его
+            fs.unlinkSync(uploadFile.path);
+            console.log('error');
+        }
+    });
+
+    form.on('close', function() {
+        //если нет ошибок и все хорошо
+        if(errors.length == 0) {
+            //сообщаем что все хорошо
+            res.send({status: 'ok', text: 'Success'});
+        }
+        else {
+            if(fs.existsSync(uploadFile.path)) {
+                //если загружаемый файл существует удаляем его
+                fs.unlinkSync(uploadFile.path);
+            }
+            //сообщаем что все плохо и какие произошли ошибки
+            res.send({status: 'bad', errors: errors});
+        }
+    });
+
+    // при поступление файла
+    form.on('part', function(part) {
+        //читаем его размер в байтах
+        uploadFile.size = part.byteCount;
+        //читаем его тип
+        uploadFile.type = part.headers['content-type'];
+        //путь для сохранения файла
+        uploadFile.path = './public/img/' + part.filename;
+
+        //проверяем размер файла, он не должен быть больше максимального размера
+        if(uploadFile.size > maxSize) {
+            errors.push('File size is ' + uploadFile.size + '. Limit is' + (maxSize / 1024 / 1024) + 'MB.');
+        }
+
+        //проверяем является ли тип поддерживаемым
+        if(supportMimeTypes.indexOf(uploadFile.type) == -1) {
+            errors.push('Unsupported mimetype ' + uploadFile.type);
+        }
+
+        //если нет ошибок то создаем поток для записи файла
+        if(errors.length == 0) {
+            var out = fs.createWriteStream(uploadFile.path);
+            part.pipe(out);
+        }
+        else {
+            //пропускаем
+            //вообще здесь нужно как-то остановить загрузку и перейти к onclose
+            part.resume();
+        }
+    });
+
+    // парсим форму
+    form.parse(req);
+});
 
 
-app.get('/usersjson', userController.get)
-app.get('/usersjson/:id', userController.getById)
-app.post('/usersjson/email', userController.getByEmail)
-app.post('/usersjson', userController.post)
-app.put('/usersjson/:id', userController.put)
+/*----------------------------------------------------------------------*/
+
+app.get('/usersjson', userController.get);
+app.get('/usersjson/:id', userController.getById);
+app.post('/usersjson/email', userController.getByEmail);
+app.post('/usersjson', userController.post);
+app.put('/usersjson/:id', userController.put);
 app.delete('/usersjson/:id', userController.delete);
 
 app.post('/sendkey', userController.postKey);
