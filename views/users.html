@@ -33,7 +33,7 @@
     <!-- USER LIST -->
     <div class="row" >
         <div class="col-sm-4">
-            <table class="table user_table">
+            <table class="table user_table table-hover">
                 <thead>
                     <tr class="heading_of_table" >
                         <td class="user_foto">
@@ -64,10 +64,9 @@
                 <tr class="active body_of_table" ng-repeat="user in users | orderBy:propertyName:reverse">
                      <td class="user_foto">
                          <div class="box_for_profile">
-                             <button class="look_profile" type="button">
-                                 <span class="glyphicon glyphicon-user icon"></span>
-                             </button>
-                         </div></td>
+                             <img  ng-src="{{user.avatar}}" class="avatar" >
+                         </div>
+                     </td>
                      <td class="user_name">{{ user.firstname + " " + user.lastname }}</td>
                      <td class="user_domain">{{ user.domain }}</td>
                      <td class="user_last_log">{{ user.log_time }}</td>
@@ -76,11 +75,9 @@
                                  <span class="glyphicon glyphicon-option-vertical" aria-hidden="true" style="color: #000000"></span>
                              </a>
                              <ul class="dropdown-menu" role="menu">
-                                 <li><a href="#"
-                                        ng-click="getById(user.id)">put</a>
-
-                                 </li>
-                                 <li><a href="#" ng-click="deleteUser(user.id)">delete</a></li>
+                                 <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="getById(user.id)">Reset password</a></li>
+                                 <li><a href="#" ng-click="getByIdForEdit(user.id)">Update user</a></li>
+                                 <li><a href="#" ng-click="deleteUser(user.id)">Delete User</a></li>
                              </ul>
                      </td>
                 </tr>
@@ -94,8 +91,8 @@
     </div>
 
      <!--FORM TO CREATE USERS-->
-    <!-- data-toggle="modal" data-target="#myModal"   - дописать к ссылке для вызова модального окна
-    <div class="row">
+
+    <!--<div class="row">
          <div class="col-sm-8 col-sm-offset-2 text-center">
              <form>
                  &lt;!&ndash; BIND THIS VALUE TO formData IN ANGULAR &ndash;&gt;
@@ -113,54 +110,50 @@
 
 
 
-    <div id="myModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!--<div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
-                    &lt;!&ndash;<h4 class="modal-title">Edit users </h4>&ndash;&gt;
-                </div>-->
-                <button class="close" type="button" data-dismiss="modal">×</button>
-                <div class="modal-body">
-                    <div class="row head_update">
-                        <h3> Update {{formData.firstname + " " + formData.lastname}}</h3>
-                    </div>
-                    <div class="row">
-                        <!--<h3> All fields </h3>-->
-                    </div>
-                    <div class="row">
-                        <div class="domain ">
-                            <input type="text" class=" domain form-control input-lg text-center" placeholder="domain" ng-model="formData.domain" >
-                        </div>
-                        <div class="role">
-                            <input type="text" class="role form-control input-lg text-center" placeholder="role" ng-model="formData.role">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="firstname">
-                            <input type="text" class=" firstname form-control input-lg text-center" placeholder="firstname" ng-model="formData.firstname" >
-                        </div>
-                        <div class="lastname ">
-                            <input type="text" class="lastname form-control input-lg text-center" placeholder="lastname" ng-model="formData.lastname">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="email ">
-                            <input type="email" class="email form-control input-lg text-center" placeholder="email" ng-model="formData.email">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="password">
-                            <input type="password" class="password form-control input-lg text-center" placeholder="password" ng-model="formData.password">
-                        </div>
-                    </div>
-                    <div class="modal_com">
-                        <a href="" ng-click="update()" data-dismiss="modal"><h3>UPDATE USER</h3></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </div>
 
 
+<!-- data-toggle="modal" data-target="#myModal"   - дописать к ссылке для вызова модального окна-->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--<div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">×</button>
+            </div>-->
+            <div class="modal-body modal_reset">
+                <div class="row">
+                    <button class="close close_reset" type="button" data-dismiss="modal">×</button>
+                </div>
+
+                <div class="row head_update">
+                    <div class="password">
+                        <h4> Reset password for  {{formData.firstname + " " + formData.lastname}}</h4>
+                    </div>
+                </div>
+                <form name="reset_form" novalidate>
+                    <div class="row">
+                        <div class="password">
+                            <input type="password" class="password form-control input-lg text-center" placeholder="password" ng-model="formData.password" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="password">
+                            <input name = "confirm" type="password" class="password form-control input-lg text-center"
+                                    placeholder="confirm password" ng-model="passwordConfirm" required password-confirm match-target="formData.password">
+                        </div>
+                    </div>
+                    <div class="reset_space">
+                        <span class="help-block" ng-show="reset_form.confirm.$error.match">confirm password.</span>
+                    </div>
+                    <div class="row">
+                        <div class="modal_com">
+                            <input type="submit" class="canc_user_btn" value="CANCEL" data-dismiss="modal">
+                            <input type="submit" class="update_user_btn" ng-disabled="reset_form.$invalid" value="RESET" data-dismiss="modal" ng-click="resetPassword()">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

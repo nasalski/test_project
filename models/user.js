@@ -41,8 +41,8 @@ exports.getByEmail = function (email,cb) {
         });
 };
 exports.post = function (user,cb) {
-    db.none('insert into users(firstname, lastname, nickname, role, domain, log_time, foto, email, password) ' +
-        'values(${firstname}, ${lastname},${nickname}, ${role}, ${domain}, ${log_time}, ${foto}, ${email}, ${password})',
+    db.none('insert into users(firstname, lastname, nickname, role, domain, log_time, foto,avatar, email, password) ' +
+        'values(${firstname}, ${lastname},${nickname}, ${role}, ${domain}, ${log_time}, ${foto}, ${avatar}, ${email}, ${password})',
         user).then(function (data) {
             cb(data,null);
         }).catch(function (error) {
@@ -50,9 +50,9 @@ exports.post = function (user,cb) {
         });
 };
 exports.put = function (id,user,cb) {
-    db.none('update users set firstname=$1, lastname = $2, nickname = $3, role=$4, domain=$5, foto=$6, email=$7, password=$8 where id=$9',
+    db.none('update users set firstname=$1, lastname = $2, nickname = $3, role=$4, domain=$5, foto=$6, avatar=$7, email=$8, password=$9 where id=$10',
         [user.firstname, user.lastname,user.nickname, user.role, user.domain, user.foto,
-            user.email, user.password, parseInt(user.id)])
+            user.avatar, user.email, user.password, parseInt(user.id)])
         .then(function (data) {
             cb(data,null);
         }).catch(function (error) {

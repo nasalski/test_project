@@ -4,7 +4,7 @@ angular.module('allControllers')
         $scope.top = false;
         function clearForm() {
             $scope.formData = {
-                email: null,
+                email: null
             };
         }
         clearForm();

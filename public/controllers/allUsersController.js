@@ -20,12 +20,13 @@ angular.module('allControllers')
 
                 }
             }
-
+            $scope.picFile = null;
+            $scope.indexCarousel = null;
             $scope.id = 0;
             $scope.propertyName = 'lastname';
             $scope.reverse = true;
             $scope.loading = true;
-
+            $scope.password = null;
             $scope.email={
                 email:$rootScope.currentUser
             };
@@ -59,7 +60,7 @@ angular.module('allControllers')
             // GET one by id =====================================================================
             // when landing on the page, get one user and show
             // use the service to get one user by id
-            $scope.getById = function(id)
+            $scope.getByIdForEdit = function(id)
             {$scope.loading = true;
                 UsersService.getById(id)
                     .success(function(data) {
@@ -74,7 +75,21 @@ angular.module('allControllers')
                         }
 
                     });
-            }
+            };
+            $scope.getById = function(id) {
+
+                UsersService.getById(id)
+                    .success(function(data) {
+                        if($scope.currentUser.role === "admin" ||($scope.currentUser.role === "moderator" && $scope.currentUser.id === $scope.id)) {
+                        $scope.formData = data.data;
+                        $scope.formData.password = null;
+                        $scope.id = id;
+                        } else {
+                            window.alert("u cant reset password ");
+                        }
+                    });
+
+            };
             // CREATE ==================================================================
             // when submitting the add form, send the data user to the node API
             $scope.create = function(files) {
@@ -98,12 +113,13 @@ angular.module('allControllers')
                             var foto = null;
                             if(files!=null)
                                 for(var i=0;i<files.length ;i++ ){
-
+                                    var str = files[i].name.split('.');
+                                    var name = new Date().getTime() + i + '.' + str[str.length-1];
+                                    UploadService.rename(files[i], name);  //переименовываем файл что бы не было повторений
                                     if (foto != null) {
-
-                                        foto = foto + "," + files[i].name;
+                                        foto = foto + "," + name;
                                     } else {
-                                        foto =files[i].name;
+                                        foto = name;
                                     }
                                 }
                             $scope.formData.foto = foto;
@@ -159,18 +175,23 @@ angular.module('allControllers')
                         var email ={
                             email:$scope.formData.email
                         };
-                        UploadService.upload(files);
                         if(userEmail == $scope.formData.email){
                             var foto = $scope.formData.foto;
                             if(files!=null)
                                 for(var i=0;i<files.length ;i++ ){
-
+                                    var str = files[i].name.split('.')
+                                    var name = new Date().getTime() + i + '.' + str[str.length-1];
+                                    UploadService.rename(files[i], name);
+                                    /*files[i].name = name.toString(); //зададим файлу уникальное название*/
+                                    console.log('file name: ' + name);
                                     if (foto != null) {
-                                        foto = foto + "," + files[i].name;
+                                        foto = foto + "," + name;
                                     } else {
-                                        foto = files[i].name;
+                                        foto = name;
                                     }
                                 }
+                            console.log(files);
+                            UploadService.upload(files);
                             console.log(foto);
                             //тут удаляем все фотки, которые были ранее загружены но их решили удалить сейчас
                             if(delArrayPhoto!=null)
@@ -194,21 +215,22 @@ angular.module('allControllers')
                                     window.alert("email is already in use")
                                 })
                                 .error(function () {
-
-                                    UploadService.upload(files); //отправляем наши файлы на сервер
-
-
+                                    //если почта изменена но введенной почты в базе нет
                                     if(files!=null)
                                         var foto = $scope.formData.foto;
                                         for(var i=0;i<files.length ;i++ ){
+                                            var str = files[i].name.split('.')
+                                            var name = new Date().getTime() + i + '.' + str[str.length-1];
+                                            UploadService.rename(files[i], name);  //переименовываем файл что бы не было повторений
                                             if (foto != null) {
                                                 console.log(i);
                                                 console.log(foto);
-                                                foto = foto + "," + files[i].name;
+                                                foto = foto + "," + name;
                                             } else {
-                                                foto = files[i].name;
+                                                foto = name;
                                             }
                                         }
+                                    UploadService.upload(files); //отправляем наши файлы на сервер
                                     //тут удаляем все фотки, которые были ранее загружены но их решили удалить сейчас
                                     if(delArrayPhoto!=null)
                                         for(var j=0;j<delArrayPhoto.length ;j++ ) {
@@ -303,6 +325,16 @@ angular.module('allControllers')
             $scope.delUplPhoto = function (id) {
                 $scope.picFile.splice(id, 1);
             };
+            $scope.setAvatar = function (name) {
+              $scope.formData.avatar = name;
+              console.log('avatar is ', name);
+            };
+            $scope.resetPassword = function () {
+                UsersService.update($scope.formData.id, $scope.formData)
+                    .success(function () {
+                        console.log('updated  person' + $scope.formData.firstname);
+                    });
+            };
             function clearForm() {
                 $scope.formData = {
                     id: null,
@@ -313,10 +345,35 @@ angular.module('allControllers')
                     domain:null,
                     log_time:null,
                     foto:null,
+                    avatar:null,
                     email:null,
                     password:null
 
                 }; // clear the form so our user is ready to enter another
 
             }
-        }]);
+        }])
+    .directive('passwordConfirm', ['$parse', function ($parse) {
+        return {
+            restrict: 'A',
+            scope: {
+                matchTarget: '='
+            },
+            require: 'ngModel',
+            link: function link(scope, elem, attrs, ctrl) {
+                var validator = function (value) {
+                    ctrl.$setValidity('match', value === scope.matchTarget);
+                    return value;
+                };
+
+                ctrl.$parsers.unshift(validator);
+                ctrl.$formatters.push(validator);
+
+                // This is to force validator when the original password gets changed
+                scope.$watch('matchTarget', function(newval, oldval) {
+                    validator(ctrl.$viewValue);
+                });
+
+            }
+        };
+    }]);

@@ -12,6 +12,9 @@ angular.module('allControllers')
                     console.log(data);
 
                 });
+            },
+            rename: function (file,name) {
+                Upload.rename(file,name);
             }
 
         }

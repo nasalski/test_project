@@ -38,7 +38,7 @@
     <div class="box_add">
         <div class="row add_table" >
             <div class="col-sm-4">
-                <table class="table user_table_3_columns">
+                <table class="table user_table_3_columns table-hover">
                     <thead class="add_thead">
                     <tr class="heading_of_table" >
                         <td class="user_foto">
@@ -68,10 +68,9 @@
                     <tr class="active body_of_table" ng-repeat="user in users | orderBy:propertyName:reverse">
                         <td class="user_foto">
                             <div class="box_for_profile">
-                                <button class="look_profile" type="button">
-                                    <span class="glyphicon glyphicon-user icon"></span>
-                                </button>
-                            </div></td>
+                                <img  ng-src="{{user.avatar}}" class="avatar" >
+                            </div>
+                        </td>
                         <td class="user_name">{{ user.firstname + " " + user.lastname }}</td>
                         <td class="user_domain">{{ user.domain }}</td>
                     </tr>
@@ -99,20 +98,61 @@
 
             <!--форма для добавления файлов-->
                 <form name="file_form" novalidate>
-                    <input type="file" ngf-select ng-model="picFile" name="file"
-                           accept="image/*" ngf-max-size="2MB" required
-                           ngf-model-invalid="errorFile" ngf-multiple="true">
+                    <div class="file-upload">
+                        <label>
+                            <input type="file" ngf-select ng-model="picFile" name="file"
+                               accept="image/*" ngf-max-size="2MB" required
+                               ngf-model-invalid="errorFile" ngf-multiple="true">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </label>
+                    </div>
                     <i ng-show="file_form.file.$error.required">*required</i><br>
                     <i ng-show="file_form.file.$error.maxSize">File too large
                         {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
-                    <p ng-repeat="file in picFile">
-                        <img ng-show="file_form.file.$valid" ngf-thumbnail="file" class="thumb"> <button ng-click="delUplPhoto($index)" ng-show="file">Remove</button>
-                    </p>
+                    <ul  class="list-inline ">
+                        <li ng-repeat="file in picFile" >
+                            <a href="#myGallery" data-slide-to="{{$index + 1}}">
+                                <img data-toggle="modal" data-target="#myModal" ng-show="file_form.file.$valid" ngf-thumbnail="file" class="thumb img-thumbnail" >
+                            </a>
+                            <input type="button" class="close remove_btn"  ng-click="delUplPhoto($index)" ng-show="file" value = "x">
+                        </li>
+                    </ul>
                 </form>
-                <!--загруженные ранее фотки-->
-                <p ng-repeat="photo in fotoUrl">
-                    <img ng-src="{{photo}}" class="thumb"> <button ng-click="deletePhoto(photo,$index)" ng-show="photo">Remove</button>
-                </p>
+
+                <!--загруженные ранее фотки, галерея по нажатию-->
+                <!--<ul  class="list-inline">
+                    <li ng-repeat="photo in fotoUrl"  >
+
+                        <a href="#myGallery" data-slide-to="{{$index  + picFile.length + 1}}">
+                            <img data-toggle="modal" data-target="#myModal" ng-src="{{photo}}" class="thumb img-thumbnail" >
+                        </a>
+                        <input type="button" class="close remove_btn"  ng-click="deletePhoto(photo,$index)" value = "x">
+                        <input type="button" class="close remove_btn"  ng-click="setAvatar(photo)" value = "ok">
+
+                    </li>
+                </ul>-->
+
+
+                <!--загруженные ранее фотки, меню по нажатию-->
+                <ul  class="list-inline">
+                    <li ng-repeat="photo in fotoUrl" class="dropdown" >
+
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-label="Left Align">
+                            <img  ng-src="{{photo}}" class="thumb img-thumbnail" >
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="" ng-click="setAvatar(photo)">on avatar</a></li>
+                            <li><a href="" ng-click="deletePhoto(photo,$index)">Delete photo</a></li>
+                            <li><a href="#myGallery" data-slide-to="{{$index  + picFile.length + 1}}">
+                                    <p data-toggle="modal" data-target="#myModal">Gallery</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+
                 <form name="add_form" novalidate>
 
                     <div class="row add_assign">
@@ -160,3 +200,65 @@
         </div>
     </div>
 </div>
+
+<!--begin modal window-->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="pull-left">My Gallery Title</div>
+                <button type="button" class="close" data-dismiss="modal" title="Close"> <span class="glyphicon glyphicon-remove"></span></button>
+            </div>
+            <div class="modal-body">
+
+                <!--CAROUSEL CODE GOES HERE-->
+
+                <!--begin carousel-->
+                <div id="myGallery" class="carousel slide" data-interval="false">
+                    <div class="carousel-inner">
+
+                        <div class="item active">
+                            <div class="carousel-caption">
+                                <h3>nothing</h3>
+                                <p>nothing</p>
+                            </div>
+                        </div>
+                        <div class="item" ng-repeat="file in picFile" ng-show="file_form.file.$valid">
+                            <img ng-show="file_form.file.$valid" ngf-thumbnail="file" alt="item{{$index + 1}}">
+                            <div class="carousel-caption">
+                                <!--<h3>Heading {{$index}}</h3>-->
+                                <!--<p>Slide {{$index}} description.</p>-->
+                                <p>{{$index+1}}</p>
+                            </div>
+                        </div>
+                        <div class="item" ng-repeat="photo in fotoUrl">
+                            <img ng-src="{{photo}}" alt="item{{$index  + picFile.length + 1}}">
+                            <div class="carousel-caption">
+                                <!--<h3>Heading {{$index}}</h3>-->
+                                <!--<p>Slide {{$index}} description.</p>-->
+                                <p>{{$index  + picFile.length + 1}}</p>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <!--end carousel-inner--></div>
+                    <!--Begin Previous and Next buttons-->
+                    <a class="left carousel-control" href="#myGallery" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myGallery" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <!--end carousel--></div>
+
+
+
+                <!--end modal-body--></div>
+            <div class="modal-footer">
+                <!--<div class="pull-left">
+                    <small>Photographs by <a href="https://placeimg.com" target="new">placeimg.com</a></small>
+                </div>-->
+                <button class="btn-sm close" type="button" data-dismiss="modal">Close</button>
+                <!--end modal-footer--></div>
+            <!--end modal-content--></div>
+        <!--end modal-dialoge--></div>
+    <!--end myModal-->></div>
+
