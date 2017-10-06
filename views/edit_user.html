@@ -97,22 +97,21 @@
                     </div>
 
             <!--форма для добавления файлов-->
-                <form name="file_form" novalidate>
+                <form name="file_form"  novalidate>
                     <div class="file-upload">
                         <label>
-                            <input type="file" ngf-select ng-model="picFile" name="file"
-                               accept="image/*" ngf-max-size="2MB" required
-                               ngf-model-invalid="errorFile" ngf-multiple="true">
-                            <span class="glyphicon glyphicon-plus"></span>
+                                <input href = "" type="file" ngf-select ng-model="picFile" name="file"
+                                   accept="image/*" ngf-max-size="2MB" required
+                                   ngf-model-invalid="errorFile" ngf-multiple="true" ng-click="onUpload()">
+                                <span class="glyphicon glyphicon-plus"></span>
                         </label>
                     </div>
-                    <i ng-show="file_form.file.$error.required">*required</i><br>
                     <i ng-show="file_form.file.$error.maxSize">File too large
                         {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
                     <ul  class="list-inline ">
                         <li ng-repeat="file in picFile" >
                             <a href="#myGallery" data-slide-to="{{$index + 1}}">
-                                <img data-toggle="modal" data-target="#myModal" ng-show="file_form.file.$valid" ngf-thumbnail="file" class="thumb img-thumbnail" >
+                                <img data-toggle="modal" data-target="#myModal"  ngf-thumbnail="file" class="thumb img-thumbnail" >
                             </a>
                             <input type="button" class="close remove_btn"  ng-click="delUplPhoto($index)" ng-show="file" value = "x">
                         </li>
@@ -156,7 +155,7 @@
                 <form name="add_form" novalidate>
 
                     <div class="row add_assign">
-                        <h6><a href="#">Assign to a domain</a></h6>
+                        <h6><a href="" data-toggle="modal" data-target="#myModalDomain">Assign to a domain</a></h6>
                     </div>
                     <div class="row add_text" ng-class="{ 'has-error' :( add_form.firstname.$invalid && !add_form.firstname.$pristine ) ||
                                                                              (add_form.lastname.$invalid && !add_form.lastname.$pristine)}">
@@ -206,7 +205,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="pull-left">My Gallery Title</div>
+                <div class="pull-left">My Gallery </div>
                 <button type="button" class="close" data-dismiss="modal" title="Close"> <span class="glyphicon glyphicon-remove"></span></button>
             </div>
             <div class="modal-body">
@@ -247,18 +246,62 @@
                         <!--end carousel-inner--></div>
                     <!--Begin Previous and Next buttons-->
                     <a class="left carousel-control" href="#myGallery" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myGallery" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span></a>
-                    <!--end carousel--></div>
+                </div>
 
-
-
-                <!--end modal-body--></div>
+            </div>
             <div class="modal-footer">
                 <!--<div class="pull-left">
                     <small>Photographs by <a href="https://placeimg.com" target="new">placeimg.com</a></small>
                 </div>-->
                 <button class="btn-sm close" type="button" data-dismiss="modal">Close</button>
-                <!--end modal-footer--></div>
-            <!--end modal-content--></div>
-        <!--end modal-dialoge--></div>
-    <!--end myModal-->></div>
+            </div>
+        </div>
+    </div>
+</div>
 
+
+
+<!-- data-toggle="modal" data-target="#myModalDomain"   - дописать к ссылке для вызова модального окна-->
+<div id="myModalDomain" class="modal fade fade_assign" name="myModalDomain" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--<div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">×</button>
+            </div>-->
+            <div class="modal-body modal_assign">
+                <div class="row">
+                    <button class="close close_reset" type="button" data-dismiss="modal">×</button>
+                </div>
+                <form name="domain_form" novalidate>
+                    <div class="row">
+                        <div class="assign-domain col-sm-6 inner-addon right-addon">
+                            <i class="assign-domain-icon glyphicon glyphicon-triangle-bottom top-icon"></i>
+                            <i class="assign-domain-icon glyphicon glyphicon-triangle-top bottom-icon"></i>
+                            <input name = "domain" type="text" required domain class=" assign-domain form-control input-lg text-center" placeholder="Choose a domain" ng-model="domain" required>
+                        </div>
+                    </div>
+                    <div  class="row edit_help">
+                        <div class="col-sm-10" ng-show=" domain_form.domain.$invalid ">
+                                    not valid.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="assign-role col-sm-6 inner-addon right-addon">
+                            <i class="assign-domain-icon glyphicon glyphicon-triangle-bottom top-icon"></i>
+                            <i class="assign-domain-icon glyphicon glyphicon-triangle-top bottom-icon"></i>
+                            <input name = "role" type="text" class=" assign-role form-control input-lg text-center"
+                                   placeholder="Choose a role" ng-model="role" >
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="modal_com">
+                            <input type="submit" class="canc_user_btn" value="CANCEL" data-dismiss="modal">
+                            <input type="submit" class="update_user_btn" value="ASSIGN" data-dismiss="modal" ng-disabled=" domain_form.$invalid "  ng-click="applyDomain(domain,role)">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

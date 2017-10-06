@@ -3,6 +3,7 @@ angular.module('allControllers')
         function($scope, $http, $rootScope, $cookieStore, $location, UsersService, Storage,UploadService) {
             //когда переходим на изменение пользователя
             clearForm();
+
             if(location.pathname =='/edit'){
                 $scope.formData = Storage.getUser();
                 $scope.name = Storage.getName();
@@ -20,7 +21,7 @@ angular.module('allControllers')
 
                 }
             }
-            $scope.picFile = null;
+            $scope.picFile = $scope.upLoadFiles;
             $scope.indexCarousel = null;
             $scope.id = 0;
             $scope.propertyName = 'lastname';
@@ -64,7 +65,8 @@ angular.module('allControllers')
             {$scope.loading = true;
                 UsersService.getById(id)
                     .success(function(data) {
-                        if($scope.currentUser.role === "admin" ||($scope.currentUser.role === "moderator" && $scope.currentUser.id === $scope.id)) {
+                        if($scope.currentUser.role === "admin" || ($scope.currentUser.role === "moderator" && $scope.currentUser.id === id)) {
+
                             $scope.loading = false;
                             Storage.setUser(data.data);
                             Storage.setName(data.data.firstname + " " + data.data.lastname);
@@ -80,7 +82,7 @@ angular.module('allControllers')
 
                 UsersService.getById(id)
                     .success(function(data) {
-                        if($scope.currentUser.role === "admin" ||($scope.currentUser.role === "moderator" && $scope.currentUser.id === $scope.id)) {
+                        if($scope.currentUser.role === "admin" ||($scope.currentUser.role === "moderator" && $scope.currentUser.id === id)) {
                         $scope.formData = data.data;
                         $scope.formData.password = null;
                         $scope.id = id;
@@ -107,7 +109,10 @@ angular.module('allControllers')
                             window.alert("email is already in use")
                         })
                         .error(function () {
-                            $scope.formData.role = "user";
+                            if($scope.formData.role ==null){
+                                $scope.formData.role = "user";
+                            }
+                            $scope.formData.log_time = "never signed in"
                             console.log($scope.formData);
                             UploadService.upload(files);
                             var foto = null;
@@ -165,16 +170,21 @@ angular.module('allControllers')
             };
             // UPDATE ==================================================================
             // when submitting the updating form, send the data user to the node API
+            $scope.cancel = function () {
+              $location.url('/users');
+            };
             $scope.update = function(files) {
-
+                    console.log($scope.formData);
                 // validate the formData to make sure that something is there
                 // if form is empty, nothing will happen
                 if ($scope.formData.lastname != "" && $scope.formData.firstname != "") {
-                    if($scope.currentUser.role === "admin" ||($scope.currentUser.role === "moderator" && $scope.currentUser.id === $scope.id)) {
+                    console.log($scope.currentUser);
+                    if($scope.currentUser.role === "admin" || ($scope.currentUser.role === "moderator" && $scope.currentUser.id === $scope.formData.id)) {
                         $scope.loading = true;
                         var email ={
                             email:$scope.formData.email
                         };
+
                         if(userEmail == $scope.formData.email){
                             var foto = $scope.formData.foto;
                             if(files!=null)
@@ -297,6 +307,7 @@ angular.module('allControllers')
                 }
 
             };
+            //тут формируем массив фоток, которые хотим удалить
             $scope.deletePhoto = function (photoUrl,id) {
                 var str = photoUrl.split('/');
                 photoUrl = str[3];
@@ -335,6 +346,17 @@ angular.module('allControllers')
                         console.log('updated  person' + $scope.formData.firstname);
                     });
             };
+            $scope.onUpload = function () {
+                console.log("something");
+            };
+            $scope.applyDomain = function (domain,role) {
+                if(/^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/.test(domain)){
+
+                    $scope.formData.role = role;
+                    $scope.formData.domain = domain;
+
+                } else window.alert("domain looks dont like valid");
+            };
             function clearForm() {
                 $scope.formData = {
                     id: null,
@@ -366,8 +388,8 @@ angular.module('allControllers')
                     return value;
                 };
 
-                ctrl.$parsers.unshift(validator);
-                ctrl.$formatters.push(validator);
+                ctrl.$parsers.unshift(validator); //$parsers определяют как значения из вью будет записаны в модель
+                ctrl.$formatters.push(validator);//$formatters определяют как модель будет представлена во вью
 
                 // This is to force validator when the original password gets changed
                 scope.$watch('matchTarget', function(newval, oldval) {
@@ -376,4 +398,25 @@ angular.module('allControllers')
 
             }
         };
-    }]);
+    }])
+    .directive('domain', function () {
+    var isValid = function(s) {
+        return /^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/.test(s);
+    };
+
+    return {
+        require:'ngModel',
+        link:function (scope, elm, attrs, ngModelCtrl) {
+
+            ngModelCtrl.$parsers.unshift(function (viewValue) {
+                ngModelCtrl.$setValidity('domain', isValid(viewValue));
+                return viewValue;
+            });
+
+            ngModelCtrl.$formatters.unshift(function (modelValue) {
+                ngModelCtrl.$setValidity('domain', isValid(modelValue));
+                return modelValue;
+            });
+        }
+    };
+});

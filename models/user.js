@@ -1,5 +1,9 @@
 var pgp = require("pg-promise")(/*options*/);
 var db = pgp("postgres://postgres:684439@localhost:5432/db_users");
+/*var bcrypt = require('bcrypt');
+const saltRounds = 10;*/
+
+
 
 exports.get = function (cb) {
     db.any("SELECT * from users", 123)
@@ -23,12 +27,14 @@ exports.getById = function (id,cb) {
         });
 };
 exports.login = function (user,cb) {
-    db.one("SELECT * from users where email = $1 and password = $2", [user.email, user.password])
+       db.one("SELECT * from users where email = $1 and password = $2", [user.email, user.password])
         .then(function (data) {
-            cb(data,null);
+            console.log(data.password);
+                    cb(data,null);
+
         })
         .catch(function (error) {
-           cb(null,error);
+            cb(null,error);
         });
 };
 exports.getByEmail = function (email,cb) {
@@ -41,23 +47,35 @@ exports.getByEmail = function (email,cb) {
         });
 };
 exports.post = function (user,cb) {
-    db.none('insert into users(firstname, lastname, nickname, role, domain, log_time, foto,avatar, email, password) ' +
-        'values(${firstname}, ${lastname},${nickname}, ${role}, ${domain}, ${log_time}, ${foto}, ${avatar}, ${email}, ${password})',
-        user).then(function (data) {
+    console.log(user.password);
+    /*bcrypt.hash(user.password, saltRounds, function(err, hash) {
+        // Store hash in your password DB.
+        user.password = hash;*/
+        db.none('insert into users(firstname, lastname, nickname, role, domain, log_time, foto, avatar, email, password) ' +
+            'values(${firstname}, ${lastname},${nickname}, ${role}, ${domain}, ${log_time}, ${foto}, ${avatar}, ${email}, ${password})',
+            user).then(function (data) {
             cb(data,null);
         }).catch(function (error) {
             cb(null,error);
         });
+   /* });*/
+
+
 };
 exports.put = function (id,user,cb) {
-    db.none('update users set firstname=$1, lastname = $2, nickname = $3, role=$4, domain=$5, foto=$6, avatar=$7, email=$8, password=$9 where id=$10',
-        [user.firstname, user.lastname,user.nickname, user.role, user.domain, user.foto,
-            user.avatar, user.email, user.password, parseInt(user.id)])
-        .then(function (data) {
-            cb(data,null);
-        }).catch(function (error) {
-            cb(null,error);
-        });
+    /*bcrypt.hash(user.password, saltRounds, function(err, hash) {
+        // Store hash in your password DB.*/
+        /*user.password = hash;*/
+        db.none('update users set firstname=$1, lastname = $2, nickname = $3, role=$4, domain=$5, log_time=$6, foto=$7, avatar=$8, email=$9, password=$10 where id=$11',
+            [user.firstname, user.lastname, user.nickname, user.role, user.domain, user.log_time, user.foto,
+                user.avatar, user.email, user.password, parseInt(user.id)])
+            .then(function (data) {
+                cb(data,null);
+            }).catch(function (error) {
+                cb(null,error);
+            });
+    /*});*/
+
 };
 
 exports.delete = function (id,cb) {

@@ -7,10 +7,12 @@ CREATE TABLE users (
   ID SERIAL PRIMARY KEY,
   firstname VARCHAR,
   lastname VARCHAR,
+  nickname VARCHAR,
   role VARCHAR,
   domain VARCHAR,
   log_time VARCHAR,
   foto VARCHAR,
+  avatar VARCHAR,
   email VARCHAR,
   password VARCHAR
 );

@@ -10,7 +10,8 @@ var passport       = require('passport');
 var LocalStrategy  = require('passport-local').Strategy;
 var logger = require('morgan');
 var multiparty = require('multiparty');
-var fs = require("fs");
+var fs = require('fs');
+
 
 app.set('views', __dirname + '/views/');
 app.use('/static', express.static(__dirname + '/views'));
@@ -38,6 +39,9 @@ passport.use(new LocalStrategy(
         };
 
         userController.login(user, function (docs, err) {
+            console.log(docs);
+            console.log(email);
+            console.log(password);
             if (err) {
                 console.log(err);
             }
@@ -131,16 +135,10 @@ app.get('/logout', function(req, res){
     res.redirect('/signin');
 });
 
-
-
-
-
-
 app.post('/signin', passport.authenticate('local', {
     successRedirect: '/users',
     failureRedirect: '/signin' })
 );
-
 
 /*----------------------------------------------------------------------*/
 

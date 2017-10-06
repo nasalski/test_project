@@ -4,7 +4,7 @@
         <div class="row"  >
             <div class="col-sm-8">
                 <div class="box_for_button_create">
-                    <button class="create_user" type="button" ng-click="addNew()">
+                    <button class="create_user" type="button" ng-click="addNew()" ng-show="currentUser.role !='user' && currentUser.role !=null">
                         <span class="glyphicon glyphicon-plus"></span>
                     </button>
                 </div>
@@ -71,13 +71,13 @@
                      <td class="user_domain">{{ user.domain }}</td>
                      <td class="user_last_log">{{ user.log_time }}</td>
                      <td class="dropdown user_menu">
-                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-label="Left Align">
+                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-label="Left Align" ng-show="(currentUser.role =='admin') || (currentUser.role =='moderator' && currentUser.id == user.id ) ">
                                  <span class="glyphicon glyphicon-option-vertical" aria-hidden="true" style="color: #000000"></span>
                              </a>
                              <ul class="dropdown-menu" role="menu">
                                  <li><a href="#" data-toggle="modal" data-target="#myModal" ng-click="getById(user.id)">Reset password</a></li>
                                  <li><a href="#" ng-click="getByIdForEdit(user.id)">Update user</a></li>
-                                 <li><a href="#" ng-click="deleteUser(user.id)">Delete User</a></li>
+                                 <li><a href="#" data-toggle="modal" data-target="#myModaldel" ng-click="getById(user.id)">Delete User new</a></li>
                              </ul>
                      </td>
                 </tr>
@@ -90,29 +90,7 @@
         </div>
     </div>
 
-     <!--FORM TO CREATE USERS-->
-
-    <!--<div class="row">
-         <div class="col-sm-8 col-sm-offset-2 text-center">
-             <form>
-                 &lt;!&ndash; BIND THIS VALUE TO formData IN ANGULAR &ndash;&gt;
-                 <input type="text" class="form-control input-lg text-center" placeholder="firstname" ng-model="formData.firstname">
-                 <input type="text" class="form-control input-lg text-center" placeholder="lastname" ng-model="formData.lastname">
-                 <input type="text" class="form-control input-lg text-center" placeholder="role" ng-model="formData.role">
-                 <input type="text" class="form-control input-lg text-center" placeholder="domain" ng-model="formData.domain">
-
-
-                 &lt;!&ndash; create() WILL CREATE NEW USERS &ndash;&gt;
-                 <button type="submit" class="btn btn-primary btn-lg" ng-click="create()">Add</button>
-             </form>
-         </div>
-     </div>-->
-
-
-
-
 </div>
-
 
 <!-- data-toggle="modal" data-target="#myModal"   - дописать к ссылке для вызова модального окна-->
 <div id="myModal" class="modal fade">
@@ -150,6 +128,47 @@
                         <div class="modal_com">
                             <input type="submit" class="canc_user_btn" value="CANCEL" data-dismiss="modal">
                             <input type="submit" class="update_user_btn" ng-disabled="reset_form.$invalid" value="RESET" data-dismiss="modal" ng-click="resetPassword()">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- data-toggle="modal" data-target="#myModal"   - дописать к ссылке для вызова модального окна-->
+<div id="myModaldel" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--<div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">×</button>
+            </div>-->
+            <div class="modal-body modal_del">
+                <div class="row">
+                    <button class="close close_reset" type="button" data-dismiss="modal">×</button>
+                </div>
+
+                <div class="row head_update">
+                    <div class=" col-sm-7 password">
+                        <h5> Are you sure you want to delete to  {{formData.firstname + " " + formData.lastname}}</h5>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <form name="reset_form" novalidate>
+
+                    <div class="row">
+                        <div class="col-sm-1">
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="submit" class="canc_user_btn" value="CANCEL" data-dismiss="modal">
+                        </div>
+                        <div class="col-sm-1">
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="submit" class="update_user_btn" ng-disabled="reset_form.$invalid" value="DElETE" data-dismiss="modal" ng-click="deleteUser(formData.id)">
+                        </div>
+                        <div class="col-sm-1">
                         </div>
                     </div>
                 </form>

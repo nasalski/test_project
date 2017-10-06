@@ -10,8 +10,9 @@ angular.module('allControllers')
                 nickname:null,
                 role:null,
                 domain:null,
-                log_time:null,
+                log_time:"never signed in",
                 foto:null,
+                avatar:null,
                 email:null,
                 password:null
 

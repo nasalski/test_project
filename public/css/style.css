@@ -87,16 +87,26 @@ input:focus {
 }
 
 /* style icon */
-.inner-addon .glyphicon {
+.inner-addon .glyphicon  {
     position: absolute;
     padding: 15px;
     pointer-events: none;
 }
-
+.inner-addon .assign-domain-icon {
+    position: absolute;
+    padding: 7px;
+    pointer-events: none;
+}
 /* align icon */
 .left-addon .icon_auth  { left:  0px;}
 .right-addon .icon_auth { right: 0px;}
-
+/* align icon */
+.left-addon .assign-domain-icon  { left:  0px;}
+.right-addon .assign-domain-icon { right: 13px;}
+.right-addon .top-icon { top: 11px;}
+.right-addon .top-icon { bottom: 11px;}
+.left-addon .top-icon { top: 11px;}
+.left-addon .top-icon { bottom: 11px;}
 /* add padding  */
 .left-addon input  { padding-left:  30px; }
 .right-addon input { padding-right: 30px; }
@@ -119,6 +129,10 @@ input:focus {
     vertical-align: middle;
     margin-top: 9px;
 
+}
+.edit_help {
+    height: 10px;
+    color: #761c19;
 }
 .create_user {
     background: #4185f2;
@@ -226,6 +240,16 @@ td.user_foto {
      background: rgba(0, 0, 0, 0.0001);
     width: 700px;
  }
+.fade_assign {
+    position: fixed;
+    top: 200px;
+    right: 0;
+    bottom: 0;
+    left: 430px;
+    /*background: #FFFFFF;*/
+    /*visibility: visible;*/ /* Делает видимым */
+
+}
 .modal-dialog {
 
 
@@ -237,6 +261,16 @@ td.user_foto {
 .modal_reset {
     width: 600px;
     height:300px;
+    border-radius: 0px;
+}
+.modal_del {
+    width: 600px;
+    height:200px;
+    border-radius: 0px;
+}
+.modal_assign {
+    width: 600px;
+    height:200px;
     border-radius: 0px;
 }
 .modal_img{
@@ -616,4 +650,17 @@ div.password {
 }
 .file-upload span {
     line-height: 30px; /* Делаем вертикальное выравнивание текста, который написан на кнопке */
+}
+
+.assign-domain{
+    height: 38px;
+}
+.assign-domain input{
+    height: 38px;
+}
+.assign-role{
+    height: 38px;
+}
+.assign-role input{
+    height: 38px;
 }

@@ -1,5 +1,6 @@
 
 var Users = require('../models/user');
+
 exports.get = function (req, res) {
     Users.get(function (docs,err) {
         if(err) {console.log(err);
@@ -128,7 +129,7 @@ exports.deleteKey = function (req,res) {
         }
         res.status(200)
             .json({
-                status: 'success',
+                status: 'success'
             });
     });
 
