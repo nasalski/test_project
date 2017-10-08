@@ -7,9 +7,12 @@ angular.module('usersService', [])
             sendMail:function (email) {
                 return $http.post('/sendmail',email);
             },
-            /*login:function (user) {
+            login:function (user) {
                 return $http.post('/signin',user);
-            },*/
+            },
+            checkPass:function (user) {
+                            return $http.post('/userspass',user);
+            },
             logout:function () {
                 return $http.get('/logout');
             },
@@ -28,6 +31,9 @@ angular.module('usersService', [])
             update : function(id,Data) {
                 return $http.put('/usersjson/' + id, Data);
             },
+            updatePass : function(id,Data) {
+                            return $http.put('/usersjson/pass/' + id, Data);
+                        },
             deleteUser : function(id) {
                 console.log("delete ID:", id);
                 return $http.delete('/usersjson/' + id);

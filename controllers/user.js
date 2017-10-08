@@ -25,6 +25,21 @@ exports.login = function (user,cb) {
         });
 };
 
+exports.checkPass = function (req,res) {
+    Users.login(req.body, function (docs,err) {
+            if(err) {console.log(err);
+                return res.sendStatus(500);
+            }
+
+            res.status(200)
+                        .json({
+                            status: 'success',
+                            data: docs,
+                            message: 'Retrieved one user'
+                        });
+        });
+};
+
 exports.getByEmail = function (req,res) {
     console.log(req.body.email);
     Users.getByEmail(req.body.email, function (docs,err) {
@@ -68,6 +83,20 @@ exports.post = function (req,res) {
 exports.put = function (req,res) {
     var userID = parseInt(req.params.id);
     Users.put(userID,req.body, function (docs,err) {
+        if(err) {console.log(err);
+            return res.sendStatus(500);
+        }
+        /*getUsers(res);*/
+        res.status(200)
+            .json({
+                status: 'success',
+            });
+    });
+};
+
+exports.putPass = function (req,res) {
+    var userID = parseInt(req.params.id);
+    Users.putPass(userID,req.body, function (docs,err) {
         if(err) {console.log(err);
             return res.sendStatus(500);
         }

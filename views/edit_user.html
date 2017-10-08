@@ -167,7 +167,7 @@
                         </div>
                     </div>
                     <p ng-show="( add_form.firstname.$invalid && !add_form.firstname.$pristine ) ||
-                                (add_form.lastname.$invalid && !add_form.lastname.$pristine)" class="help-block" >Input your name and lastname.</p>
+                                (add_form.lastname.$invalid && !add_form.lastname.$pristine)" class="help-block" >Input name and lastname.</p>
                     <div class="row add_text" ng-class="{ 'has-error' : add_form.email.$invalid && !add_form.email.$pristine }">
                         <div class=" add_email ">
                             <input name="email" type="email" class="add_email form-control input-lg text-center" placeholder=" Enter email" ng-model="formData.email" required>
@@ -176,12 +176,12 @@
                     <p ng-show=" add_form.email.$invalid && !add_form.email.$pristine" class="help-block">Doesn't look like a valid email.</p>
                     <div class="row add_text">
                         <div class=" add_nick ">
-                            <input type="text" class="add_nick form-control input-lg text-center" placeholder="Enter username" ng-model="formData.username">
+                            <input type="text" class="add_nick form-control input-lg text-center" placeholder="Enter nickname" ng-model="formData.nickname">
                         </div>
                     </div>
                     <div class="row add_text">
                         <div class=" add_password ">
-                            <input name="password" type="password" class="add_password form-control input-lg text-center" placeholder="Enter password" ng-model="formData.password" required>
+                            <input name="password" type="password" class="add_password form-control input-lg text-center" placeholder="Enter your password" ng-model="password" required>
                         </div>
                     </div>
                     <p ng-show=" add_form.password.$invalid && !add_form.password.$pristine " class="help-block" >Input your password.</p>

@@ -168,105 +168,112 @@ angular.module('allControllers')
                     $scope.formData.foto = foto;
                 });
             };
+            $scope.cancel = function () {
+                          $location.url('/users');
+                        };
             // UPDATE ==================================================================
             // when submitting the updating form, send the data user to the node API
-            $scope.cancel = function () {
-              $location.url('/users');
-            };
+
             $scope.update = function(files) {
                     console.log($scope.formData);
-                // validate the formData to make sure that something is there
-                // if form is empty, nothing will happen
-                if ($scope.formData.lastname != "" && $scope.formData.firstname != "") {
-                    console.log($scope.currentUser);
                     if($scope.currentUser.role === "admin" || ($scope.currentUser.role === "moderator" && $scope.currentUser.id === $scope.formData.id)) {
                         $scope.loading = true;
                         var email ={
                             email:$scope.formData.email
                         };
-
-                        if(userEmail == $scope.formData.email){
-                            var foto = $scope.formData.foto;
-                            if(files!=null)
-                                for(var i=0;i<files.length ;i++ ){
-                                    var str = files[i].name.split('.')
-                                    var name = new Date().getTime() + i + '.' + str[str.length-1];
-                                    UploadService.rename(files[i], name);
-                                    /*files[i].name = name.toString(); //зададим файлу уникальное название*/
-                                    console.log('file name: ' + name);
-                                    if (foto != null) {
-                                        foto = foto + "," + name;
-                                    } else {
-                                        foto = name;
-                                    }
-                                }
-                            console.log(files);
-                            UploadService.upload(files);
-                            console.log(foto);
-                            //тут удаляем все фотки, которые были ранее загружены но их решили удалить сейчас
-                            if(delArrayPhoto!=null)
-                                for(var j=0;j<delArrayPhoto.length ;j++ ) {
-                                    UsersService.deletePhoto({photoUrl: delArrayPhoto[j]})
-                                        .success(function () {
-                                            concole.log('deleted photo ' + delArrayPhoto[j]);
-                                        });
-                                }
-                            $scope.formData.foto = foto;
-                            UsersService.update($scope.id, $scope.formData)
-                                .success(function () {
-                                    console.log('updated  person' + $scope.formData.firstname);
-                                    Storage.setUser(null);
-                                    Storage.setName(null);
-                                    $location.url('/users');
-                                });
-                        } else{
-                            UsersService.getByEmail(email)
-                                .success(function () {
-                                    window.alert("email is already in use")
-                                })
-                                .error(function () {
-                                    //если почта изменена но введенной почты в базе нет
+                        var currUser = {
+                            email:$scope.currentUser.email,
+                            password:$scope.password
+                        };
+                        console.log($scope.password);
+                        console.log($scope.currentUser.email);
+                        UsersService.checkPass(currUser)
+                        .success(function(){
+                            if(userEmail == $scope.formData.email){
+                                var foto = $scope.formData.foto;
                                     if(files!=null)
-                                        var foto = $scope.formData.foto;
                                         for(var i=0;i<files.length ;i++ ){
                                             var str = files[i].name.split('.')
                                             var name = new Date().getTime() + i + '.' + str[str.length-1];
-                                            UploadService.rename(files[i], name);  //переименовываем файл что бы не было повторений
+                                            UploadService.rename(files[i], name);
+                                            /*files[i].name = name.toString(); //зададим файлу уникальное название*/
+                                            console.log('file name: ' + name);
                                             if (foto != null) {
-                                                console.log(i);
-                                                console.log(foto);
                                                 foto = foto + "," + name;
                                             } else {
-                                                foto = name;
+                                            foto = name;
                                             }
                                         }
-                                    UploadService.upload(files); //отправляем наши файлы на сервер
-                                    //тут удаляем все фотки, которые были ранее загружены но их решили удалить сейчас
-                                    if(delArrayPhoto!=null)
+                                        console.log(files);
+                                        UploadService.upload(files);
+                                        console.log(foto);
+                                        //тут удаляем все фотки, которые были ранее загружены но их решили удалить сейчас
+                                        if(delArrayPhoto!=null)
                                         for(var j=0;j<delArrayPhoto.length ;j++ ) {
                                             UsersService.deletePhoto({photoUrl: delArrayPhoto[j]})
                                                 .success(function () {
                                                     concole.log('deleted photo ' + delArrayPhoto[j]);
-                                                });
+                                            });
                                         }
-                                    $scope.formData.foto = foto;
-                                    UsersService.update($scope.id, $scope.formData)
-                                        .success(function () {
-                                            console.log('updated  person' + $scope.formData.firstname);
-                                            Storage.setUser(null);
-                                            Storage.setName(null);
-                                            $scope.picFile = null;
-                                            $location.url('/users');
-
+                                        $scope.formData.foto = foto;
+                                        UsersService.update($scope.id, $scope.formData)
+                                            .success(function () {
+                                                console.log('updated  person' + $scope.formData.firstname);
+                                                Storage.setUser(null);
+                                                Storage.setName(null);
+                                                $location.url('/users');
                                         });
-                                });
-                        }
+                                    } else{
+                                        UsersService.getByEmail(email)
+                                            .success(function () {
+                                                window.alert("email is already in use")
+                                        })
+                                            .error(function () {
+                                                //если почта изменена но введенной почты в базе нет
+                                                if(files!=null)
+                                                    var foto = $scope.formData.foto;
+                                                    for(var i=0;i<files.length ;i++ ){
+                                                        var str = files[i].name.split('.')
+                                                        var name = new Date().getTime() + i + '.' + str[str.length-1];
+                                                        UploadService.rename(files[i], name);  //переименовываем файл что бы не было повторений
+                                                        if (foto != null) {
+                                                            console.log(i);
+                                                            console.log(foto);
+                                                            foto = foto + "," + name;
+                                                        } else {
+                                                            foto = name;
+                                                        }
+                                                    }
+                                                    UploadService.upload(files); //отправляем наши файлы на сервер
+                                                    //тут удаляем все фотки, которые были ранее загружены но их решили удалить сейчас
+                                                    if(delArrayPhoto!=null)
+                                                        for(var j=0;j<delArrayPhoto.length ;j++ ) {
+                                                            UsersService.deletePhoto({photoUrl: delArrayPhoto[j]})
+                                                                 .success(function () {
+                                                                      concole.log('deleted photo ' + delArrayPhoto[j]);
+                                                            });
+                                                        }
+                                                        UsersService.update($scope.id, $scope.formData)
+                                                            .success(function () {
+                                                                console.log('updated  person' + $scope.formData.firstname);
+                                                                Storage.setUser(null);
+                                                                Storage.setName(null);
+                                                                $scope.picFile = null;
+                                                                $location.url('/users');
+                                                        });
+                                        });
+                                    }
+
+                        })
+                        .error(function(){
+                            window.alert('incorrect password');
+                        });
+
 
                     } else{
                         console.log('u cant update user, u are '+ $scope.currentUser.role);
                         window.alert('u cant update user, u are '+ $scope.currentUser.role);
                     }
-                }
             };
 
             // DELETE ==================================================================
@@ -341,7 +348,7 @@ angular.module('allControllers')
               console.log('avatar is ', name);
             };
             $scope.resetPassword = function () {
-                UsersService.update($scope.formData.id, $scope.formData)
+                UsersService.updatePass($scope.formData.id, $scope.formData)
                     .success(function () {
                         console.log('updated  person' + $scope.formData.firstname);
                     });

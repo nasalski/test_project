@@ -45,12 +45,19 @@ passport.use(new LocalStrategy(
             if (err) {
                 console.log(err);
             }
-            if (email == docs.email && password == docs.password) {
-                return done(null, {
-                    email: email
+            if(docs != null ){
+                if (email == docs.email && password == docs.password) {
+                    return done(null, {
+                        email: email
 
-                });
-            } else {
+                    });
+                } else {
+                    return done(null, false, {
+                        message: 'Неверный логин или пароль'
+
+                    });
+                }
+            }else {
                 return done(null, false, {
                     message: 'Неверный логин или пароль'
 
@@ -225,6 +232,7 @@ app.post('/upload', function(req, res, next) {
 
 app.get('/usersjson', userController.get);
 app.get('/usersjson/:id', userController.getById);
+app.post('/userspass', userController.checkPass);
 app.post('/usersjson/email', userController.getByEmail);
 app.post('/usersjson', userController.post);
 app.put('/usersjson/:id', userController.put);
@@ -235,6 +243,7 @@ app.post('/new_password',userController.getKey);
 app.get('/new_pass',function (req,res) {
     res.sendFile(path.join(__dirname+'/index.html'));
 });
+app.put('/usersjson/pass/:id', userController.putPass);
 app.delete('/deletekey/:key', userController.deleteKey);
 
 app.post('/sendmail',function(req,res){     //subscription, signal) {
