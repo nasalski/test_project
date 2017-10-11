@@ -21,7 +21,7 @@ angular.module('allControllers')
 
                 }
             }
-            $scope.picFile = $scope.upLoadFiles;
+            //$scope.picFile = $scope.upLoadFiles;
             $scope.indexCarousel = null;
             $scope.id = 0;
             $scope.propertyName = 'lastname';

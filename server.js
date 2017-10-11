@@ -11,7 +11,8 @@ var LocalStrategy  = require('passport-local').Strategy;
 var logger = require('morgan');
 var multiparty = require('multiparty');
 var fs = require('fs');
-
+var bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 app.set('views', __dirname + '/views/');
 app.use('/static', express.static(__dirname + '/views'));
@@ -44,16 +45,26 @@ passport.use(new LocalStrategy(
             console.log(password);
             if (err) {
                 console.log(err);
-            }
+                return done(null, null, {
+                                        message: 'Неверный логин или пароль'
+                                    });
+            } else
             if(docs != null ){
-                if (email == docs.email && password == docs.password) {
-                    return done(null, {
-                        email: email
-
+                console.log(docs);
+                if (email == docs.email) {
+                    bcrypt.compare(user.password, docs.password, function(err, res) {
+                        if(res == true){
+                            return done(null, {email: email});
+                        } else{
+                            return done(null, false, {
+                                                    message: 'Неверный пароль'
+                                                });
+                        }
                     });
+
                 } else {
                     return done(null, false, {
-                        message: 'Неверный логин или пароль'
+                        message: 'Неверный логин'
 
                     });
                 }
@@ -100,52 +111,17 @@ app.get('/signin', function(req, res){
     res.sendFile(path.join(__dirname+'/index.html'));
 });
 
-/*function checkAuthentication(req,res,next){
-    if(req.isAuthenticated()){
-        //if user is looged in, req.isAuthenticated() will return true
-        next();
-    } else{
-        res.redirect("/signin");
-    }
-}*/
-
-/*app.get('/users', function(req,res){
-    if (req.isAuthenticated()) {
-        res.sendFile(path.join(__dirname + '/index.html'));
-    } else res.redirect('/signin');
-});*/
-
-
-/*app.get('/users', function(req, res, next) {
-    passport.authenticate('local', function(err, user, info) {
-        if (err) { return next(err); }
-        if (!user) { return res.redirect('/signin'); }
-        req.logIn(user, function(err) {
-            if (err) { return next(err); }
-            res.sendFile(path.join(__dirname+'/index.html'));
-        });
-    })(req, res, next);
-});*/
-/*app.get('/signin', function(req, res, next) {
-    passport.authenticate('local', function(err, user, info) {
-        if (err) { return next(err); }
-        if (!user) { res.sendFile(path.join(__dirname+'/index.html')); }
-        req.logIn(user, function(err) {
-            if (err) { return next(err); }
-            return res.redirect('/users');
-        });
-    })(req, res, next);
-});*/
 
 app.get('/logout', function(req, res){
     req.logout();
     res.redirect('/signin');
 });
 
-app.post('/signin', passport.authenticate('local', {
-    successRedirect: '/users',
-    failureRedirect: '/signin' })
+app.post('/signin', passport.authenticate('local'), function(req,res){
+    res.sendStatus(200);
+}
 );
+
 
 /*----------------------------------------------------------------------*/
 

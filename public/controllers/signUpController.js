@@ -51,20 +51,11 @@ angular.module('allControllers')
                 // call the create function from our service (returns a promise object)
 
             } else{
-                window.alert('incorrect repeated password');
+                window.alert('incorrect confirm password');
             }
 
             } else {
                 window.alert('empty inputs');
             }
-
-
-
-
-
         }
-
-
-
-
     }]);

@@ -2,77 +2,15 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/models/user.js" line="26" />
-    <bookmark url="file://$PROJECT_DIR$/server.js" line="20" />
+    <bookmark url="file://$PROJECT_DIR$/server.js" line="21" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4b70ff0-e3c0-44b7-a995-8cfc93b56846" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/cloudformation/travis.template" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/template-name.diff" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/lib/binding/bcrypt_lib.node" afterPath="$PROJECT_DIR$/node_modules/bcrypt/lib/binding/bcrypt_lib.node" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/user.js" afterPath="$PROJECT_DIR$/controllers/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/user.js" afterPath="$PROJECT_DIR$/models/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/.bin/node-pre-gyp" afterPath="$PROJECT_DIR$/node_modules/.bin/node-pre-gyp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/.npmignore" afterPath="$PROJECT_DIR$/node_modules/bcrypt/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/bcrypt/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/bcrypt/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/ISSUE_TEMPLATE.md" afterPath="$PROJECT_DIR$/node_modules/bcrypt/ISSUE_TEMPLATE.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/LICENSE" afterPath="$PROJECT_DIR$/node_modules/bcrypt/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/Makefile" afterPath="$PROJECT_DIR$/node_modules/bcrypt/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/README.md" afterPath="$PROJECT_DIR$/node_modules/bcrypt/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/bcrypt.js" afterPath="$PROJECT_DIR$/node_modules/bcrypt/bcrypt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/binding.gyp" afterPath="$PROJECT_DIR$/node_modules/bcrypt/binding.gyp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/examples/async_compare.js" afterPath="$PROJECT_DIR$/node_modules/bcrypt/examples/async_compare.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/examples/forever_gen_salt.js" afterPath="$PROJECT_DIR$/node_modules/bcrypt/examples/forever_gen_salt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/lib/promises.js" afterPath="$PROJECT_DIR$/node_modules/bcrypt/lib/promises.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/package.json" afterPath="$PROJECT_DIR$/node_modules/bcrypt/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/src/bcrypt.cc" afterPath="$PROJECT_DIR$/node_modules/bcrypt/src/bcrypt.cc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/src/bcrypt_node.cc" afterPath="$PROJECT_DIR$/node_modules/bcrypt/src/bcrypt_node.cc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/src/blowfish.cc" afterPath="$PROJECT_DIR$/node_modules/bcrypt/src/blowfish.cc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/src/node_blf.h" afterPath="$PROJECT_DIR$/node_modules/bcrypt/src/node_blf.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/test/async.js" afterPath="$PROJECT_DIR$/node_modules/bcrypt/test/async.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/test/promise.js" afterPath="$PROJECT_DIR$/node_modules/bcrypt/test/promise.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/test/repetitions.js" afterPath="$PROJECT_DIR$/node_modules/bcrypt/test/repetitions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/test/sync.js" afterPath="$PROJECT_DIR$/node_modules/bcrypt/test/sync.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/bcrypt/werker.yml" afterPath="$PROJECT_DIR$/node_modules/bcrypt/werker.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/LICENSE" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/README.md" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/appveyor.yml" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/appveyor.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/bin/node-pre-gyp" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/bin/node-pre-gyp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/bin/node-pre-gyp.cmd" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/bin/node-pre-gyp.cmd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/contributing.md" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/contributing.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/build.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/clean.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/clean.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/configure.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/configure.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/info.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/info.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/install.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/install.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/node-pre-gyp.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/node-pre-gyp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/package.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/package.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/pre-binding.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/pre-binding.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/publish.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/publish.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/rebuild.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/rebuild.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/reinstall.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/reinstall.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/reveal.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/reveal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/testbinary.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/testbinary.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/testpackage.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/testpackage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/unpublish.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/unpublish.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/util/abi_crosswalk.json" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/util/abi_crosswalk.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/util/compile.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/util/compile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/util/handle_gyp_opts.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/util/handle_gyp_opts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/index.html" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/package.json" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/util/s3_setup.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/util/s3_setup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/util/versioning.js" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/lib/util/versioning.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-pre-gyp/package.json" afterPath="$PROJECT_DIR$/node_modules/node-pre-gyp/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/controllers/allUsersController.js" afterPath="$PROJECT_DIR$/public/controllers/allUsersController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/controllers/signInController.js" afterPath="$PROJECT_DIR$/public/controllers/signInController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/services/service.js" afterPath="$PROJECT_DIR$/public/services/service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/controllers/signUpController.js" afterPath="$PROJECT_DIR$/public/controllers/signUpController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/add_new.html" afterPath="$PROJECT_DIR$/views/add_new.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/edit_user.html" afterPath="$PROJECT_DIR$/views/edit_user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/register.html" afterPath="$PROJECT_DIR$/views/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/users.html" afterPath="$PROJECT_DIR$/views/users.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -124,51 +62,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="edit_user.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/edit_user.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="178" column="125" selection-start-line="178" selection-start-column="125" selection-end-line="178" selection-end-column="125" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="allUsersController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/controllers/allUsersController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1430">
-              <caret line="188" column="60" selection-start-line="188" selection-start-column="60" selection-end-line="188" selection-end-column="60" />
+            <state relative-caret-position="506">
+              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_new.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/add_new.html">
+      <file leaf-file-name="newPassController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/controllers/newPassController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2323">
-              <caret line="144" column="125" selection-start-line="144" selection-start-column="125" selection-end-line="144" selection-end-column="125" />
+            <state relative-caret-position="0">
+              <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <file leaf-file-name="forgotController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/controllers/forgotController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2090">
-              <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
+            <state relative-caret-position="61">
+              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signInController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/controllers/signInController.js">
+      <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/controllers/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+            <state relative-caret-position="0">
+              <caret line="0" column="37" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signUpController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/controllers/signUpController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="53" column="47" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -177,38 +115,8 @@
       <file leaf-file-name="service.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/services/service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
+            <state relative-caret-position="418">
               <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/users.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1584">
-              <caret line="168" column="117" selection-start-line="168" selection-start-column="117" selection-end-line="168" selection-end-column="117" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="770">
-              <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -217,8 +125,38 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="234" column="49" selection-start-line="234" selection-start-column="49" selection-end-line="234" selection-end-column="49" />
+            <state relative-caret-position="1848">
+              <caret line="120" column="23" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signInController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/controllers/signInController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -297,17 +235,17 @@
         <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/users.sql" />
         <option value="$PROJECT_DIR$/lib/passport.js" />
-        <option value="$PROJECT_DIR$/public/controllers/signUpController.js" />
         <option value="$PROJECT_DIR$/views/register.html" />
         <option value="$PROJECT_DIR$/models/user.js" />
-        <option value="$PROJECT_DIR$/public/controllers/signInController.js" />
-        <option value="$PROJECT_DIR$/public/controllers/allUsersController.js" />
         <option value="$PROJECT_DIR$/public/services/service.js" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/controllers/user.js" />
         <option value="$PROJECT_DIR$/views/users.html" />
         <option value="$PROJECT_DIR$/views/edit_user.html" />
         <option value="$PROJECT_DIR$/views/add_new.html" />
+        <option value="$PROJECT_DIR$/public/controllers/allUsersController.js" />
+        <option value="$PROJECT_DIR$/public/controllers/signInController.js" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/public/controllers/signUpController.js" />
       </list>
     </option>
   </component>
@@ -321,10 +259,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-8" />
+    <option name="width" value="1924" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -811,21 +748,21 @@
     <option name="totallyTimeSpent" value="392361000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-8" y="0" width="1924" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29088914" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29411766" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33115467" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2046875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="646" y="162" width="312" height="1004" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20619097" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="646" y="162" width="312" height="1004" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -939,13 +876,6 @@
     <entry file="file://$PROJECT_DIR$/public/controllers/authCtrl.js" />
     <entry file="file://$PROJECT_DIR$/public/controllers/auth.js" />
     <entry file="file://$PROJECT_DIR$/public/controllers/usersController.js" />
-    <entry file="file://$PROJECT_DIR$/views/notfound.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/common.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1015,13 +945,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/controllers/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="37" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1030,25 +953,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/controllers/forgotController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="5840" column="0" selection-start-line="5840" selection-start-column="0" selection-end-line="5849" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/auth.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1067,14 +975,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/passport.js" />
-    <entry file="file://$PROJECT_DIR$/public/controllers/signUpController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/users.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
@@ -1091,34 +991,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/controllers/newPassController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132">
-          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/services/uploadService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/controllers/signInController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="234" column="49" selection-start-line="234" selection-start-column="49" selection-end-line="234" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1131,42 +1007,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/services/service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/controllers/allUsersController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1430">
-          <caret line="188" column="60" selection-start-line="188" selection-start-column="60" selection-end-line="188" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/edit_user.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="178" column="125" selection-start-line="178" selection-start-column="125" selection-end-line="178" selection-end-column="125" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/auth.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1179,10 +1039,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+    <entry file="file://$PROJECT_DIR$/views/notfound.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2090">
-          <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
+        <state relative-caret-position="0">
+          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1848">
+          <caret line="120" column="23" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/controllers/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="37" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/controllers/signInController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/controllers/forgotController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/services/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/controllers/allUsersController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/controllers/newPassController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/controllers/signUpController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="53" column="47" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
           <folding />
         </state>
       </provider>

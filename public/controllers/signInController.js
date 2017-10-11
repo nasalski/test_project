@@ -4,14 +4,20 @@ angular.module('allControllers')
         $scope.login = function(user) {
             /*console.log(user.email);*/
             UsersService.login(user)
-                .success(function(data,docs) {
+                .success(function(data,docs,inf,bla) {
                     if(docs==200){
+                        console.log(inf);
+                        console.log(bla.data);
+                        console.log(docs);
                         console.log("im here");
                         $rootScope.currentUser = user.email;
                         /*$rootScope.isAuth = true;*/
                         $location.url("/users");
 
                     } else window.alert('incorrect email or password');
+                })
+                .error(function(){
+                        window.alert('incorrect email or password');
                 });
         };
         $scope.register = function() {
